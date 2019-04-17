@@ -30,8 +30,8 @@ export class TShirtService {
   	return this.http.get<TShirt[]>(this.URL+"/all");
   }
 
-  public GetOneTShirt(id){
-    return this.http.get<TShirt>(this.URL+id);
+  public GetOneTShirt(id:Number){
+    return this.http.get<TShirt>(this.URL+"/"+id);
   }
 
   public GetLastTShirt(){

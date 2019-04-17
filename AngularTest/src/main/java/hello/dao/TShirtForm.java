@@ -1,6 +1,5 @@
 package hello.dao;
 
-import org.w3c.dom.Text;
 
 import javax.validation.constraints.NotNull;
 
@@ -9,6 +8,26 @@ public class TShirtForm {
     private String url;
     @NotNull
     private String Description;
+    @NotNull
+    private String Name;
+    @NotNull
+    private String Tags;
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public String getTags() {
+        return Tags;
+    }
+
+    public void setTags(String tags) {
+        Tags = tags;
+    }
 
     public String getUrl() {
         return url;

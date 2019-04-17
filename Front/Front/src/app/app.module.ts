@@ -14,7 +14,7 @@ import { TShirtPageComponent } from './tshirt-page/tshirt-page.component';
 const appRoutes:Routes=[
 {path: '',component:MainPageComponent},
 {path: 'add',component:TShirtComponent},
-{path: 'TShirtPage',component:TShirtPageComponent}
+{path: 'TShirtPage/:id',component:TShirtPageComponent}
 ]
 
 @NgModule({

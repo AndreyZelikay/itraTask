@@ -1,10 +1,11 @@
 package hello.model;
 
-import org.w3c.dom.Text;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class TShirt {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,7 +14,24 @@ public class TShirt {
     @Column( length = 100000 )
     private String url;
     private String Description;
+    private String Tags;
+    private String Name;
 
+    public String getTags() {
+        return Tags;
+    }
+
+    public void setTags(String tags) {
+        Tags = tags;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
 
     public TShirt() {}
 

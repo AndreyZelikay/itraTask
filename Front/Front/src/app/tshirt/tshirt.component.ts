@@ -32,12 +32,14 @@ export class TShirtComponent implements OnInit {
     });
   }
 
-  createTShirt(Description){
+  createTShirt(Description,Name,Tags){
     this.ImgUrl=$("#meme").memeGenerator("save");
   	this.TShirt={
   		id:0,
   		description:Description,
-  		url:this.ImgUrl
+  		url:this.ImgUrl,
+      tags:Tags,
+      name:Name
   	};
   	this.tshirtService.CreateTShirt(this.TShirt);
   }

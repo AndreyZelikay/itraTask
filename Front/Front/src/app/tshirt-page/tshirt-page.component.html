@@ -1,2 +1,23 @@
-
-<p *ngFor="let tshirt of TShirts">{{tshirt.url}}</p>
+<div class="container-fluide">
+	<h1>{{TShirt.url}}</h1>
+	<div class="row">
+		<div class="col-lg-4">
+			<div class="product-photo">
+        		<img src={{TShirt.url}}
+      						alt="" width="600" height="600">
+    		</div>
+		</div>
+		<div class="col">
+			<h1>{{TShirt.name}}</h1>
+			<p>Tags: <br>
+			{{TShirt.tags}}</p>
+			<p>Description:<br>
+			{{TShirt.description}}</p>
+			<div class="product-price">148$ <a class="cart-btn" href="#">Add to cart</a></div>
+		</div>
+		<div class="w-100"></div>
+		<div class="col">
+			<h1 align="center">Comments</h1>
+		</div>
+	</div>
+</div>

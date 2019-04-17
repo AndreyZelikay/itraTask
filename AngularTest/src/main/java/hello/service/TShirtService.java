@@ -5,7 +5,6 @@ import hello.dao.TShirtForm;
 import hello.model.TShirt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -21,6 +20,8 @@ public class TShirtService {
         TShirt tShirt=new TShirt();
         tShirt.setUrl(tShirtForm.getUrl());
         tShirt.setDescription(tShirtForm.getDescription());
+        tShirt.setName(tShirtForm.getName());
+        tShirt.setTags(tShirtForm.getTags());
         return tShirtRepo.save(tShirt);
     }
 

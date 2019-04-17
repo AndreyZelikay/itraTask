@@ -1,17 +1,16 @@
 <ul class="products clearfix">
   <li *ngFor="let tshirt of TShirts" class="product-wrapper">
-    <a href="/TShirtPage" class="product">
+    <a [routerLink]="['/TShirtPage', tshirt.id]" class="product">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-sm">
+          <div class="col">
             <div class="product-photo">
               <img src="assets/T-ShirtsModels/Male.png" alt="">
             </div>
           </div>
-          <div class="col-sm">
+          <div class="col">
            <p>Description:</p>
            <p>{{tshirt.description}}</p>
-           <p>{{tshirt.url}}</p>
           </div>
         </div>
       </div>
