@@ -1,0 +1,31 @@
+<h1>T-Shirt creating</h1>
+<h1>{{ImgUrl}}</h1>
+<div class="container-fluide">
+  <img src="assets/T-ShirtsModels/Male.png" id="meme">
+</div>
+<div class="container">
+  <div class="row">
+    <div class="offset-3"></div>
+    <div class="col-md-6">
+      <form name="form" #f="ngForm" >
+        <div class="form-group">
+          <label for="feedback">Description</label>
+          <textarea
+            id="description"
+            class="form-control"
+            name="feedback"
+            placeholder="Your description"
+            #feedback
+            rows="7">
+            {{TShirt.description}}
+        </textarea>
+        </div>
+        <button type="submit" class="btn btn-info pull-right" (click)="createTShirt(feedback.value)">
+          <i class="fa fa-envelope-o"></i>
+          <span> Send description</span>
+        </button>
+      </form>
+    </div>
+    <div class="offset-3"></div>
+  </div>
+</div>
