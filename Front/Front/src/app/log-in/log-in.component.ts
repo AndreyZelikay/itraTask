@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {LoginForm} from '../../../MyModules/login.module';
+import {LoginService} from '../../../MyServices/LogInService/login.service';
 
 @Component({
   selector: 'app-log-in',
@@ -7,12 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogInComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loginservice:LoginService) { }
+
+  loginform:LoginForm;
 
   ngOnInit() {
   }
 
   logInForm(email,password){
-  	
+  	this.loginform={
+  		email:email,
+  		password:password,
+  		username:"",
+  		id:0
+  	};
+  	this.loginservice.signIn(this.loginform);
   }
 }

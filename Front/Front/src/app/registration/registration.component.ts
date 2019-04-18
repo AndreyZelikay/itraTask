@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {LoginForm} from '../../../MyModules/login.module';
+import {LoginService} from '../../../MyServices/LogInService/login.service';
 
 @Component({
   selector: 'app-registration',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loginservice:LoginService) { }
+
+  loginform:LoginForm;
 
   ngOnInit() {
   }
-
+  signUp(Username,Email,Password){
+  	this.loginform={
+  		email:Email,
+  		password:Password,
+  		username:Username,
+  		id:0
+  	};
+  	this.loginservice.signUp(this.loginform);
+  }
 }

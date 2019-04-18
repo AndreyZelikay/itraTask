@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class UserService {
     @Autowired
     private UserRepo userRepo;
-
+    @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public User SignUp(UserForm userForm){
@@ -19,6 +19,12 @@ public class UserService {
         user.setPassword(bCryptPasswordEncoder.encode(userForm.getPassword()));
         user.setEmail(userForm.getEmail());
         user.setUsername(userForm.getUsername());
+        return userRepo.save(user);
+    }
+    public User SignIn(UserForm userForm){
+        User user = new User();
+        user.setPassword(bCryptPasswordEncoder.encode(userForm.getPassword()));
+        user.setEmail(userForm.getEmail());
         return userRepo.save(user);
     }
 }
