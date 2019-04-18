@@ -1,0 +1,19 @@
+<div class="container login-container">
+            <div class="row">
+                <div class="col login-form-1" align="center">
+                    <h3>Login form</h3>
+                    <form>
+                        <div class="form-group col-lg-6">
+                            <input type="text" class="form-control" placeholder="Your Email *" #mail/>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <input type="password" class="form-control" placeholder="Your Password *" #pas/>
+                        </div>
+                        <div class="form-group col-lg-6">
+                            <button type="submit" (onclick)="logInForm(mail.value,pas.value)">Log in</button>
+                        </div>
+                    </form>
+                </div>
+            
+            </div>
+        </div>
