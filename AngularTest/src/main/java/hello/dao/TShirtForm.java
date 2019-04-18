@@ -1,7 +1,10 @@
 package hello.dao;
 
 
+import hello.model.Comments;
+
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 public class TShirtForm {
     @NotNull
@@ -12,6 +15,7 @@ public class TShirtForm {
     private String Name;
     @NotNull
     private String Tags;
+
 
     public String getName() {
         return Name;

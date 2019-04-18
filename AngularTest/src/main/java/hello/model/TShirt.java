@@ -1,8 +1,10 @@
 package hello.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -16,6 +18,14 @@ public class TShirt {
     private String Description;
     private String Tags;
     private String Name;
+
+    @OneToMany(mappedBy = "tShirt",fetch = FetchType.LAZY, cascade = CascadeType.ALL,orphanRemoval = true)
+    @JsonIgnore
+    private List<Comments> Comments;
+
+    public List<hello.model.Comments> getComments() {
+        return Comments;
+    }
 
     public String getTags() {
         return Tags;

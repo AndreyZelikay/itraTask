@@ -28,27 +28,6 @@ public class TShirtController {
 
     @PostMapping("/add")
     public TShirt create(@RequestBody TShirtForm tShirtForm){
-        byte[] data=null;
-        try {
-            BufferedImage bImage = ImageIO.read(new File("C:/Users/andre/IdeaProjects/AngularTest/src/main/java/hello/model/image.jpg"));
-            ByteArrayOutputStream bos = new ByteArrayOutputStream();
-            ImageIO.write(bImage, "jpg", bos);
-            data = bos.toByteArray();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        byte[] decodedBytes = Base64.decodeBase64(tShirtForm.getUrl());
-        File photo= new File("C:/Users/andre/IdeaProjects/AngularTest/src/main/java/hello/model/","photo1.jpg");
-        if (photo.exists()) {
-            photo.delete();
-        }
-        try {
-            new FileOutputStream(photo).write(decodedBytes);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-       //tShirtForm.setUrl(cloudinaryService.post("C:/Users/andre/IdeaProjects/AngularTest/src/main/java/hello/model/photo1.jpg"));
         return tShirtService.Create(tShirtForm);
     }
 
