@@ -1,9 +1,9 @@
 package hello.Repos;
 
-import hello.model.User;
+import hello.model.ApplicationUser;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepo extends JpaRepository<User,Integer> {
-    User findByUsername(String username);
+public interface UserRepo extends JpaRepository<ApplicationUser,Integer> {
+    ApplicationUser findByUsername(String username);
 }

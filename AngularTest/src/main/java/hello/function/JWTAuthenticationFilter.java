@@ -2,7 +2,9 @@ package hello.function;
 
 import com.auth0.jwt.JWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import hello.model.User;
+
+import hello.model.ApplicationUser;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -21,7 +23,6 @@ import static com.auth0.jwt.algorithms.Algorithm.HMAC512;
 import static hello.function.SequrityConstants.*;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
-
     private AuthenticationManager authenticationManager;
 
     public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
@@ -32,8 +33,8 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     public Authentication attemptAuthentication(HttpServletRequest req,
                                                 HttpServletResponse res) throws AuthenticationException {
         try {
-            User creds = new ObjectMapper()
-                    .readValue(req.getInputStream(), User.class);
+            ApplicationUser creds = new ObjectMapper()
+                    .readValue(req.getInputStream(), ApplicationUser.class);
 
             return authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(

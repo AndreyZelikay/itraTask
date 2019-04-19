@@ -1,10 +1,11 @@
 package hello.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name="User")
-public class User {
+@Table(name="ApplicationUser")
+public class ApplicationUser {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -12,6 +13,8 @@ public class User {
     private String username;
     private String Password;
     private String Email;
+
+    public ApplicationUser(){}
 
     public Integer getId() {
         return id;
