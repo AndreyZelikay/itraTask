@@ -2,6 +2,7 @@ package hello.model;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="ApplicationUser")
@@ -13,6 +14,19 @@ public class ApplicationUser {
     private String username;
     private String Password;
     private String Email;
+
+    @ElementCollection(targetClass = Roles.class,fetch=FetchType.LAZY)
+    @CollectionTable(name="user_role", joinColumns = @JoinColumn(name="ApplicationUser_id"))
+    @Enumerated(EnumType.STRING)
+    private List<Roles> role;
+
+    public List<Roles> getRole() {
+        return role;
+    }
+
+    public void setRole(List<Roles> role) {
+        this.role = role;
+    }
 
     public ApplicationUser(){}
 

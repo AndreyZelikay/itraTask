@@ -2,26 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb992427-d9ea-43c1-9279-3685b850f5b3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/hello/model/Roles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/Repos/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/Repos/UserRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/config/WebSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/config/WebSecurity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello/function/JWTAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/function/JWTAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/model/ApplicationUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/UserDetailsImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/service/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/Repos/UserRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/Repos/UserRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/ApplicationUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/model/ApplicationUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/photo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/CloudinaryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hello/config/WebSecurity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/config/WebSecurity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello/controllers/TShirtController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/controllers/TShirtController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hello/function/JWTAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/function/JWTAuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/model/UserDetailsImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/service/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/service/UserDetailsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello/service/CloudinaryService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello/service/TShirtService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/service/TShirtService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front/Front/MyServices/LogInService/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/MyServices/LogInService/login.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/log-in/log-in.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/log-in/log-in.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/log-in/log-in.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/log-in/log-in.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,11 +34,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hello/config/WebSecurity.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/ApplicationUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="38" column="79" lean-forward="true" selection-start-line="38" selection-start-column="79" selection-end-line="38" selection-end-column="79" />
+            <state relative-caret-position="272">
+              <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#597#598#0" expanded="true" />
+                <element signature="e#624#625#0" expanded="true" />
+                <element signature="e#669#670#0" expanded="true" />
+                <element signature="e#701#702#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hello/function/JWTAuthorizationFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="51" column="94" lean-forward="true" selection-start-line="51" selection-start-column="94" selection-end-line="51" selection-end-column="94" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/hello/function/JWTAuthenticationFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="36" column="76" lean-forward="true" selection-start-line="36" selection-start-column="76" selection-end-line="36" selection-end-column="76" />
+            <state relative-caret-position="220">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,10 +75,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hello/service/UserDetailsServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hello/config/WebSecurity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="6" column="58" lean-forward="true" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+            <state relative-caret-position="374">
+              <caret line="34" column="65" selection-start-line="34" selection-start-column="65" selection-end-line="34" selection-end-column="65" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/TShirtForm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -76,6 +105,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -99,8 +129,6 @@
         <option value="$PROJECT_DIR$/src/main/java/hello/service/CloudinaryService.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/Repos/CommentsRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/dao/CommentForm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/model/TShirt.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/model/Comments.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/dao/TShirtForm.java" />
@@ -108,7 +136,6 @@
         <option value="$PROJECT_DIR$/src/main/java/hello/ApplicationRun.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/hello/function/SequrityConstants.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/function/JWTAuthorizationFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/model/UserDetails.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/dao/UserForm.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/Repos/UserRepo.java" />
@@ -119,9 +146,13 @@
         <option value="$PROJECT_DIR$/src/main/java/hello/service/UserDetailsServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/model/Roles.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/model/ApplicationUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/config/WebSecurity.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/function/JWTAuthenticationFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/function/JWTAuthorizationFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/config/WebSecurity.java" />
       </list>
     </option>
   </component>
@@ -194,7 +225,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="hello" type="462c0819:PsiDirectoryNode" />
-              <item name="function" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AngularTest" type="b2602c69:ProjectViewProjectNode" />
@@ -203,16 +234,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="hello" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AngularTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AngularTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hello" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AngularTest" type="b2602c69:ProjectViewProjectNode" />
@@ -296,18 +318,18 @@
       <workItem from="1555246228541" duration="29424000" />
       <workItem from="1555519687491" duration="10432000" />
       <workItem from="1555595755357" duration="19409000" />
-      <workItem from="1555666586590" duration="6699000" />
+      <workItem from="1555666586590" duration="11092000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78963000" />
+    <option name="totallyTimeSpent" value="83356000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26599148" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26599148" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -317,7 +339,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -362,16 +384,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/Repos/UserRepository.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/controllers/TempController.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/Success.ftl" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/service/CloudinaryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/Repos/CommentsRepo.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/CommentForm.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Comments.java">
@@ -414,38 +426,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#Create#0;class#TShirtService#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/ApplicationRun.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/Repos/UserRepo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/function/JWTAuthorizationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="45" column="59" lean-forward="true" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -489,42 +473,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/ApplicationUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#356#357#0" expanded="true" />
-            <element signature="e#387#388#0" expanded="true" />
-            <element signature="e#435#436#0" expanded="true" />
-            <element signature="e#475#476#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#795#796#0" expanded="true" />
-            <element signature="e#850#851#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/TShirtForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/UserForm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -546,13 +494,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/function/SequrityConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="62" lean-forward="true" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/service/UserDetailsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -560,10 +501,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/function/SequrityConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="62" lean-forward="true" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/service/CloudinaryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+          <folding>
+            <element signature="method#Create#0;class#TShirtService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/ApplicationRun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Roles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/function/JWTAuthenticationFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="36" column="76" lean-forward="true" selection-start-line="36" selection-start-column="76" selection-end-line="36" selection-end-column="76" />
+        <state relative-caret-position="220">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/ApplicationUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#597#598#0" expanded="true" />
+            <element signature="e#624#625#0" expanded="true" />
+            <element signature="e#669#670#0" expanded="true" />
+            <element signature="e#701#702#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/function/JWTAuthorizationFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="51" column="94" lean-forward="true" selection-start-line="51" selection-start-column="94" selection-end-line="51" selection-end-column="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -572,8 +588,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/config/WebSecurity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="38" column="79" lean-forward="true" selection-start-line="38" selection-start-column="79" selection-end-line="38" selection-end-column="79" />
+        <state relative-caret-position="374">
+          <caret line="34" column="65" selection-start-line="34" selection-start-column="65" selection-end-line="34" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/TShirtForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
