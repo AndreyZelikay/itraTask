@@ -4,7 +4,9 @@ import com.auth0.jwt.JWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import hello.model.ApplicationUser;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -17,6 +19,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -25,8 +28,6 @@ import static hello.function.SequrityConstants.*;
 
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private AuthenticationManager authenticationManager;
-    @Autowired
-    private ObjectMapper objectMapper;
 
     public JWTAuthenticationFilter(AuthenticationManager authenticationManager) {
         this.authenticationManager = authenticationManager;
@@ -54,13 +55,13 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                                             HttpServletResponse res,
                                             FilterChain chain,
                                             Authentication auth) throws IOException, ServletException {
-        String userInfo = ((User)auth.getPrincipal()).getUsername()+((User)auth.getPrincipal()).getAuthorities();
+        JsonString jsonString=new JsonString();
         String token = JWT.create()
-                .withSubject(userInfo)
+                .withSubject(jsonString.UserInfo(((User)auth.getPrincipal()).getUsername(),((User)auth.getPrincipal()).getAuthorities().toString()))
                 .withExpiresAt(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .sign(HMAC512(SECRET.getBytes()));
-        res.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
         res.setStatus(HttpServletResponse.SC_OK);
-        res.getWriter().write("token: "+TOKEN_PREFIX + token);
+        res.getWriter().write(jsonString.Token(token));
+        res.getHeader(jsonString.Token(token));
     }
 }
