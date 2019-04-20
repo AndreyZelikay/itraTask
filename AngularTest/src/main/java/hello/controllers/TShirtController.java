@@ -5,6 +5,7 @@ import hello.model.TShirt;
 import hello.service.TShirtService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,6 +19,7 @@ public class TShirtController {
     private TShirtService tShirtService;
 
     @PostMapping("/add")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public TShirt create(@RequestBody TShirtForm tShirtForm){
         return tShirtService.Create(tShirtForm);
     }
