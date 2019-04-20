@@ -16,11 +16,11 @@ export class LogInComponent implements OnInit {
   ngOnInit() {
   }
 
-  logInForm(email,password){
+  logInForm(Username,Password){
   	this.loginform={
-  		email:email,
-  		password:password,
-  		username:"",
+  		email:"",
+  		password:Password,
+  		username:Username,
   		id:0
   	};
   	this.loginservice.signIn(this.loginform);

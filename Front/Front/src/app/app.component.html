@@ -4,6 +4,13 @@
     <a class="p-2 text-dark" href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Home</font></font></a>
     <a class="p-2 text-dark" href="/add"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Create your design</font></font></a>
   </nav>
-  <a class="btn btn-outline-primary" href="/login"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Log In</font></font></a>
+  <a *ngIf="!isAuthorized"
+  	 class="btn btn-outline-primary" href="/login"><font style="vertical-align: inherit;">
+  	<font style="vertical-align: inherit;">Log In</font></font>
+  </a>
+  <a *ngIf="isAuthorized" (click)="signOut()">Sign Out</a>
+  <a class="btn btn-outline-primary" href="/AdminPage"><font style="vertical-align: inherit;">
+    <font style="vertical-align: inherit;">Admin page</font></font>
+  </a>
 </div>
 <router-outlet></router-outlet>

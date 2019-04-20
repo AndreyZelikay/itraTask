@@ -3,7 +3,7 @@ import  {TShirt} from '../../MyModules/TShirt.module';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json'})
 };
 
 @Injectable({
@@ -11,7 +11,7 @@ const httpOptions = {
 })
 export class TShirtService {
 
-	private URL="http://localhost:8080/api/TShirts";
+	private URL="http://localhost:8080/TShirts";
 
   constructor(private http:HttpClient) { }
 
@@ -31,7 +31,7 @@ export class TShirtService {
   }
 
   public GetOneTShirt(id:Number){
-    return this.http.get<TShirt>(this.URL+"/"+id);
+    return this.http.get<TShirt>(this.URL+"/TShirt/"+id);
   }
 
   public GetLastTShirt(){

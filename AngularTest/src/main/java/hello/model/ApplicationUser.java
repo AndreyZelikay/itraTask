@@ -15,6 +15,15 @@ public class ApplicationUser {
     private String username;
     private String Password;
     private String Email;
+    private String Role;
+
+    public String getRole() {
+        return Role;
+    }
+
+    public void setRole(String role) {
+        Role = role;
+    }
 
     public ApplicationUser(){}
 

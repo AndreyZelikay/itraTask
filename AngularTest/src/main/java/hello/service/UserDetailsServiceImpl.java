@@ -20,7 +20,6 @@ import java.util.*;
 public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UserRepo userRepo;
-    private GrantedAuthority grantedAuthority;
 
     public UserDetailsServiceImpl(UserRepo userRepo) {
         this.userRepo = userRepo;

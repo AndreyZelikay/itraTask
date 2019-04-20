@@ -1,0 +1,23 @@
+<h1 align="center">Admin Page</h1>
+<div class="container-fluide">
+	<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">User Name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of Users">
+      <th scope="row" #id>{{user.id}}</th>
+      <a href="#"><td>{{user.username}}</td></a>
+      <td>{{user.email}}</td>
+      <td><a class="btn btn-outline-primary" href="/AdminPage" (click)="delete(1)"><font style="vertical-align: inherit;">
+    <font style="vertical-align: inherit;">Delete</font></font></a></td>
+    <td><a class="btn btn-outline-primary" href="/AdminPage" (click)="setRole(1)"><font style="vertical-align: inherit;">
+    <font style="vertical-align: inherit;">Set Role</font></font></a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
