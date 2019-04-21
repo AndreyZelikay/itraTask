@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginForm} from '../../../MyModules/login.module';
 import {LoginService} from '../../../MyServices/LogInService/login.service';
+import {TransformableFormGroup} from '../../helpers';
+import { form } from './registration.form';
 
 @Component({
   selector: 'app-registration',
@@ -9,19 +11,36 @@ import {LoginService} from '../../../MyServices/LogInService/login.service';
 })
 export class RegistrationComponent implements OnInit {
 
+  public form: TransformableFormGroup = form;
+  public isFormValid: boolean = true;
+  public isNameExist: boolean = false;
+  private result:String;
+
   constructor(private loginservice:LoginService) { }
 
-  loginform:LoginForm;
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-  signUp(Username,Email,Password){
-  	this.loginform={
-  		email:Email,
-  		password:Password,
-  		username:Username,
-  		id:0
-  	};
-  	this.loginservice.signUp(this.loginform);
+  public signUp(): void {
+    if (this.form.valid) {
+      this.loginservice.signUp(this.form).subscribe(
+        (response) => {
+          this.result=response['status'];
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+      if(this.result=="Error!"){
+          this.isNameExist=true;
+          this.isFormValid=false;
+      }
+      else{
+      this.isFormValid=true;
+      }
+    this.form.markAsTouched();
+    } else {
+      this.isFormValid = false;
+      this.form.markAsTouched();
+    }
   }
 }

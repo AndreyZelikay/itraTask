@@ -22,6 +22,6 @@ export class AppComponent implements OnInit {
   			this.isAuthorized = response['onAuthorized'];
   		}
   	);
-    this.isAuthorized=this.authService.isAuthenticated();
+    //this.isAuthorized=this.authService.isAuthenticated();
   }
 }

@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import {LoginForm} from 'MyModules/login.module';
+import {RoleForm} from 'MyModules/RoleForm';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of, Subject } from 'rxjs';
+import { TransformableFormGroup, TransformableFormControl } from 'src/helpers';
 
 @Injectable({
   providedIn: 'root'
@@ -16,32 +18,27 @@ export class LoginService {
   private url="http://localhost:8080";
   private Users:LoginForm[];
 
-  public signIn(loginform:LoginForm){
-  	this.http.post(this.url+"/login",loginform).subscribe(
-  		(response) => {
-        localStorage.setItem('token', response['token']);
-        this.authorization.next({
-          'onAuthorized': true
-        });
-      },
-      (error) => {
-        console.log(error)
-      }
-  )}
+  public signIn(form: TransformableFormGroup): Observable<any>{
+    const requestBody: object = {};
+    const fields = Object.keys(form.controls);
+    for (const field of fields) {
+      requestBody[field] = form.controls[field].value
+    }
+  	return this.http.post(this.url+"/login",requestBody);
+  }
   public signOut(){
    localStorage.removeItem('token');
         this.authorization.next({
           'onAuthorized': false
         });  
   }
-  public signUp(loginform:LoginForm){
-  	this.http.post(this.url+"/users/sign-up",loginform).subscribe(
-  		res=>{
-  			 location.reload();
-  		},
-  		err=>{
-			alert("an error whith post");
-  		});
+  public signUp(form: TransformableFormGroup): Observable<any> {
+    const requestBody: object = {};
+    const fields = Object.keys(form.controls);
+    for (const field of fields) {
+      requestBody[field] = form.controls[field].value
+    }
+  	return this.http.post(this.url+"/users/sign-up",requestBody);
   }
   public GetAll(){
     return this.http.get<LoginForm[]>(this.url+"/users/admin/all")
@@ -55,7 +52,13 @@ export class LoginService {
       alert("an error whith delete");
       });
   }
-  //public SetRole(id:Number,role:String){
-    //this.http.post(this.url+"/users/admin/",role)
-  //}
+  public SetRole(role:RoleForm){
+    this.http.post(this.url+"/users/admin/role",role).subscribe(
+      (response)=>{
+        location.reload();
+      },
+      (error)=>{
+           alert("an error whith post");
+      });
+  }
 }

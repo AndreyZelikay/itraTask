@@ -2,7 +2,6 @@ package hello.service;
 
 import hello.Repos.UserRepo;
 
-
 import hello.model.ApplicationUser;
 import hello.model.Roles;
 import org.springframework.security.core.GrantedAuthority;
@@ -32,7 +31,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             throw new UsernameNotFoundException(username);
         }
         Set<GrantedAuthority> roles = new HashSet();
-        roles.add(new SimpleGrantedAuthority(Roles.USER.name()));
+
+        if(user.getRole().isEmpty())
+            roles.add(new SimpleGrantedAuthority("USER"));
+        else
+            roles.add(new SimpleGrantedAuthority(user.getRole()));
         return new User(user.getUsername(), user.getPassword(), roles);
     }
 }

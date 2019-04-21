@@ -25,4 +25,11 @@ public class JsonString {
         obj.writeJSONString(out);
         return obj.toString();
     }
+    public String ReturnInfo(String info)throws IOException{
+        JSONObject obj = new JSONObject();
+        obj.put("status",info);
+        StringWriter out = new StringWriter();
+        obj.writeJSONString(out);
+        return obj.toString();
+    }
 }

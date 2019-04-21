@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule,HTTP_INTERCEPTORS} from "@angular/common/http";
 import {RouterModule,Routes} from "@angular/router";
 
@@ -16,6 +16,7 @@ import { AuthGuardService as AuthGuard } from '../../MyServices/LogInService/aut
 import {JwtModule,JwtModuleOptions} from '@auth0/angular-jwt';
 import {AuthInterceptor} from '../../MyServices/LogInService/auth.interceptor';
 import { AdminPageComponent } from './admin-page/admin-page.component';
+import {ArrayPipe} from '../pipes/array.pipe'
 
 const appRoutes:Routes=[
 {path: '',component:MainPageComponent},
@@ -44,12 +45,14 @@ const JWT_Module_Options: JwtModuleOptions = {
     TShirtPageComponent,
     LogInComponent,
     RegistrationComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    ArrayPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
     JwtModule.forRoot(JWT_Module_Options)

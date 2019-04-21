@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginForm} from '../../../MyModules/login.module';
 import {LoginService} from '../../../MyServices/LogInService/login.service';
+import {TransformableFormGroup} from '../../helpers';
+import { form } from './log-in.form';
 
 @Component({
   selector: 'app-log-in',
@@ -9,20 +11,38 @@ import {LoginService} from '../../../MyServices/LogInService/login.service';
 })
 export class LogInComponent implements OnInit {
 
-  constructor(private loginservice:LoginService) { }
+  public form: TransformableFormGroup = form;
+  public isFormValid: boolean = true;
+  public isNameExist: boolean = false;
+  private result:String;
 
-  loginform:LoginForm;
+
+  constructor(private loginservice:LoginService) { }
 
   ngOnInit() {
   }
 
-  logInForm(Username,Password){
-  	this.loginform={
-  		email:"",
-  		password:Password,
-  		username:Username,
-  		id:0
-  	};
-  	this.loginservice.signIn(this.loginform);
+  logInForm(){
+    if(this.form.valid){
+        this.loginservice.signIn(this.form).subscribe(
+      (response) => {
+        localStorage.setItem('token', response['token']);
+      },
+      (error) => {
+        console.log(error)
+      });
+      if(this.result=="Error!"){
+          this.isNameExist=true;
+          this.isFormValid=false;
+      }
+      else{
+      this.isFormValid=true;
+      }
+      this.form.markAsTouched();
+    }
+    else{
+      this.isFormValid = false;
+      this.form.markAsTouched();
+    }
   }
 }

@@ -1,5 +1,6 @@
 package hello.controllers;
 
+import hello.Repos.UserRepo;
 import hello.dao.RoleForm;
 import hello.dao.UserForm;
 import hello.model.ApplicationUser;
@@ -17,7 +18,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/sign-up")
-    public ApplicationUser SingUp(@RequestBody UserForm userForm){
+    public String SingUp(@RequestBody UserForm userForm){
         return userService.SignUp(userForm);
     }
 
@@ -30,6 +31,7 @@ public class UserController {
     public ApplicationUser SetRole(@RequestBody RoleForm roleForm){
         return userService.setRole(roleForm);
     }
+
     @DeleteMapping("/admin/{id}")
     public String DeleteUser(@PathVariable ( "id" ) int id){
         userService.deleteUser(id);

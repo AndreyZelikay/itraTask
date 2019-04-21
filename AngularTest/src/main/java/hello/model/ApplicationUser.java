@@ -1,12 +1,12 @@
 package hello.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name="ApplicationUser")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class ApplicationUser {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,6 +16,15 @@ public class ApplicationUser {
     private String Password;
     private String Email;
     private String Role;
+    private String SetActivationCode;
+
+    public String getSetActivationCode() {
+        return SetActivationCode;
+    }
+
+    public void setSetActivationCode(String setActivationCode) {
+        SetActivationCode = setActivationCode;
+    }
 
     public String getRole() {
         return Role;

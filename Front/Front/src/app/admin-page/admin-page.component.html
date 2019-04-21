@@ -6,6 +6,9 @@
       <th scope="col">Id</th>
       <th scope="col">User Name</th>
       <th scope="col">Email</th>
+      <th scope="col">Role</th>
+      <th scope="col">Delete User</th>
+      <th scope="col">Set User Role</th>
     </tr>
   </thead>
   <tbody>
@@ -13,10 +16,31 @@
       <th scope="row" #id>{{user.id}}</th>
       <a href="#"><td>{{user.username}}</td></a>
       <td>{{user.email}}</td>
-      <td><a class="btn btn-outline-primary" href="/AdminPage" (click)="delete(1)"><font style="vertical-align: inherit;">
+      <td>{{user.role}}</td>
+      <td><a class="btn btn-outline-primary" href="/AdminPage" (click)="delete(user.id)"><font style="vertical-align: inherit;">
     <font style="vertical-align: inherit;">Delete</font></font></a></td>
-    <td><a class="btn btn-outline-primary" href="/AdminPage" (click)="setRole(1)"><font style="vertical-align: inherit;">
-    <font style="vertical-align: inherit;">Set Role</font></font></a></td>
+    <td>
+    	<div class="container-fluide">
+    		<div class="row">
+    			<div class="col">
+			    	<div class="form-check">
+						<label class="form-check-label">
+						  	<input type="radio" class="form-check-input" name="optradio" value="USER" (change)="changeRole($event)">USER
+						</label>
+					</div>
+					<div class="form-check">
+						<label class="form-check-label">
+						    <input ng-model="roles" type="radio" class="form-check-input" name="optradio" value="ADMIN" (change)="changeRole($event)">ADMIN
+						</label>
+					</div>
+				</div>
+				<div class="col">
+					<a class="btn btn-outline-primary" href="/AdminPage" (click)="setRole(user.id)"><font style="vertical-align: inherit;">
+			    	<font style="vertical-align: inherit;">Set Role {{ChosenRole}}</font></font></a>
+			    </div>
+			</div>
+		</div>
+    </td>
     </tr>
   </tbody>
 </table>

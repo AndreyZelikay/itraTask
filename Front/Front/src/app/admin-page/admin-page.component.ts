@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {LoginService} from '../../../MyServices/LogInService/login.service';
-import {LoginForm} from '../../../MyModules/login.module';
+import {LoginService} from 'MyServices/LogInService/login.service';
+import {LoginForm} from 'MyModules/login.module';
+import {RoleForm} from 'MyModules/RoleForm';
  
 @Component({
   selector: 'app-admin-page',
@@ -10,6 +11,8 @@ import {LoginForm} from '../../../MyModules/login.module';
 export class AdminPageComponent implements OnInit {
 
   public Users:LoginForm[]; 
+  private Role:RoleForm;
+  public ChosenRole:String;
   constructor(private loginService:LoginService) { }
 
   ngOnInit() {
@@ -23,6 +26,16 @@ export class AdminPageComponent implements OnInit {
   }
   delete(id){
   	this.loginService.DeleteUser(id);
+  }
+  changeRole(event:any){
+  		this.ChosenRole=event.target.value;
+  }
+  setRole(Id){
+  	this.Role={
+  		id:Id,
+  		role:this.ChosenRole
+  	}
+  	this.loginService.SetRole(this.Role);
   }
 
 }
