@@ -1,10 +1,8 @@
 package hello.dao;
 
-
-import hello.model.Comments;
+import hello.model.Tag;
 
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 public class TShirtForm {
     @NotNull
@@ -14,8 +12,15 @@ public class TShirtForm {
     @NotNull
     private String Name;
     @NotNull
-    private String Tags;
+    private Integer AuthorId;
 
+    public Integer getAuthorId() {
+        return AuthorId;
+    }
+
+    public void setAuthorId(Integer authorId) {
+        AuthorId = authorId;
+    }
 
     public String getName() {
         return Name;
@@ -23,14 +28,6 @@ public class TShirtForm {
 
     public void setName(String name) {
         Name = name;
-    }
-
-    public String getTags() {
-        return Tags;
-    }
-
-    public void setTags(String tags) {
-        Tags = tags;
     }
 
     public String getUrl() {

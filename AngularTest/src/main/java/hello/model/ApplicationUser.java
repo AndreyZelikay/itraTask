@@ -1,11 +1,14 @@
 package hello.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name="ApplicationUser")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class ApplicationUser {
     @Id
@@ -14,16 +17,36 @@ public class ApplicationUser {
 
     private String username;
     private String Password;
-    private String Email;
+    private String email;
     private String Role;
-    private String SetActivationCode;
+    private String activationCode;
+    private Boolean isActive;
 
-    public String getSetActivationCode() {
-        return SetActivationCode;
+    @OneToMany(mappedBy = "applicationUser")
+    private Set<TShirt> TShirts;
+
+    public Set<TShirt> getTShirts() {
+        return TShirts;
     }
 
-    public void setSetActivationCode(String setActivationCode) {
-        SetActivationCode = setActivationCode;
+    public void setTShirts(Set<TShirt> TShirts) {
+        this.TShirts = TShirts;
+    }
+
+    public Boolean getActive() {
+        return isActive;
+    }
+
+    public void setActive(Boolean active) {
+        isActive = active;
+    }
+
+    public String getActivationCode() {
+        return activationCode;
+    }
+
+    public void setActivationCode(String activationCode) {
+        this.activationCode = activationCode;
     }
 
     public String getRole() {
@@ -57,10 +80,10 @@ public class ApplicationUser {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 }

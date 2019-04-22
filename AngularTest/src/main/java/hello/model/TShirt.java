@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -16,22 +16,39 @@ public class TShirt {
     @Column( length = 100000 )
     private String url;
     private String Description;
-    private String Tags;
     private String Name;
 
-    @OneToMany(mappedBy = "tShirt",fetch = FetchType.LAZY, cascade = CascadeType.ALL,orphanRemoval = true)
-    @JsonIgnore
-    private List<Comments> Comments;
+    @OneToMany(mappedBy = "tShirt",fetch = FetchType.LAZY)
+    private Set<Comments> Comments;
+    @OneToMany(mappedBy = "tShirt",fetch = FetchType.LAZY)
+    private Set<Tag> Tags;
 
-    public List<hello.model.Comments> getComments() {
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="ApplicationUser_id")
+    private ApplicationUser applicationUser;
+
+    public Set<hello.model.Comments> getComments() {
         return Comments;
     }
 
-    public String getTags() {
+    public void setComments(Set<hello.model.Comments> comments) {
+        Comments = comments;
+    }
+
+    public ApplicationUser getApplicationUser() {
+        return applicationUser;
+    }
+
+    public void setApplicationUser(ApplicationUser applicationUser) {
+        this.applicationUser = applicationUser;
+    }
+
+    public Set<Tag> getTags() {
         return Tags;
     }
 
-    public void setTags(String tags) {
+    public void setTags(Set<Tag> tags) {
         Tags = tags;
     }
 

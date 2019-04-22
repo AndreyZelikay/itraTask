@@ -32,4 +32,19 @@ public class JsonString {
         obj.writeJSONString(out);
         return obj.toString();
     }
+    public String RetrunSignUpInfo(String info,String activationCode)throws IOException{
+        JSONObject obj = new JSONObject();
+        obj.put("status",info);
+        obj.put("code",activationCode);
+        StringWriter out = new StringWriter();
+        obj.writeJSONString(out);
+        return obj.toString();
+    }
+    public String ReturnActivity(String activity) throws IOException{
+        JSONObject obj = new JSONObject();
+        obj.put("activity",activity);
+        StringWriter out = new StringWriter();
+        obj.writeJSONString(out);
+        return obj.toString();
+    }
 }
