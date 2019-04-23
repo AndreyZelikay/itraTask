@@ -13,52 +13,58 @@ export class LoginService {
     public authorization = new Subject<any>();
     public onAuthorizationChanged$ = this.authorization.asObservable();
 
-  constructor(private http:HttpClient) {}
+  constructor(private http: HttpClient) {}
 
-  private url="http://localhost:8080";
-  private Users:LoginForm[];
+  private url = 'http://localhost:8080';
+  private Users: LoginForm[];
 
-  public signIn(form: TransformableFormGroup): Observable<any>{
+  public signIn(form: TransformableFormGroup): Observable<any> {
     const requestBody: object = {};
     const fields = Object.keys(form.controls);
     for (const field of fields) {
-      requestBody[field] = form.controls[field].value
+      requestBody[field] = form.controls[field].value;
     }
-  	return this.http.post(this.url+"/login",requestBody);
+    return this.http.post(this.url + '/login', requestBody);
   }
-  public signOut(){
+  public signOut() {
    localStorage.removeItem('token');
-        this.authorization.next({
-          'onAuthorized': false
-        });  
+   this.authorization.next({
+          onAuthorized: false
+        });
   }
   public signUp(form: TransformableFormGroup): Observable<any> {
     const requestBody: object = {};
     const fields = Object.keys(form.controls);
     for (const field of fields) {
-      requestBody[field] = form.controls[field].value
+      requestBody[field] = form.controls[field].value;
     }
-  	return this.http.post(this.url+"/users/sign-up",requestBody);
+    return this.http.post(this.url + '/users/sign-up', requestBody);
   }
-  public GetAll(){
-    return this.http.get<LoginForm[]>(this.url+"/users/admin/all")
+  public GetAll() {
+    return this.http.get<LoginForm[]>(this.url + '/users/admin/all');
   }
-  public DeleteUser(id:Number){
-    this.http.delete(this.url+"/users/admin/"+id).subscribe(
-      res=>{
+  public DeleteUser(id: number) {
+    this.http.delete(this.url + '/users/admin/' + id).subscribe(
+        (res) => {
          location.reload();
       },
-      err=>{
-      alert("an error whith delete");
+        (error) => {
+          console.log(error);
       });
   }
-  public SetRole(role:RoleForm){
-    this.http.post(this.url+"/users/admin/role",role).subscribe(
-      (response)=>{
-        location.reload();
+  public SetRole(role: RoleForm) {
+    this.http.post(this.url + '/users/admin/role', role).subscribe(
+      (response) => {
+          location.reload();
       },
-      (error)=>{
-           alert("an error whith post");
+      (error) => {
+           alert('an error with post');
       });
+  }
+  public SetActive(id: number) {
+      return this.http.post(this.url + '/users/activity/set', id);
+  }
+  public GetActive(id: number) {
+      return this.http.get(this.url + '/users/activity/' + id);
   }
 }

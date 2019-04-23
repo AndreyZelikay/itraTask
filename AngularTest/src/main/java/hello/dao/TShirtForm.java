@@ -1,18 +1,19 @@
 package hello.dao;
 
-import hello.model.Tag;
-
-import javax.validation.constraints.NotNull;
-
 public class TShirtForm {
-    @NotNull
     private String url;
-    @NotNull
     private String Description;
-    @NotNull
     private String Name;
-    @NotNull
     private Integer AuthorId;
+    private Integer Rating;
+
+    public Integer getRating() {
+        return Rating;
+    }
+
+    public void setRating(Integer rating) {
+        Rating = rating;
+    }
 
     public Integer getAuthorId() {
         return AuthorId;

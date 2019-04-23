@@ -2,7 +2,6 @@ package hello.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.search.annotations.ContainedIn;
 import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.IndexedEmbedded;
@@ -24,6 +23,8 @@ public class TShirt {
     private String Description;
     @Field
     private String Name;
+
+    private Integer Rating;
 
     @IndexedEmbedded
     @OneToMany(mappedBy = "tShirt")
@@ -90,5 +91,13 @@ public class TShirt {
 
     public void setDescription(String description) {
         Description = description;
+    }
+
+    public Integer getRating() {
+        return Rating;
+    }
+
+    public void setRating(Integer rating) {
+        Rating = rating;
     }
 }

@@ -2,30 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb992427-d9ea-43c1-9279-3685b850f5b3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello/service/HibernateSearchService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/Comments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/model/Comments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/config/RestConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/config/WebSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/config/WebSecurity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/dao/TShirtForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/dao/TShirtForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/TShirt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/model/TShirt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/model/Tag.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/controllers/TShirtController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/controllers/TShirtController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/model/Comments.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/model/Comments.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello/config/RestConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello/config/WebSecurity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/config/WebSecurity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello/dao/TShirtForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/dao/TShirtForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hello/model/TShirt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/model/TShirt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hello/model/Tag.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/model/Tag.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello/service/HibernateSearchService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/service/HibernateSearchService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hello/service/TShirtService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/service/TShirtService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/MyServices/LogInService/auth-guard.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/MyServices/LogInService/auth-guard.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/MyServices/LogInService/auth.interceptor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/MyServices/LogInService/auth.interceptor.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front/Front/MyServices/LogInService/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/MyServices/LogInService/login.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/MyServices/TShirtService/tshirt-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/MyServices/TShirtService/tshirt-service.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/admin-page/admin-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/admin-page/admin-page.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/admin-page/admin-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/admin-page/admin-page.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/log-in/log-in.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/log-in/log-in.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/log-in/log-in.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/log-in/log-in.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/main-page/main-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/main-page/main-page.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/registration/registration.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/registration/registration.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -40,59 +44,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="80" column="5" lean-forward="true" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#setComment#0;class#TShirtService#0" />
-                <element signature="method#setTag#0;class#TShirtService#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hello/service/HibernateSearchService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="51" column="78" lean-forward="true" selection-start-line="51" selection-start-column="78" selection-end-line="51" selection-end-column="78" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#SearchTag#0;class#HibernateSearchService#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Comments.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Tag.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -141,11 +93,7 @@
         <option value="$PROJECT_DIR$/src/main/java/hello/function/JsonString.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/config/CorsEnable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/config/RestConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/config/WebSecurity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/controllers/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/model/ApplicationUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/dao/TShirtForm.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/Repos/CommentRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/Repos/TagRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/dao/TagForm.java" />
@@ -153,13 +101,17 @@
         <option value="$PROJECT_DIR$/src/main/java/hello/Repos/SearchTShirts.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/config/HibernateSearchConfiguration.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/model/Tag.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/model/Comments.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/model/Tag.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/service/HibernateSearchService.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/model/TShirt.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/model/Comments.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/dao/TShirtForm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/controllers/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/config/RestConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/config/WebSecurity.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -170,7 +122,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="264" />
     <option name="y" value="559" />
     <option name="width" value="1223" />
@@ -215,24 +167,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="hello" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AngularTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AngularTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hello" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AngularTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AngularTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hello" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AngularTest" type="b2602c69:ProjectViewProjectNode" />
@@ -316,16 +250,15 @@
       <workItem from="1555246228541" duration="29424000" />
       <workItem from="1555519687491" duration="10432000" />
       <workItem from="1555595755357" duration="19409000" />
-      <workItem from="1555666586590" duration="105395000" />
+      <workItem from="1555666586590" duration="110727000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177659000" />
+    <option name="totallyTimeSpent" value="182991000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26599148" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -608,51 +541,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/config/RestConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="88" lean-forward="true" selection-start-line="22" selection-start-column="88" selection-end-line="22" selection-end-column="88" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.1.3.RELEASE/spring-boot-autoconfigure-2.1.3.RELEASE.jar!/org/springframework/boot/autoconfigure/orm/jpa/JpaBaseConfiguration.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="100" column="50" selection-start-line="100" selection-start-column="50" selection-end-line="100" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/UserForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
-          <folding>
-            <element signature="e#220#221#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
-            <element signature="e#299#300#0" expanded="true" />
-            <element signature="e#334#335#0" expanded="true" />
-            <element signature="e#366#367#0" expanded="true" />
-            <element signature="e#394#395#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-            <element signature="e#465#466#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
-            <element signature="e#531#532#0" expanded="true" />
-            <element signature="e#579#580#0" expanded="true" />
-            <element signature="e#614#615#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/config/WebSecurity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="33" column="85" lean-forward="true" selection-start-line="33" selection-start-column="85" selection-end-line="33" selection-end-column="85" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -666,19 +558,6 @@
             <element signature="e#2154#2155#0" expanded="true" />
             <element signature="e#2195#2196#0" expanded="true" />
             <element signature="method#activateUser#0;class#UserService#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/controllers/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#673#674#0" expanded="true" />
-            <element signature="e#716#717#0" expanded="true" />
-            <element signature="method#DeleteUser#0;class#UserController#0" />
           </folding>
         </state>
       </provider>
@@ -775,16 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/TShirtForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="526">
@@ -802,15 +671,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Comments.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
+        <state relative-caret-position="527">
+          <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1595#1596#0" expanded="true" />
-            <element signature="e#1741#1742#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/service/HibernateSearchService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#SearchTshirt#0;class#HibernateSearchService#0" />
+            <element signature="method#SearchTag#0;class#HibernateSearchService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/TShirt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="61" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/TShirtForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -821,56 +714,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/service/HibernateSearchService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/config/RestConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="51" column="78" lean-forward="true" selection-start-line="51" selection-start-column="78" selection-end-line="51" selection-end-column="78" />
+        <state relative-caret-position="425">
+          <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#SearchTag#0;class#HibernateSearchService#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/TShirt.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/UserForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="136">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding>
+            <element signature="e#220#221#0" expanded="true" />
+            <element signature="e#251#252#0" expanded="true" />
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#334#335#0" expanded="true" />
+            <element signature="e#366#367#0" expanded="true" />
+            <element signature="e#394#395#0" expanded="true" />
+            <element signature="e#436#437#0" expanded="true" />
+            <element signature="e#465#466#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+            <element signature="e#531#532#0" expanded="true" />
+            <element signature="e#579#580#0" expanded="true" />
+            <element signature="e#614#615#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1539#1540#0" expanded="true" />
+            <element signature="e#1595#1596#0" expanded="true" />
+            <element signature="e#1689#1690#0" expanded="true" />
+            <element signature="e#1741#1742#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/controllers/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#DeleteUser#0;class#UserController#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="80" column="5" lean-forward="true" selection-start-line="80" selection-start-column="5" selection-end-line="80" selection-end-column="5" />
+        <state relative-caret-position="290">
+          <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#Create#0;class#TShirtService#0" />
             <element signature="method#setComment#0;class#TShirtService#0" />
             <element signature="method#setTag#0;class#TShirtService#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Tag.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/config/WebSecurity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+        <state relative-caret-position="476">
+          <caret line="52" column="103" lean-forward="true" selection-start-line="52" selection-start-column="103" selection-end-line="52" selection-end-column="103" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Comments.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Tag.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
         </state>
       </provider>
     </entry>

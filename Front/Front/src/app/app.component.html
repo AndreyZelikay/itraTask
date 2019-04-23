@@ -1,16 +1,17 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-  <h1 class="my-0 mr-md-auto font-weight-normal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">T-shirts</font></font></h1>
+  <h1 class="my-0 mr-md-auto font-weight-normal"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">T-shirts</span></span></h1>
   <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-dark" href=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Home</font></font></a>
-    <a class="p-2 text-dark" href="/add"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Create your design</font></font></a>
+    <a class="p-2 text-dark" href=""><span style="vertical-align: inherit;"><span
+            style="vertical-align: inherit;">Home</span></span></a>
+    <a class="p-2 text-dark" href="/add"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Create your design</span></span></a>
   </nav>
   <a *ngIf="!isAuthorized"
-  	 class="btn btn-outline-primary" href="/login"><font style="vertical-align: inherit;">
-  	<font style="vertical-align: inherit;">Log In</font></font>
+  	 class="btn btn-outline-primary" href="/login"><span style="vertical-align: inherit;">
+  	<span style="vertical-align: inherit;">Log In</span></span>
   </a>
   <a *ngIf="isAuthorized" (click)="signOut()">Sign Out</a>
-  <a class="btn btn-outline-primary" href="/AdminPage"><font style="vertical-align: inherit;">
-    <font style="vertical-align: inherit;">Admin page</font></font>
+  <a class="btn btn-outline-primary" href="/AdminPage"><span style="vertical-align: inherit;">
+    <span style="vertical-align: inherit;">Admin page</span></span>
   </a>
 </div>
 <router-outlet></router-outlet>

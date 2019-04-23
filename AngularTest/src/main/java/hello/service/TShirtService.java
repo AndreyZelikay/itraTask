@@ -38,6 +38,7 @@ public class TShirtService {
         tShirt.setDescription(tShirtForm.getDescription());
         tShirt.setName(tShirtForm.getName());
         tShirt.setApplicationUser(userRepo.getOne(tShirtForm.getAuthorId()));
+        tShirt.setRating(tShirtForm.getRating());
         return tShirtRepo.save(tShirt);
     }
 

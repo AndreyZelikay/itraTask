@@ -1,0 +1,146 @@
+<link rel="stylesheet" href="http://bootstraptema.ru/plugins/2015/bootstrap3/bootstrap.min.css" />
+<script type="text/javascript" src="http://bootstraptema.ru/plugins/jquery/jquery-1.11.3.min.js"></script>
+
+<br><br><br><br><br><br><br><br><br>
+
+
+<div class="container"><div class="row">
+
+  <div class="col-xs-12"><div class="text-center"><a href="http://bootstraptema.ru/stuff/plugins_bootstrap/bootstrap_3/tagcanvas/12-1-0-313" target="_blank" class="btn btn-default" >Страница плагина</a></div></div>
+  <div class="clearfix"></div>
+
+  <div class="col-lg-4">
+    <div class="center-block"><canvas id="tagcanvas1" width="300" height="300"></canvas></div>
+  </div>
+  <div class="col-lg-4">
+    <div class="center-block"><canvas id="tagcanvas2" width="300" height="300"></canvas></div>
+  </div>
+  <div class="col-lg-4">
+    <div class="center-block"><canvas id="tagcanvas3" width="300" height="300"></canvas></div>
+  </div>
+  <div class="col-lg-4">
+    <div class="center-block"><canvas id="tagcanvas4" width="300" height="300"></canvas></div>
+  </div>
+  <div class="col-lg-4">
+    <div class="center-block"><canvas id="tagcanvas5" width="300" height="300"></canvas></div>
+  </div>
+  <div class="col-lg-4">
+    <div class="center-block"><canvas id="tagcanvas6" width="300" height="300"></canvas></div>
+  </div>
+
+  <div id="ptTags">
+    <a href="#" onclick="return false">A</a>
+    <a href="#" onclick="return false">B</a>
+    <a href="#" onclick="return false">C</a>
+    <a href="#" onclick="return false">D</a>
+    <a href="#" onclick="return false">E</a>
+    <a href="#" onclick="return false">F</a>
+    <a href="#" onclick="return false">G</a>
+    <a href="#" onclick="return false">H</a>
+    <a href="#" onclick="return false">I</a>
+    <a href="#" onclick="return false">J</a>
+    <a href="#" onclick="return false">K</a>
+    <a href="#" onclick="return false">L</a>
+    <a href="#" onclick="return false">M</a>
+    <a href="#" onclick="return false">N</a>
+    <a href="#" onclick="return false">O</a>
+    <a href="#" onclick="return false">P</a>
+    <a href="#" onclick="return false">Q</a>
+    <a href="#" onclick="return false">R</a>
+    <a href="#" onclick="return false">S</a>
+    <a href="#" onclick="return false">T</a>
+    <a href="#" onclick="return false">U</a>
+    <a href="#" onclick="return false">V</a>
+    <a href="#" onclick="return false">W</a>
+    <a href="#" onclick="return false">X</a>
+    <a href="#" onclick="return false">Y</a>
+    <a href="#" onclick="return false">Z</a>
+    <a href="#" onclick="return false">A</a>
+    <a href="#" onclick="return false">B</a>
+    <a href="#" onclick="return false">C</a>
+    <a href="#" onclick="return false">D</a>
+    <a href="#" onclick="return false">E</a>
+    <a href="#" onclick="return false">F</a>
+    <a href="#" onclick="return false">G</a>
+    <a href="#" onclick="return false">H</a>
+    <a href="#" onclick="return false">I</a>
+    <a href="#" onclick="return false">J</a>
+    <a href="#" onclick="return false">K</a>
+    <a href="#" onclick="return false">L</a>
+    <a href="#" onclick="return false">M</a>
+    <a href="#" onclick="return false">N</a>
+    <a href="#" onclick="return false">O</a>
+    <a href="#" onclick="return false">P</a>
+    <a href="#" onclick="return false">Q</a>
+    <a href="#" onclick="return false">R</a>
+    <a href="#" onclick="return false">S</a>
+    <a href="#" onclick="return false">T</a>
+    <a href="#" onclick="return false">U</a>
+    <a href="#" onclick="return false">V</a>
+    <a href="#" onclick="return false">W</a>
+    <a href="#" onclick="return false">X</a>
+    <a href="#" onclick="return false">Y</a>
+    <a href="#" onclick="return false">Z</a>
+  </div>
+
+  <div id="ptTags1">
+    <a href="#" onclick="return false">BootstrapТема</a>
+    <a href="#" onclick="return false">BootstrapТема</a>
+    <a href="#" onclick="return false">BootstrapТема</a>
+    <a href="#" onclick="return false">BootstrapТема</a>
+    <a href="#" onclick="return false">BootstrapТема</a>
+    <a href="#" onclick="return false">BootstrapТема</a>
+  </div>
+
+</div></div>
+
+<script src="http://bootstraptema.ru/plugins/2015/tagcanvas/jquery.tagcanvas.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  window.onload = function() {
+    TagCanvas.textFont = 'Impact,"Arial Black",sans-serif';
+    TagCanvas.textColour = '#694198';
+    TagCanvas.textHeight = 25;
+    TagCanvas.outlineColour = '#f6f';
+    TagCanvas.outlineThickness = 3;
+    TagCanvas.outlineOffset = 5;
+    TagCanvas.outlineMethod = 'outline';
+    TagCanvas.maxSpeed = 0.06;
+    TagCanvas.minBrightness = 0.2;
+    TagCanvas.depth = 0.95;
+    TagCanvas.pulsateTo = 0.2;
+    TagCanvas.pulsateTime = 0.75;
+    TagCanvas.decel = 0.9;
+    TagCanvas.reverse = true;
+    TagCanvas.shadow = '#336';
+    TagCanvas.shadowBlur = 3;
+    TagCanvas.shadowOffset = [1,1];
+    TagCanvas.wheelZoom = false;
+    TagCanvas.fadeIn = 800;
+    try {
+      TagCanvas.Start('tagcanvas1','ptTags');
+      TagCanvas.Start('tagcanvas2','ptTags', {shape:'vcylinder'});
+      TagCanvas.Start('tagcanvas3','ptTags', {shape:'hcylinder', lock: 'x'});
+      TagCanvas.Start('tagcanvas4','ptTags1', {shape:'hring', lock: 'x'});
+      TagCanvas.Start('tagcanvas5','ptTags', {
+        shape:'vring(0.5)',
+        offsetY: -60,
+        lock: 'y'
+      });
+      TagCanvas.Start('tagcanvas6','ptTags', {
+        shape:'DblHelix',
+        lock: 'y'
+      });
+    } catch(e) {
+    }
+  };
+  function DblHelix(n, rx, ry, rz) {
+    var a = Math.PI / n, i, j, p = [], z = rz * 2 / n;
+    for(i = 0; i < n; ++i) {
+      j = a * i;
+      if(i % 2)
+        j += Math.PI;
+      p.push([rx * Math.cos(j), rz - z * i, ry * Math.sin(j)]);
+    }
+    return p;
+  }
+</script>

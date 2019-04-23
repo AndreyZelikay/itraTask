@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {LoginForm} from '../../../MyModules/login.module';
 import {LoginService} from '../../../MyServices/LogInService/login.service';
 import {TransformableFormGroup} from '../../helpers';
 import { form } from './log-in.form';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -12,36 +12,22 @@ import { form } from './log-in.form';
 export class LogInComponent implements OnInit {
 
   public form: TransformableFormGroup = form;
-  public isFormValid: boolean = true;
-  public isNameExist: boolean = false;
-  private result:String;
-
-
-  constructor(private loginservice:LoginService) { }
+  private result = true;
+  constructor(private loginservice: LoginService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  logInForm(){
-    if(this.form.valid){
-        this.loginservice.signIn(this.form).subscribe(
-      (response) => {
-        localStorage.setItem('token', response['token']);
-      },
-      (error) => {
-        console.log(error)
-      });
-      if(this.result=="Error!"){
-          this.isNameExist=true;
-          this.isFormValid=false;
-      }
-      else{
-      this.isFormValid=true;
-      }
-      this.form.markAsTouched();
-    }
-    else{
-      this.isFormValid = false;
+  SingIn() {
+    this.result = false;
+    this.loginservice.signIn(this.form).subscribe(
+        (response) => {
+          localStorage.setItem('token', response.token);
+          this.result = true;
+        });
+    if (this.result) {
+      this.router.navigate(['']);
+    } else {
       this.form.markAsTouched();
     }
   }

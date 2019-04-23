@@ -9,18 +9,17 @@ import {TShirtService} from '../../../MyServices/TShirtService/tshirt-service.se
 })
 export class MainPageComponent implements OnInit {
 
-TShirts:TShirt[];
+TShirts: TShirt[];
 
   constructor(private tshirtService: TShirtService) { }
 
   ngOnInit() {
-  	this.tshirtService.GetAllTShirt().subscribe( 
-  		  res =>{
-           this.TShirts=res;
-        },
-        err =>{
-           alert("an error whith get");
-        }
-    );
+      this.tshirtService.GetAllTShirt().subscribe(
+          (res) => {
+           this.TShirts = res;
+            },
+          (err) => {
+                console.log(err);
+        });
   }
 }
