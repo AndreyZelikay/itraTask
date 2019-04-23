@@ -4,7 +4,6 @@ public class TShirtForm {
     private String url;
     private String Description;
     private String Name;
-    private Integer AuthorId;
     private Integer Rating;
 
     public Integer getRating() {
@@ -13,14 +12,6 @@ public class TShirtForm {
 
     public void setRating(Integer rating) {
         Rating = rating;
-    }
-
-    public Integer getAuthorId() {
-        return AuthorId;
-    }
-
-    public void setAuthorId(Integer authorId) {
-        AuthorId = authorId;
     }
 
     public String getName() {

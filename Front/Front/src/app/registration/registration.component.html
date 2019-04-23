@@ -9,10 +9,6 @@
                                     class="form-control" 
                                     formControlName="username"
                                     placeholder="Your user name *"/>
-                            <div  *ngIf="isNameExist && form.controls['username'].touched"
-                                  style="color: red">
-                               <div>This username is taken</div>
-                            </div>
                             <div *ngIf="form.controls['username'].errors && form.controls['username'].touched"
                             style="color: red">
                                 Invalid User Name!
@@ -40,6 +36,7 @@
                         </div>
                         <div class="form-group col-lg-6" *ngIf="!isFormValid && form.touched">
                             <div class="alert alert-error" style="color: red">Form validation error</div>
+                            <div class="alert alert-error" style="color: red">{{registrationErrors}}</div>
                         </div>
                         <div class="form-group col-lg-6">
                             <button type="submit">Sign in</button>

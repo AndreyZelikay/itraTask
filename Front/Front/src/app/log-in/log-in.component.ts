@@ -12,23 +12,21 @@ import {Router} from '@angular/router';
 export class LogInComponent implements OnInit {
 
   public form: TransformableFormGroup = form;
-  private result = true;
+  public error = false;
   constructor(private loginservice: LoginService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  SingIn() {
-    this.result = false;
+  singIn() {
     this.loginservice.signIn(this.form).subscribe(
         (response) => {
           localStorage.setItem('token', response.token);
-          this.result = true;
+          this.router.navigate(['']);
+        },
+        (error) => {
+          this.form.markAsTouched();
+          this.error = true;
         });
-    if (this.result) {
-      this.router.navigate(['']);
-    } else {
-      this.form.markAsTouched();
-    }
   }
 }

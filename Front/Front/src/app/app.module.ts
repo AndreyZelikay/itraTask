@@ -17,9 +17,15 @@ import {AuthInterceptor} from '../../MyServices/LogInService/auth.interceptor';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import {ArrayPipe} from '../pipes/array.pipe';
 import { TagCloudComponent } from './tag-cloud/tag-cloud.component';
+import { ActivatePageComponent } from './activate-page/activate-page.component';
+import { SuccessfulRegistrationComponent } from './successful-registration/successful-registration.component';
+import { ConfirmPageComponent } from './confirm-page/confirm-page.component';
 
 const appRoutes: Routes = [
     {path: '', component: MainPageComponent, canActivate: [AuthGuard]},
+    {path: 'activate/:uid', component: ActivatePageComponent},
+    {path: 'confirm', component : ConfirmPageComponent},
+    {path: 'success', component: SuccessfulRegistrationComponent},
     {path: 'add', component: TShirtComponent, canActivate: [AuthGuard]},
     {path: 'TShirtPage/:id', component: TShirtPageComponent, canActivate: [AuthGuard]},
     {path: 'login', component: LogInComponent},
@@ -47,16 +53,19 @@ const JWT_Module_Options: JwtModuleOptions = {
     RegistrationComponent,
     AdminPageComponent,
     ArrayPipe,
-    TagCloudComponent
+    TagCloudComponent,
+    ActivatePageComponent,
+    SuccessfulRegistrationComponent,
+    ConfirmPageComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    RouterModule.forRoot(appRoutes),
-    JwtModule.forRoot(JWT_Module_Options)
+      BrowserModule,
+      AppRoutingModule,
+      FormsModule,
+      ReactiveFormsModule,
+      HttpClientModule,
+      RouterModule.forRoot(appRoutes),
+      JwtModule.forRoot(JWT_Module_Options)
   ],
   providers: [{
       provide : HTTP_INTERCEPTORS,

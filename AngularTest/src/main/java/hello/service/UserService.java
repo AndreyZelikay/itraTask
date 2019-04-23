@@ -4,105 +4,97 @@ import hello.Repos.UserRepo;
 import hello.dao.RoleForm;
 import hello.dao.UserForm;
 import hello.function.JsonString;
+import hello.function.Token;
+import hello.function.UserRegistrationSuccess;
 import hello.model.ApplicationUser;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class UserService {
     @Autowired
     private UserRepo userRepo;
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
-    @Autowired
-    private EmailSender emailSender;
 
-    public String SignUp(UserForm userForm){
-        ApplicationUser user = new ApplicationUser();
-        String Status,Code,Result="";
-        if(userRepo.findByUsername(userForm.getUsername())!=null || userRepo.findByEmail(userForm.getEmail())!=null) {
-            Status = "Error!";
-            Code="null";
+    public ResponseEntity SignUp(UserForm userForm) {
+        JsonString jsonString= new JsonString();
+        String str="";
+        if (userRepo.findByUsername(userForm.getUsername()) != null) {
+            str+="User with this name already exist. ";
+        }
+        if (userRepo.findByEmail(userForm.getEmail()) != null) {
+            str+="User with this email already exist.";
+        }
+        if(userRepo.findByUsername(userForm.getUsername()) == null && userRepo.findByEmail(userForm.getEmail()) == null){
+            UserRegistrationSuccess registrationSuccess=new UserRegistrationSuccess();
+            registrationSuccess.registrateUser(userForm);
+            return ResponseEntity.status(HttpStatus.OK).body(null);
         }
         else {
-            Status = "Success!";
-            user.setPassword(bCryptPasswordEncoder.encode(userForm.getPassword()));
-            user.setEmail(userForm.getEmail());
-            user.setUsername(userForm.getUsername());
-            user.setActivationCode(UUID.randomUUID().toString());
-            if(!user.getEmail().isEmpty()){
-                String message=String.format("Hello %s \n" +
-                        " Welcome to T-Shirt Shop! to complete your registration follow next link: http://localhost:4200/activate/%s",
-                        user.getUsername(),user.getActivationCode());
-               emailSender.send(user.getEmail(),"Activation code",message);
-               Code=user.getActivationCode();
+            try {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(jsonString.ReturnInfo(str));
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            else{
-            Code="null";
-            }
-            user.setRole("ANONYMOUS");
-            user.setActive(true);
-            userRepo.save(user);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
-        JsonString jsonString=new JsonString();
-        try {
-            Result=jsonString.RetrunSignUpInfo(Status,Code);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return Result;
     }
+
     public List<ApplicationUser> getAll(){
         return userRepo.findAll();
     }
+
     public ApplicationUser setRole(RoleForm roleForm){
         ApplicationUser user=userRepo.getOne(roleForm.getId());
         user.setRole(roleForm.getRole());
         return userRepo.save(user);
     }
+
     public void deleteUser(Integer id){
         userRepo.deleteById(id);
     }
 
-    public String activateUser(String code) {
+    public ResponseEntity activateUser(String code) {
         String str="";
         ApplicationUser user=userRepo.findByActivationCode(code);
         if(user==null){
-            str="Error!";
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
         else {
             user.setActivationCode(null);
+            user.setRole("USER");
             userRepo.save(user);
-            str = "Success!";
+            return ResponseEntity.status(HttpStatus.OK).body(null);
         }
-        JsonString jsonString=new JsonString();
-        try {
-            str=jsonString.ReturnInfo(str);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return str;
     }
 
-    public String getActivity(Integer id) {
+    public String getActivity(HttpServletRequest request) {
+        Token token=new Token();
         String Result="";
         JsonString jsonString=new JsonString();
         try {
-            Result=jsonString.ReturnActivity(userRepo.getOne(id).getActive().toString());
+            Result=jsonString.ReturnActivity(userRepo.findByUsername(token.readToken(request)).getActive().toString());
         } catch (IOException e) {
             e.printStackTrace();
         }
         return Result;
     }
 
-    public ApplicationUser serActivity(int id) {
+    public ApplicationUser setActivity(int id) {
         ApplicationUser user=userRepo.getOne(id);
         user.setActive(false);
+        return userRepo.save(user);
+    }
+
+    public ApplicationUser resetActivity(HttpServletRequest request) {
+        Token token=new Token();
+        ApplicationUser user = userRepo.findByUsername(token.readToken(request));
+        user.setActive(true);
         return userRepo.save(user);
     }
 }

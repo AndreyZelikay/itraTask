@@ -9,7 +9,7 @@ export class TagCloudComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit() {
   }
-
 }

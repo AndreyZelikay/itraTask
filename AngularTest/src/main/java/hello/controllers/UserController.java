@@ -1,14 +1,15 @@
 package hello.controllers;
 
-import hello.Repos.UserRepo;
 import hello.dao.RoleForm;
 import hello.dao.UserForm;
 import hello.model.ApplicationUser;
-import hello.model.TShirt;
 import hello.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
@@ -17,11 +18,9 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
-    @Autowired
-    private UserRepo userRepo;
 
     @PostMapping("/sign-up")
-    public String SingUp(@RequestBody UserForm userForm){
+    public ResponseEntity SingUp(@RequestBody UserForm userForm){
         return userService.SignUp(userForm);
     }
 
@@ -39,16 +38,25 @@ public class UserController {
         userService.deleteUser(id);
         return "User Deleted";
     }
-    @PostMapping("/activate/{code}")
-    public String Activate(@PathVariable String code){
+
+    @PostMapping("/activate")
+    public ResponseEntity Activate(@RequestBody String code){
         return userService.activateUser(code);
     }
-    @GetMapping("/activity/{id}")
-    public String getActive(@PathVariable ( "id" ) int id){
-        return userService.getActivity(id);
+
+    @CrossOrigin
+    @GetMapping("/activity")
+    public String getActive(HttpServletRequest request){
+        return userService.getActivity(request);
     }
+
     @PostMapping("/activity/set")
     public ApplicationUser setActive(@RequestBody int id){
-        return userService.serActivity(id);
+        return userService.setActivity(id);
+    }
+
+    @GetMapping("/activity/reset")
+    public ApplicationUser resetActive(HttpServletRequest request){
+        return userService.resetActivity(request);
     }
 }

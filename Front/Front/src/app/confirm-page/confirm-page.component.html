@@ -1,0 +1,33 @@
+<div class="container login-container">
+  <div class="row">
+    <div class="col login-form-1" align="center">
+      <h3>Your role has been changed</h3>
+      <h3>To continue your work please log in</h3>
+      <form   [formGroup]="form">
+        <div class="form-group col-lg-6">
+          <input  type="text"
+                  class="form-control"
+                  formControlName="username"
+                  placeholder="Your user name *"/>
+        </div>
+        <div class="form-group col-lg-6">
+          <input  type="password"
+                  class="form-control"
+                  formControlName="password"
+                  placeholder="Your password *"/>
+        </div>
+      </form>
+      <div class="form-group col-lg-6">
+        <button type="submit" (click)="singIn()">Sign in</button>
+      </div>
+      <div class="form-group col-lg-6">
+        <div>
+          <a href="/registration">Sign up now!</a>
+        </div>
+      </div>
+      <div class="form-group col-lg-6" *ngIf="error">
+        <div class="alert alert-error" style="color: red">Invalid username or password</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,12 +7,14 @@ import hello.Repos.UserRepo;
 import hello.dao.CommentForm;
 import hello.dao.TShirtForm;
 import hello.dao.TagForm;
+import hello.function.Token;
 import hello.model.Comments;
 import hello.model.TShirt;
 import hello.model.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Service
@@ -32,13 +34,14 @@ public class TShirtService {
         return tShirtRepo.getOne(id);
     }
 
-    public TShirt Create(TShirtForm tShirtForm){
+    public TShirt Create(TShirtForm tShirtForm, HttpServletRequest request){
+        Token token=new Token();
         TShirt tShirt=new TShirt();
         tShirt.setUrl(tShirtForm.getUrl());
         tShirt.setDescription(tShirtForm.getDescription());
         tShirt.setName(tShirtForm.getName());
-        tShirt.setApplicationUser(userRepo.getOne(tShirtForm.getAuthorId()));
         tShirt.setRating(tShirtForm.getRating());
+        tShirt.setApplicationUser(userRepo.findByUsername(token.readToken(request)));
         return tShirtRepo.save(tShirt);
     }
 

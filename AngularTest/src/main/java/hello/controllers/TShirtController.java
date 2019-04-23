@@ -11,6 +11,7 @@ import hello.service.TShirtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 
@@ -22,8 +23,8 @@ public class TShirtController {
     private TShirtService tShirtService;
 
     @PostMapping("/add")
-    public TShirt create(@RequestBody TShirtForm tShirtForm) {
-        return tShirtService.Create(tShirtForm);
+    public TShirt create(@RequestBody TShirtForm tShirtForm, HttpServletRequest request) {
+        return tShirtService.Create(tShirtForm,request);
     }
 
     @GetMapping("/TShirt/{id}")

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TShirt} from '../../../MyModules/TShirt.module';
 import {TShirtService} from '../../../MyServices/TShirtService/tshirt-service.service';
-import {RouterModule,Routes,ActivatedRoute} from "@angular/router";
+import {RouterModule, Routes, ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-tshirt-page',
   templateUrl: './tshirt-page.component.html',
@@ -9,20 +9,20 @@ import {RouterModule,Routes,ActivatedRoute} from "@angular/router";
 })
 export class TShirtPageComponent implements OnInit {
 
-  TShirt:TShirt;
-  ID: Number;
+  TShirt: TShirt;
+  ID: number;
 
-  constructor(private tshirtService: TShirtService,private route: ActivatedRoute) {
-    this.ID=this.route.snapshot.params['id'];
+  constructor(private tshirtService: TShirtService, private route: ActivatedRoute) {
+    this.ID = this.route.snapshot.params.id;
   }
 
-  ngOnInit(){
+  ngOnInit() {
   	this.tshirtService.GetOneTShirt(this.ID).subscribe(
-        res =>{
-           this.TShirt=res;
+        res => {
+           this.TShirt = res;
         },
-        err =>{
-           alert("an error whith get");
+        err => {
+           alert('an error whith get');
         }
     );
   }

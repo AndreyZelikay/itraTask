@@ -4,6 +4,8 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.codesnippets4all.json.parsers.JsonParserFactory;
 import hello.model.Roles;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
@@ -49,12 +51,15 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
                     .build()
                     .verify(token.replace(TOKEN_PREFIX, ""))
                     .getSubject();
-            String[] split_string = token.split("\\.");
-            String body = new String(Base64.getDecoder().decode(split_string[1]));
             String role="";
-            for(Roles roles:Arrays.asList(Roles.values()))
-                if(body.contains(roles.name()))
-                    role=roles.name();
+            JSONObject jsonObject=null;
+            try {
+                jsonObject = new JSONObject(user);
+                role = jsonObject.getString("role");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            role=role.replaceAll("\\[","").replaceAll("\\]","");
             List<GrantedAuthority> grantedAuths = AuthorityUtils.commaSeparatedStringToAuthorityList(role);
             if (user != null) {
                 return new UsernamePasswordAuthenticationToken(user, null,grantedAuths);

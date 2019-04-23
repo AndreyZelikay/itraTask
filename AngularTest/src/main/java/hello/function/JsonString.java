@@ -27,15 +27,7 @@ public class JsonString {
     }
     public String ReturnInfo(String info)throws IOException{
         JSONObject obj = new JSONObject();
-        obj.put("status",info);
-        StringWriter out = new StringWriter();
-        obj.writeJSONString(out);
-        return obj.toString();
-    }
-    public String RetrunSignUpInfo(String info,String activationCode)throws IOException{
-        JSONObject obj = new JSONObject();
-        obj.put("status",info);
-        obj.put("code",activationCode);
+        obj.put("cause",info);
         StringWriter out = new StringWriter();
         obj.writeJSONString(out);
         return obj.toString();

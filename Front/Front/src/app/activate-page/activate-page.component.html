@@ -1,0 +1,3 @@
+<div class="container-fluid" *ngIf="isActivated && !loading"><h1 align="center">User successfully activated. Go to the <a href="">homepage</a></h1></div>
+<div *ngIf="!isActivated && !loading">Wrong activation code</div>
+<div *ngIf="loading" class="container-fluid"><h1 align="center">Verifying user. Please wait...</h1></div>

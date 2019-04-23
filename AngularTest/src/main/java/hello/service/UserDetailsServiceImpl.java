@@ -3,7 +3,6 @@ package hello.service;
 import hello.Repos.UserRepo;
 
 import hello.model.ApplicationUser;
-import hello.model.Roles;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -27,7 +26,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         ApplicationUser user = userRepo.findByUsername(username);
-        if (user == null) {
+        if (user == null || user.getRole().equals("ANONYMOUS")) {
             throw new UsernameNotFoundException(username);
         }
         Set<GrantedAuthority> roles = new HashSet();
