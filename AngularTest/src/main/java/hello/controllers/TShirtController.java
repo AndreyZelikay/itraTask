@@ -22,37 +22,47 @@ public class TShirtController {
     private TShirtService tShirtService;
 
     @PostMapping("/add")
-    public TShirt create(@RequestBody TShirtForm tShirtForm){
+    public TShirt create(@RequestBody TShirtForm tShirtForm) {
         return tShirtService.Create(tShirtForm);
     }
 
     @GetMapping("/TShirt/{id}")
-    public TShirt findOne(@PathVariable ( "id" ) int id){
+    public TShirt findOne(@PathVariable("id") int id) {
         return tShirtService.findOne(id);
     }
 
     @GetMapping("/all")
-    public List<TShirt> findAll(){
+    public List<TShirt> findAll() {
         return tShirtService.findAll();
     }
 
     @GetMapping("/last")
-    public TShirt getLast(){
+    public TShirt getLast() {
         return tShirtService.findOne(tShirtService.findAll().size());
     }
 
     @PostMapping("/comment")
-    public Comments setComment(@RequestBody CommentForm commentForm){
+    public Comments setComment(@RequestBody CommentForm commentForm) {
         return tShirtService.setComment(commentForm);
     }
 
     @PostMapping("/tag")
-    public Tag setTag(@RequestBody TagForm tagForm){
+    public Tag setTag(@RequestBody TagForm tagForm) {
         return tShirtService.setTag(tagForm);
     }
 
-    @GetMapping("/tags")
-    public List<Tag> getAllTags(){
+    @GetMapping("/tag/all")
+    public List<Tag> getAllTags() {
         return tShirtService.getTags();
+    }
+
+    @PostMapping("/search/tshirt")
+    public List<TShirt> SearchTshirt(@RequestBody String search) {
+        return tShirtService.searchTShirt("cab");
+    }
+
+    @PostMapping("/search/tag")
+    public List<Tag> SearchTag(@RequestBody String search) {
+        return tShirtService.searchTag("s*");
     }
 }

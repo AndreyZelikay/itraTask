@@ -2,11 +2,16 @@ package hello.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.search.annotations.ContainedIn;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.IndexedEmbedded;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Indexed
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class TShirt {
     @Id
@@ -15,12 +20,17 @@ public class TShirt {
 
     @Column( length = 100000 )
     private String url;
+    @Field
     private String Description;
+    @Field
     private String Name;
 
-    @OneToMany(mappedBy = "tShirt",fetch = FetchType.LAZY)
+    @IndexedEmbedded
+    @OneToMany(mappedBy = "tShirt")
     private Set<Comments> Comments;
-    @OneToMany(mappedBy = "tShirt",fetch = FetchType.LAZY)
+
+    @IndexedEmbedded
+    @OneToMany(mappedBy = "tShirt")
     private Set<Tag> Tags;
 
     @JsonIgnore

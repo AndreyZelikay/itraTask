@@ -1,25 +1,33 @@
 package hello.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.search.annotations.ContainedIn;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
 
 import javax.persistence.*;
 
 @Entity
+@Indexed
 public class Tag {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    @Field
     private String body;
+
     private Integer number;
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tShirt_id")
+    @ContainedIn
+    private TShirt tShirt;
 
     public void settShirt(TShirt tShirt) {
         this.tShirt = tShirt;
     }
-    @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "tShirt_id")
-    private TShirt tShirt;
 
     public TShirt gettShirt() {
         return tShirt;

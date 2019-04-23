@@ -25,6 +25,8 @@ public class TShirtService {
     private CommentRepo commentRepo;
     @Autowired
     private TagRepo tagRepo;
+    @Autowired
+    private HibernateSearchService searchService;
 
     public TShirt findOne(Integer id){
         return tShirtRepo.getOne(id);
@@ -69,4 +71,13 @@ public class TShirtService {
     public List<Tag> getTags() {
         return tagRepo.findAll();
     }
+
+    public List<TShirt> searchTShirt(String search){
+        return searchService.SearchTshirt(search);
+    }
+
+    public List<Tag> searchTag(String search) {
+        return searchService.SearchTag(search);
+    }
+
 }
