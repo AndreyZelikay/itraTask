@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TShirt} from '../../../MyModules/TShirt.module';
 import {TShirtService} from '../../../MyServices/TShirtService/tshirt-service.service';
-  declare var $: any;
+declare var $: any;
 @Component({
   selector: 'app-tshirt',
   templateUrl: './tshirt.component.html',
@@ -9,38 +9,38 @@ import {TShirtService} from '../../../MyServices/TShirtService/tshirt-service.se
 })
 export class TShirtComponent implements OnInit {
 
-	TShirt:TShirt;
-  ImgUrl:String;
+    public	TShirt: TShirt;
+    public  ImgUrl: string;
 
   constructor(private tshirtService: TShirtService) {
   }
 
   ngOnInit() {
-     $(document).ready(function(){
-            $("#meme").memeGenerator({
+     $(document).ready(function() {
+            $('#meme').memeGenerator({
       useBootstrap: true,
-      layout: "vertical",
+      layout: 'vertical',
       defaultTextStyle: {
-        font: "'Comic Sans', Arial",
+        font: '\'Comic Sans\', Arial',
         lineHeight: 2
       },
       captions: [
 
       ],
-      dragResizeEnabled:true
+      dragResizeEnabled: true
     });
     });
   }
 
-  createTShirt(Description,Name,Tags){
-    this.ImgUrl=$("#meme").memeGenerator("save");
-  	this.TShirt={
-  		id:0,
-  		description:Description,
-  		url:this.ImgUrl,
-      tags:Tags,
-      name:Name
-  	};
-  	this.tshirtService.CreateTShirt(this.TShirt);
+  createTShirt(Description, Name, Tags) {
+    this.ImgUrl = $('#meme').memeGenerator('save');
+    this.TShirt = {
+        id: 0,
+        description: Description,
+        url: this.ImgUrl,
+        tags: Tags,
+        name: Name
+    };
+    this.tshirtService.CreateTShirt(this.TShirt);
   }
 }

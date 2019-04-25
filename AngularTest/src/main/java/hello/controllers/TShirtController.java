@@ -37,11 +37,6 @@ public class TShirtController {
         return tShirtService.findAll();
     }
 
-    @PostMapping("/comment")
-    public Comments setComment(@RequestBody CommentForm commentForm) {
-        return tShirtService.setComment(commentForm);
-    }
-
     @PostMapping("/tag")
     public Tag setTag(@RequestBody TagForm tagForm) {
         return tShirtService.setTag(tagForm);
@@ -60,5 +55,15 @@ public class TShirtController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity deleteTshirt(@PathVariable ( "id" ) int id){
         return tShirtService.delete(id);
+    }
+
+    @GetMapping("/comments/get/{id}")
+    public List<Comments> getComments(@PathVariable ( "id" ) int id){
+        return this.tShirtService.getComments(id);
+    }
+
+    @PostMapping("/comments/add")
+    public Comments setComment(@RequestBody CommentForm commentForm) {
+        return tShirtService.setComment(commentForm);
     }
 }

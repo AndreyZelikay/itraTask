@@ -2,64 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d34ef4a-fc4c-4bad-85ed-8d48f8f1e713" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/controllers/SearchController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Front/MyModules/TagModule.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front/MyModules/Comment.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Front/src/app/tshirt-page/comment.form.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AngularTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/indexpath/hello.model.TShirt/_j.cfe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/indexpath/hello.model.TShirt/_j.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/indexpath/hello.model.TShirt/_j.si" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/indexpath/hello.model.TShirt/_k.cfe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/indexpath/hello.model.TShirt/_k.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/indexpath/hello.model.TShirt/_k.si" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/indexpath/hello.model.TShirt/_l.cfe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/indexpath/hello.model.TShirt/_l.si" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/indexpath/hello.model.TShirt/_m.cfe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/indexpath/hello.model.TShirt/_m.si" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/indexpath/hello.model.TShirt/segments_m" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/indexpath/hello.model.Tag/segments_7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/ApplicationRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/ApplicationRun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/config/WebSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/config/WebSecurity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/controllers/TShirtController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/controllers/TShirtController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/function/JsonString.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/function/JsonString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/function/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/function/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/function/UserRegistrationSuccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/function/UserRegistrationSuccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/model/ApplicationUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/model/ApplicationUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/model/TShirt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/model/TShirt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/service/TShirtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/service/TShirtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/src/main/java/hello/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/target/classes/hello/ApplicationRun.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/target/classes/hello/ApplicationRun.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/target/classes/hello/config/WebSecurity.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/target/classes/hello/config/WebSecurity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AngularTest/target/classes/hello/controllers/TShirtController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/target/classes/hello/controllers/TShirtController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/target/classes/hello/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/target/classes/hello/controllers/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/target/classes/hello/function/JsonString.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/target/classes/hello/function/JsonString.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/target/classes/hello/function/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/target/classes/hello/function/Token.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/target/classes/hello/function/UserRegistrationSuccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/target/classes/hello/function/UserRegistrationSuccess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/target/classes/hello/model/ApplicationUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/target/classes/hello/model/ApplicationUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AngularTest/target/classes/hello/model/TShirt.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/target/classes/hello/model/TShirt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AngularTest/target/classes/hello/service/TShirtService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/target/classes/hello/service/TShirtService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AngularTest/target/classes/hello/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AngularTest/target/classes/hello/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/MyServices/LogInService/auth-guard.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/MyServices/LogInService/auth-guard.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/MyServices/LogInService/authservice.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/MyServices/LogInService/authservice.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/MyServices/LogInService/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/MyServices/LogInService/login.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Front/MyServices/TShirtService/tshirt-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/MyServices/TShirtService/tshirt-service.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/admin-page/admin-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/admin-page/admin-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/app.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/confirm-page/confirm-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/confirm-page/confirm-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/log-in/log-in.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/log-in/log-in.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/log-in/log-in.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/log-in/log-in.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/main-page/main-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/main-page/main-page.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/main-page/main-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/main-page/main-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/main-page/main-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/main-page/main-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/tag-cloud/tag-cloud.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/tag-cloud/tag-cloud.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/app/tag-cloud/tag-cloud.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/tag-cloud/tag-cloud.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Front/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/src/app/log-in/log-in.form.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/log-in/log-in.form.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/src/app/tshirt-page/tshirt-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/tshirt-page/tshirt-page.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/src/app/tshirt-page/tshirt-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/tshirt-page/tshirt-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/src/app/tshirt-page/tshirt-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/tshirt-page/tshirt-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/src/app/tshirt/tshirt.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/tshirt/tshirt.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/src/app/tshirt/tshirt.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/tshirt/tshirt.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Front/src/app/tshirt/tshirt.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Front/src/app/tshirt/tshirt.component.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,26 +29,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Front/src/app/app.component.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Front/src/app/tshirt-page/tshirt-page.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="48" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="48" />
+            <state relative-caret-position="476">
+              <caret line="28" column="44" lean-forward="true" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Front/src/app/tshirt-page/tshirt-page.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="714">
+              <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
               <folding>
-                <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#span#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#span#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#0#50#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Front/src/app/app.component.ts">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Front/MyServices/TShirtService/tshirt-service.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="58" column="37" lean-forward="true" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+            <state relative-caret-position="544">
+              <caret line="56" column="49" selection-start-line="56" selection-start-column="49" selection-end-line="56" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+                <element signature="n#!!block;n#CreateTShirt#0;n#TShirtService#0" />
+                <element signature="n#!!block;n#GetAllTShirt#0;n#TShirtService#0" />
+                <element signature="n#!!block;n#GetOneTShirt#0;n#TShirtService#0" />
+                <element signature="n#!!block;n#getAllTags#0;n#TShirtService#0" />
+                <element signature="n#!!block;n#searchTshirt#0;n#TShirtService#0" />
+                <element signature="n#!!block;n#getUsersThirt#0;n#TShirtService#0" />
+                <element signature="n#!!block;n#deleteTshirt#0;n#TShirtService#0" />
+                <element signature="n#!!block;n#getComments#0;n#TShirtService#0" />
+                <element signature="n#!!block;n#addComment#0;n#TShirtService#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Front/src/app/registration/registration.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="45" lean-forward="true" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -105,7 +92,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Front/src/app/admin-page/admin-page.component.ts" />
-        <option value="$PROJECT_DIR$/Front/src/app/tshirt-page/tshirt-page.component.ts" />
         <option value="$PROJECT_DIR$/Front/src/app/activate-page/activate-page.component.ts" />
         <option value="$PROJECT_DIR$/Front/src/app/registration/registration.component.ts" />
         <option value="$PROJECT_DIR$/Front/src/app/registration/registration.component.html" />
@@ -136,9 +122,18 @@
         <option value="$PROJECT_DIR$/Front/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/Front/MyModules/TagModule.ts" />
         <option value="$PROJECT_DIR$/Front/src/app/tag-cloud/tag-cloud.component.html" />
-        <option value="$PROJECT_DIR$/Front/MyServices/TShirtService/tshirt-service.service.ts" />
         <option value="$PROJECT_DIR$/Front/src/app/tag-cloud/tag-cloud.component.ts" />
         <option value="$PROJECT_DIR$/Front/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/Front/src/app/tshirt-page/tshirt-page.component.css" />
+        <option value="$PROJECT_DIR$/Front/src/app/tshirt/tshirt.component.html" />
+        <option value="$PROJECT_DIR$/Front/src/app/tshirt/tshirt.component.css" />
+        <option value="$PROJECT_DIR$/Front/src/app/tshirt-page/tshirt-page.component.html" />
+        <option value="$PROJECT_DIR$/Front/MyModules/Comment.module.ts" />
+        <option value="$PROJECT_DIR$/Front/src/app/tshirt/tshirt.component.ts" />
+        <option value="$PROJECT_DIR$/Front/src/app/log-in/log-in.form.ts" />
+        <option value="$PROJECT_DIR$/Front/src/app/tshirt-page/comment.form.ts" />
+        <option value="$PROJECT_DIR$/Front/MyServices/TShirtService/tshirt-service.service.ts" />
+        <option value="$PROJECT_DIR$/Front/src/app/tshirt-page/tshirt-page.component.ts" />
       </list>
     </option>
   </component>
@@ -176,12 +171,6 @@
               <item name="Front" type="b2602c69:ProjectViewProjectNode" />
               <item name="Front" type="462c0819:PsiDirectoryNode" />
               <item name="Front" type="462c0819:PsiDirectoryNode" />
-              <item name="MyServices" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Front" type="462c0819:PsiDirectoryNode" />
-              <item name="Front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -197,7 +186,23 @@
               <item name="Front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="tag-cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="log-in" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Front" type="462c0819:PsiDirectoryNode" />
+              <item name="Front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="registration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Front" type="462c0819:PsiDirectoryNode" />
+              <item name="Front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="tshirt-page" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -246,7 +251,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86161000" />
+    <option name="totallyTimeSpent" value="90482000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -338,16 +343,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front/src/app/tshirt-page/tshirt-page.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Front/src/app/admin-page/admin-page.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="422">
@@ -368,23 +363,10 @@
     <entry file="file://$PROJECT_DIR$/Front/tslint.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front/src/app/registration/registration.component.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Front/src/app/successful-registration/successful-registration.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Front/src/app/registration/registration.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -553,17 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front/src/app/registration/registration.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="14" lean-forward="true" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Front/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -608,35 +579,28 @@
     <entry file="file://$PROJECT_DIR$/Front/src/app/tag-cloud/tag-cloud.component.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front/MyServices/LogInService/login.service.ts">
+    <entry file="file://$PROJECT_DIR$/Front/src/app/tag-cloud/tag-cloud.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        <state relative-caret-position="476">
+          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
           <folding>
-            <element signature="n#!!block;n#signIn#0;n#LoginService#0" />
-            <element signature="n#!!block;n#signOut#0;n#LoginService#0" />
-            <element signature="n#!!block;n#signUp#0;n#LoginService#0" />
-            <element signature="n#!!block;n#GetAll#0;n#LoginService#0" />
-            <element signature="n#!!block;n#DeleteUser#0;n#LoginService#0" />
-            <element signature="n#!!block;n#SetRole#0;n#LoginService#0" />
-            <element signature="n#!!block;n#getRole#0;n#LoginService#0" />
-            <element signature="n#!!block;n#SetActive#0;n#LoginService#0" />
-            <element signature="n#!!block;n#GetActive#0;n#LoginService#0" />
-            <element signature="n#!!block;n#activateUser#0;n#LoginService#0" />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front/MyServices/TShirtService/tshirt-service.service.ts">
+    <entry file="file://$PROJECT_DIR$/Front/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        <state relative-caret-position="739">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
           <folding>
-            <element signature="n#!!block;n#CreateTShirt#0;n#TShirtService#0" />
-            <element signature="n#!!block;n#GetAllTShirt#0;n#TShirtService#0" />
-            <element signature="n#!!block;n#GetOneTShirt#0;n#TShirtService#0" />
-            <element signature="n#!!block;n#searchTshirt#0;n#TShirtService#0" />
-            <element signature="n#!!block;n#getUsersThirt#0;n#TShirtService#0" />
+            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#1122#1299#0" />
+            <element signature="e#1387#1500#0" />
+            <element signature="e#1591#1636#0" />
+            <element signature="e#1868#2239#0" />
+            <element signature="n#!!block;n#_filter#0;n#AppComponent#0" />
+            <element signature="n#!!block;n#singOut#0;n#AppComponent#0" />
           </folding>
         </state>
       </provider>
@@ -654,23 +618,144 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front/src/app/tag-cloud/tag-cloud.component.ts">
+    <entry file="file://$PROJECT_DIR$/Front/src/app/tshirt-page/tshirt-page.component.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+        <state relative-caret-position="663">
+          <caret line="39" column="1" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/src/app/tshirt/tshirt.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/src/app/registration/registration.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="50" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="61" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#form#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/src/app/registration/registration.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/src/app/tshirt/tshirt.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/MyModules/Comment.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/src/app/tshirt/tshirt.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="2" column="87" selection-start-line="2" selection-start-column="87" selection-end-line="2" selection-end-column="87" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Front/src/app/app.component.ts">
+    <entry file="file://$PROJECT_DIR$/Front/MyServices/LogInService/login.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="58" column="37" lean-forward="true" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+        <state relative-caret-position="425">
+          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+            <element signature="n#!!block;n#signOut#0;n#LoginService#0" />
+            <element signature="n#!!block;n#signUp#0;n#LoginService#0" />
+            <element signature="n#!!block;n#GetAll#0;n#LoginService#0" />
+            <element signature="n#!!block;n#DeleteUser#0;n#LoginService#0" />
+            <element signature="n#!!block;n#SetRole#0;n#LoginService#0" />
+            <element signature="n#!!block;n#getRole#0;n#LoginService#0" />
+            <element signature="n#!!block;n#SetActive#0;n#LoginService#0" />
+            <element signature="n#!!block;n#GetActive#0;n#LoginService#0" />
+            <element signature="n#!!block;n#activateUser#0;n#LoginService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/src/app/log-in/log-in.form.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/src/app/tshirt-page/comment.form.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/MyServices/TShirtService/tshirt-service.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="56" column="49" selection-start-line="56" selection-start-column="49" selection-end-line="56" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+            <element signature="n#!!block;n#CreateTShirt#0;n#TShirtService#0" />
+            <element signature="n#!!block;n#GetAllTShirt#0;n#TShirtService#0" />
+            <element signature="n#!!block;n#GetOneTShirt#0;n#TShirtService#0" />
+            <element signature="n#!!block;n#getAllTags#0;n#TShirtService#0" />
+            <element signature="n#!!block;n#searchTshirt#0;n#TShirtService#0" />
+            <element signature="n#!!block;n#getUsersThirt#0;n#TShirtService#0" />
+            <element signature="n#!!block;n#deleteTshirt#0;n#TShirtService#0" />
+            <element signature="n#!!block;n#getComments#0;n#TShirtService#0" />
+            <element signature="n#!!block;n#addComment#0;n#TShirtService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/src/app/registration/registration.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="45" lean-forward="true" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/src/app/tshirt-page/tshirt-page.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Front/src/app/tshirt-page/tshirt-page.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="44" lean-forward="true" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
         </state>
       </provider>
     </entry>

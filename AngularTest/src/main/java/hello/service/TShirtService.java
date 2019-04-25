@@ -98,4 +98,8 @@ public class TShirtService {
         tShirtRepo.deleteById(id);
         return ResponseEntity.status(HttpStatus.OK).body(null);
     }
+
+    public List<Comments> getComments(int id) {
+        return this.tShirtRepo.getOne(id).getComments();
+    }
 }

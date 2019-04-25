@@ -8,20 +8,18 @@
     <div class="col-md-6">
       <form name="form" #f="ngForm" >
         <div class="form-group">
-          <label for="feedback">Name</label><br>
+          <label >Name</label><br>
           <input type="text" #name><br>
-          <label for="feedback">Tags</label>
+          <label >Tags</label>
           <textarea
-            id="description"
             class="form-control"
             name="feedback"
             placeholder="Your description"
             #tags
             rows="3">
         </textarea>
-          <label for="feedback">Description</label>
+          <label >Description</label>
           <textarea
-            id="description"
             class="form-control"
             name="feedback"
             placeholder="Your description"
@@ -31,7 +29,7 @@
         </div>
         <button type="submit" class="btn btn-info pull-right" (click)="createTShirt(feedback.value,name.value,tags.value)">
           <i class="fa fa-envelope-o"></i>
-          <span> Send description</span>
+          <span> Save </span>
         </button>
       </form>
     </div>

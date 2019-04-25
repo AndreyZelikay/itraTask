@@ -7,7 +7,7 @@ import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.IndexedEmbedded;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Indexed
@@ -28,23 +28,31 @@ public class TShirt {
 
     @IndexedEmbedded
     @OneToMany(mappedBy = "tShirt")
-    private Set<Comments> Comments;
+    private List<Comments> Comments;
 
     @IndexedEmbedded
     @OneToMany(mappedBy = "tShirt")
-    private Set<Tag> Tags;
+    private List<Tag> Tags;
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="ApplicationUser_id")
     private ApplicationUser applicationUser;
 
-    public Set<hello.model.Comments> getComments() {
+    public List<hello.model.Comments> getComments() {
         return Comments;
     }
 
-    public void setComments(Set<hello.model.Comments> comments) {
+    public void setComments(List<hello.model.Comments> comments) {
         Comments = comments;
+    }
+
+    public List<Tag> getTags() {
+        return Tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        Tags = tags;
     }
 
     public ApplicationUser getApplicationUser() {
@@ -53,14 +61,6 @@ public class TShirt {
 
     public void setApplicationUser(ApplicationUser applicationUser) {
         this.applicationUser = applicationUser;
-    }
-
-    public Set<Tag> getTags() {
-        return Tags;
-    }
-
-    public void setTags(Set<Tag> tags) {
-        Tags = tags;
     }
 
     public String getName() {
