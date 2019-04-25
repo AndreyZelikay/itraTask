@@ -1,0 +1,25 @@
+<h1 align="center">My designs</h1>
+<ul class="products clearfix">
+  <li *ngFor="let tshirt of TShirts" class="product-wrapper">
+    <a class="product">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm">
+            <div class="product-photo">
+              <img src={{tshirt.url}} alt="">
+            </div>
+          </div>
+          <div class="w-100"></div>
+          <div class="col">
+            <button type="button" class="btn btn-success"><span style="vertical-align: inherit;">
+  	<span style="vertical-align: inherit;">Refactor</span></span>
+            </button>
+            <button type="submit" class="btn btn-danger" (click)="deleteTshirt(tshirt.id)"><span align="right" style="vertical-align: inherit;">
+  	<span style="vertical-align: inherit;">Delete</span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>

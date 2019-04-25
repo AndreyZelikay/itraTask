@@ -3,7 +3,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule,
+} from '@angular/material';
+import { TagCloudModule } from 'angular-tag-cloud-module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TShirtComponent } from './tshirt/tshirt.component';
@@ -20,9 +28,10 @@ import { TagCloudComponent } from './tag-cloud/tag-cloud.component';
 import { ActivatePageComponent } from './activate-page/activate-page.component';
 import { SuccessfulRegistrationComponent } from './successful-registration/successful-registration.component';
 import { ConfirmPageComponent } from './confirm-page/confirm-page.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const appRoutes: Routes = [
-    {path: '', component: MainPageComponent, canActivate: [AuthGuard]},
+    {path: '', component: MainPageComponent},
     {path: 'activate/:uid', component: ActivatePageComponent},
     {path: 'confirm', component : ConfirmPageComponent},
     {path: 'success', component: SuccessfulRegistrationComponent},
@@ -30,7 +39,8 @@ const appRoutes: Routes = [
     {path: 'TShirtPage/:id', component: TShirtPageComponent, canActivate: [AuthGuard]},
     {path: 'login', component: LogInComponent},
     {path: 'registration', component: RegistrationComponent},
-    {path: 'AdminPage', component: AdminPageComponent, canActivate: [AuthGuard]}
+    {path: 'admin', component: AdminPageComponent, canActivate: [AuthGuard]},
+    {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]}
 ];
 
 export function tokenGetter() {
@@ -56,17 +66,25 @@ const JWT_Module_Options: JwtModuleOptions = {
     TagCloudComponent,
     ActivatePageComponent,
     SuccessfulRegistrationComponent,
-    ConfirmPageComponent
+    ConfirmPageComponent,
+    ProfileComponent,
   ],
-  imports: [
-      BrowserModule,
-      AppRoutingModule,
-      FormsModule,
-      ReactiveFormsModule,
-      HttpClientModule,
-      RouterModule.forRoot(appRoutes),
-      JwtModule.forRoot(JWT_Module_Options)
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        RouterModule.forRoot(appRoutes),
+        JwtModule.forRoot(JWT_Module_Options),
+        BrowserAnimationsModule,
+        MatButtonModule,
+        MatCheckboxModule,
+        MatFormFieldModule,
+        MatAutocompleteModule,
+        MatInputModule,
+        TagCloudModule
+    ],
   providers: [{
       provide : HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,

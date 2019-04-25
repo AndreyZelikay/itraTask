@@ -2,23 +2,24 @@ import { Injectable } from '@angular/core';
 import {LoginForm} from 'MyModules/login.module';
 import {RoleForm} from 'MyModules/RoleForm';
 import { HttpClient} from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { TransformableFormGroup} from 'src/helpers';
 import {JwtHelperService} from '@auth0/angular-jwt';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor(private http: HttpClient, private jwtHelper: JwtHelperService) {}
+  public role = new Subject<any>();
+  public onRoleChanged$ = this.role.asObservable();
+  public activity = new Subject<any>();
+  public onActivityChanged$ = this.activity.asObservable();
 
-    public authorization = new Subject<any>();
-    public onAuthorizationChanged$ = this.authorization.asObservable();
+  constructor(private http: HttpClient, private jwtHelper: JwtHelperService, private router: Router) {}
 
   private url = 'http://localhost:8080';
-  private Users: LoginForm[];
-  public Activate;
   public signIn(form: TransformableFormGroup): Observable<any> {
     const requestBody: object = {};
     const fields = Object.keys(form.controls);
@@ -29,9 +30,11 @@ export class LoginService {
   }
   public signOut() {
    localStorage.removeItem('token');
-   this.authorization.next({
-          onAuthorized: false
-        });
+   this.activity.next({
+      isActive: false,
+      role: ''
+    });
+   this.router.navigate(['login']);
   }
   public signUp(form: TransformableFormGroup): Observable<any> {
     const requestBody: object = {};
@@ -52,7 +55,6 @@ export class LoginService {
         (error) => {
           console.log(error);
       });
-    localStorage.removeItem('token');
   }
   public SetRole(role: RoleForm) {
     this.http.post(this.url + '/users/admin/role', role).subscribe(
@@ -64,8 +66,11 @@ export class LoginService {
       });
   }
   public getRole() {
-  const jd = this.jwtHelper.decodeToken(localStorage.getItem('token'));
-  return jd.sub;
+    if (localStorage.getItem('token')) {
+      return  JSON.parse(this.jwtHelper.decodeToken(localStorage.getItem('token')).sub)['role'].replace('[', '').replace(']', '');
+    } else {
+      return '';
+    }
   }
   public SetActive(id: number) {
       return this.http.post(this.url + '/users/activity/set', id);

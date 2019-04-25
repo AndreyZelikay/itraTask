@@ -34,9 +34,8 @@ public class UserController {
     }
 
     @DeleteMapping("/admin/{id}")
-    public String DeleteUser(@PathVariable ( "id" ) int id){
-        userService.deleteUser(id);
-        return "User Deleted";
+    public ResponseEntity DeleteUser(@PathVariable ( "id" ) int id){
+        return userService.deleteUser(id);
     }
 
     @PostMapping("/activate")
@@ -46,7 +45,7 @@ public class UserController {
 
     @CrossOrigin
     @GetMapping("/activity")
-    public String getActive(HttpServletRequest request){
+    public Boolean getActive(HttpServletRequest request){
         return userService.getActivity(request);
     }
 

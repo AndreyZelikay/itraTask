@@ -30,10 +30,13 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable().authorizeRequests()
-                .antMatchers(HttpMethod.GET,"/TShirts/TShirt/**").hasAnyAuthority("USER","ADMIN")
+                .antMatchers(HttpMethod.GET,"/TShirts/user/tshirts").hasAnyAuthority("USER","ADMIN")
                 .antMatchers(HttpMethod.POST,"/TShirts/**").hasAnyAuthority("USER","ADMIN")
-                //.antMatchers(HttpMethod.POST,"/users/admin/**").hasAuthority("ADMIN")
-                //.antMatchers(HttpMethod.GET,"/users/admin/**").hasAuthority("ADMIN")
+                .antMatchers(HttpMethod.DELETE,"/TShirts/delete/**").hasAnyAuthority("USER","ADMIN")
+                .antMatchers(HttpMethod.POST,"/users/activate","/users/activity/**").hasAnyAuthority("USER","ADMIN")
+                .antMatchers(HttpMethod.GET,"/users/activate","/users/activity/**").hasAnyAuthority("USER","ADMIN")
+                .antMatchers(HttpMethod.POST,"/users/admin/**").hasAuthority("ADMIN")
+                .antMatchers(HttpMethod.GET,"/users/admin/**").hasAuthority("ADMIN")
                 .anyRequest().permitAll()
                 .and()
                 .addFilter(new JWTAuthenticationFilter(authenticationManager()))

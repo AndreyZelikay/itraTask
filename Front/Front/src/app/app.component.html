@@ -1,17 +1,54 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
   <h1 class="my-0 mr-md-auto font-weight-normal"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">T-shirts</span></span></h1>
+  <div class="col-lg-5"><form class="example-form" >
+    <mat-form-field class="example-full-width">
+      <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+</form></div>
   <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-dark" href=""><span style="vertical-align: inherit;"><span
+    <a class="p-2 text-dark" [routerLink]="['']"><span style="vertical-align: inherit;"><span
             style="vertical-align: inherit;">Home</span></span></a>
-    <a class="p-2 text-dark" href="/add"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Create your design</span></span></a>
+    <a *ngIf="isAuthorized && role == 'USER'" class="p-2 text-dark" [routerLink]="['/add']"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Create your design</span></span></a>
+    <a *ngIf="isAuthorized && role == 'ADMIN'" class="p-2 text-dark" [routerLink]="['admin']"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Admin page</span></span></a>
+    <a *ngIf="isAuthorized && role == 'USER'" class="p-2 text-dark" [routerLink]="['profile']"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">profile</span></span></a>
   </nav>
   <a *ngIf="!isAuthorized"
-  	 class="btn btn-outline-primary" href="/login"><span style="vertical-align: inherit;">
+     class="btn btn-outline-primary" href="/login"><span style="vertical-align: inherit;">
   	<span style="vertical-align: inherit;">Log In</span></span>
   </a>
-  <a *ngIf="isAuthorized" (click)="signOut()">Sign Out</a>
-  <a class="btn btn-outline-primary" href="/AdminPage"><span style="vertical-align: inherit;">
-    <span style="vertical-align: inherit;">Admin page</span></span>
+  <a *ngIf="isAuthorized"
+     class="btn btn-outline-primary" href="/login"><span style="vertical-align: inherit;" (click)="singOut()" >
+  	<span style="vertical-align: inherit;">Log out</span></span>
   </a>
 </div>
-<router-outlet></router-outlet>
+<div *ngIf="!isSearchNow">
+  <router-outlet></router-outlet>
+</div>
+<div *ngIf="isSearchNow" class="container-fluid">
+<ul class="products clearfix">
+  <li *ngFor="let tshirt of searchedTshirt" class="product-wrapper">
+    <a [routerLink]="['/TShirtPage', tshirt.id]" class="product">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+          </div>
+          <div class="col">
+            <div class="product-photo">
+              <img src={{tshirt.url}} alt="">
+            </div>
+          </div>
+          <div class="col">
+            <p>Description:</p>
+            <p>{{tshirt.description}}</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
+</div>

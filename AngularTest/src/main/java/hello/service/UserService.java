@@ -20,6 +20,12 @@ import java.util.List;
 public class UserService {
     @Autowired
     private UserRepo userRepo;
+    @Autowired
+    private  UserRegistrationSuccess registrationSuccess;
+    @Autowired
+    private Token token;
+    @Autowired
+    private JsonString jsonString;
 
     public ResponseEntity SignUp(UserForm userForm) {
         JsonString jsonString= new JsonString();
@@ -31,7 +37,6 @@ public class UserService {
             str+="User with this email already exist.";
         }
         if(userRepo.findByUsername(userForm.getUsername()) == null && userRepo.findByEmail(userForm.getEmail()) == null){
-            UserRegistrationSuccess registrationSuccess=new UserRegistrationSuccess();
             registrationSuccess.registrateUser(userForm);
             return ResponseEntity.status(HttpStatus.OK).body(null);
         }
@@ -55,8 +60,9 @@ public class UserService {
         return userRepo.save(user);
     }
 
-    public void deleteUser(Integer id){
+    public ResponseEntity deleteUser(Integer id){
         userRepo.deleteById(id);
+        return ResponseEntity.status(HttpStatus.OK).body(null);
     }
 
     public ResponseEntity activateUser(String code) {
@@ -73,16 +79,8 @@ public class UserService {
         }
     }
 
-    public String getActivity(HttpServletRequest request) {
-        Token token=new Token();
-        String Result="";
-        JsonString jsonString=new JsonString();
-        try {
-            Result=jsonString.ReturnActivity(userRepo.findByUsername(token.readToken(request)).getActive().toString());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return Result;
+    public Boolean getActivity(HttpServletRequest request) {
+        return userRepo.findByUsername(token.readToken(request)).getActive();
     }
 
     public ApplicationUser setActivity(int id) {
@@ -92,7 +90,6 @@ public class UserService {
     }
 
     public ApplicationUser resetActivity(HttpServletRequest request) {
-        Token token=new Token();
         ApplicationUser user = userRepo.findByUsername(token.readToken(request));
         user.setActive(true);
         return userRepo.save(user);

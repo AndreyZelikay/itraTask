@@ -8,10 +8,13 @@ import hello.dao.CommentForm;
 import hello.dao.TShirtForm;
 import hello.dao.TagForm;
 import hello.function.Token;
+import hello.model.ApplicationUser;
 import hello.model.Comments;
 import hello.model.TShirt;
 import hello.model.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,6 +32,8 @@ public class TShirtService {
     private TagRepo tagRepo;
     @Autowired
     private HibernateSearchService searchService;
+    @Autowired
+    private Token token;
 
     public TShirt findOne(Integer id){
         return tShirtRepo.getOne(id);
@@ -84,4 +89,13 @@ public class TShirtService {
         return searchService.SearchTag(search);
     }
 
+    public List<TShirt> getUsersTshirts(HttpServletRequest httpRequest) {
+        ApplicationUser user=userRepo.findByUsername(token.readToken(httpRequest));
+        return user.getTShirts();
+    }
+
+    public ResponseEntity delete(int id) {
+        tShirtRepo.deleteById(id);
+        return ResponseEntity.status(HttpStatus.OK).body(null);
+    }
 }

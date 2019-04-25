@@ -1,10 +1,12 @@
 package hello.function;
 
 import org.json.simple.JSONObject;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.io.StringWriter;
 
+@Service
 public class JsonString {
     public JsonString() {
     }
@@ -28,13 +30,6 @@ public class JsonString {
     public String ReturnInfo(String info)throws IOException{
         JSONObject obj = new JSONObject();
         obj.put("cause",info);
-        StringWriter out = new StringWriter();
-        obj.writeJSONString(out);
-        return obj.toString();
-    }
-    public String ReturnActivity(String activity) throws IOException{
-        JSONObject obj = new JSONObject();
-        obj.put("activity",activity);
         StringWriter out = new StringWriter();
         obj.writeJSONString(out);
         return obj.toString();

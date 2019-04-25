@@ -9,11 +9,11 @@ import hello.model.Tag;
 import hello.service.TShirtService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-
 
 @RestController
 @RequestMapping("/TShirts")
@@ -37,11 +37,6 @@ public class TShirtController {
         return tShirtService.findAll();
     }
 
-    @GetMapping("/last")
-    public TShirt getLast() {
-        return tShirtService.findOne(tShirtService.findAll().size());
-    }
-
     @PostMapping("/comment")
     public Comments setComment(@RequestBody CommentForm commentForm) {
         return tShirtService.setComment(commentForm);
@@ -57,13 +52,13 @@ public class TShirtController {
         return tShirtService.getTags();
     }
 
-    @PostMapping("/search/tshirt")
-    public List<TShirt> SearchTshirt(@RequestBody String search) {
-        return tShirtService.searchTShirt("cab");
+    @GetMapping("/user/tshirts")
+    public List<TShirt> getUsersTshirts(HttpServletRequest httpRequest){
+        return tShirtService.getUsersTshirts(httpRequest);
     }
 
-    @PostMapping("/search/tag")
-    public List<Tag> SearchTag(@RequestBody String search) {
-        return tShirtService.searchTag("s*");
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity deleteTshirt(@PathVariable ( "id" ) int id){
+        return tShirtService.delete(id);
     }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {LoginService} from '../../../MyServices/LogInService/login.service';
 import {TransformableFormGroup} from '../../helpers';
 import { form } from './log-in.form';
-import {Router} from '@angular/router';
+import {Route, Router} from '@angular/router';
 
 @Component({
   selector: 'app-log-in',
@@ -23,6 +23,10 @@ export class LogInComponent implements OnInit {
         (response) => {
           localStorage.setItem('token', response.token);
           this.router.navigate(['']);
+          this.loginservice.activity.next({
+              isActive: true,
+              role: this.loginservice.getRole()
+          });
         },
         (error) => {
           this.form.markAsTouched();

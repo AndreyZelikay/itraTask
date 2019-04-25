@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import  {TShirt} from '../../MyModules/TShirt.module';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json'})
-};
+import { HttpClient} from '@angular/common/http';
+import {Tag} from '../../MyModules/TagModule';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +30,19 @@ export class TShirtService {
     return this.http.get<TShirt>(this.URL + '/TShirt/' + id);
   }
 
-  public GetLastTShirt() {
-    return this.http.get<TShirt>(this.URL + '/last');
+  public getAllTags() {
+      return this.http.get<Tag[]>(this.URL + '/tag/all');
+  }
+
+  public searchTshirt(searchParam: string) {
+      return this.http.post<TShirt[]>('http://localhost:8080/search/tshirt', searchParam);
+  }
+
+  public getUsersThirt() {
+   return  this.http.get<TShirt[]>(this.URL + '/user/tshirts');
+  }
+
+  public deleteTshirt(id: number) {
+   return this.http.delete(this.URL + '/delete/' + id);
   }
 }

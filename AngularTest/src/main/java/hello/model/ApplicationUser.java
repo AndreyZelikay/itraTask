@@ -23,13 +23,13 @@ public class ApplicationUser {
     private Boolean isActive;
 
     @OneToMany(mappedBy = "applicationUser")
-    private Set<TShirt> TShirts;
+    private List<TShirt> TShirts;
 
-    public Set<TShirt> getTShirts() {
+    public List<TShirt> getTShirts() {
         return TShirts;
     }
 
-    public void setTShirts(Set<TShirt> TShirts) {
+    public void setTShirts(List<TShirt> TShirts) {
         this.TShirts = TShirts;
     }
 

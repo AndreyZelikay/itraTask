@@ -25,6 +25,10 @@ export class ConfirmPageComponent implements OnInit {
           this.loginservice.reSetActive().subscribe(
           (response) => {
               this.router.navigate(['']);
+              this.loginservice.activity.next({
+                  isActive: true,
+                  role: this.loginservice.getRole()
+              });
           },
           (error) => {
             console.log(error);
