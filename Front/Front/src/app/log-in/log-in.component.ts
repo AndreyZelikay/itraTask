@@ -27,6 +27,12 @@ export class LogInComponent implements OnInit {
               isActive: true,
               role: this.loginservice.getRole()
           });
+          this.loginservice.reSetActive().subscribe(
+                (response) => {this.router.navigate(['']);
+                               this.loginservice.activity.next({
+                                isActive: true,
+                                role: this.loginservice.getRole()
+                    }); });
         },
         (error) => {
           this.form.markAsTouched();

@@ -4,15 +4,6 @@ public class TShirtForm {
     private String url;
     private String Description;
     private String Name;
-    private Integer Rating;
-
-    public Integer getRating() {
-        return Rating;
-    }
-
-    public void setRating(Integer rating) {
-        Rating = rating;
-    }
 
     public String getName() {
         return Name;

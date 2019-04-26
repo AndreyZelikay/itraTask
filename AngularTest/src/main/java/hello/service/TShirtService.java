@@ -1,23 +1,18 @@
 package hello.service;
 
-import hello.Repos.CommentRepo;
-import hello.Repos.TShirtRepo;
-import hello.Repos.TagRepo;
-import hello.Repos.UserRepo;
+import hello.Repos.*;
 import hello.dao.CommentForm;
 import hello.dao.TShirtForm;
 import hello.dao.TagForm;
 import hello.function.Token;
-import hello.model.ApplicationUser;
-import hello.model.Comments;
-import hello.model.TShirt;
-import hello.model.Tag;
+import hello.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -34,6 +29,8 @@ public class TShirtService {
     private HibernateSearchService searchService;
     @Autowired
     private Token token;
+    @Autowired
+    private CommentLikeRepo commentLikeRepo;
 
     public TShirt findOne(Integer id){
         return tShirtRepo.getOne(id);
@@ -45,7 +42,6 @@ public class TShirtService {
         tShirt.setUrl(tShirtForm.getUrl());
         tShirt.setDescription(tShirtForm.getDescription());
         tShirt.setName(tShirtForm.getName());
-        tShirt.setRating(tShirtForm.getRating());
         tShirt.setApplicationUser(userRepo.findByUsername(token.readToken(request)));
         return tShirtRepo.save(tShirt);
     }
@@ -54,13 +50,18 @@ public class TShirtService {
         return tShirtRepo.findAll();
     }
 
-    public Comments setComment(CommentForm commentForm) {
+    public ResponseEntity setComment(CommentForm commentForm, HttpServletRequest httpRequest) {
+        Date date = new Date();
         Comments comment = new Comments();
-        comment.setComment(commentForm.getComment());
-        comment.setUserName(comment.getUserName());
-        comment.setLastModifiedOn(commentForm.getLastModifiedOn());
-        comment.settShirt(tShirtRepo.getOne(commentForm.gettShirtId()));
-        return commentRepo.save(comment);
+        if(commentRepo.findByUserNameAndTShirt(token.readToken(httpRequest),tShirtRepo.getOne(commentForm.gettShirtId()))==null) {
+            comment.setComment(commentForm.getComment());
+            comment.setUserName(token.readToken(httpRequest));
+            comment.setLastModifiedOn(date);
+            comment.settShirt(tShirtRepo.getOne(commentForm.gettShirtId()));
+            commentRepo.save(comment);
+            return ResponseEntity.status(HttpStatus.OK).body(null);
+        }
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
     }
 
     public Tag setTag(TagForm tagForm) {
@@ -95,11 +96,54 @@ public class TShirtService {
     }
 
     public ResponseEntity delete(int id) {
+        TShirt tShirt = tShirtRepo.getOne(id);
+        for ( Comments comment : tShirt.getComments()){
+            commentRepo.delete(comment);
+        }
         tShirtRepo.deleteById(id);
         return ResponseEntity.status(HttpStatus.OK).body(null);
     }
 
-    public List<Comments> getComments(int id) {
-        return this.tShirtRepo.getOne(id).getComments();
+    public ResponseEntity deleteComment(int id, HttpServletRequest httpRequest) {
+        Comments comment = commentRepo.findByUserNameAndTShirt(token.readToken(httpRequest),tShirtRepo.getOne(id));
+        if(comment != null) {
+            commentRepo.delete(comment);
+            return  ResponseEntity.status(HttpStatus.OK).body(null);
+        }
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+    }
+
+    public ResponseEntity setRating(int id, Integer rating) {
+        TShirt tShirt = tShirtRepo.getOne(id);
+        if(tShirt.getRating() != null) {
+            tShirt.setRating(tShirt.getRating() + rating);
+            tShirt.setCounterRating(tShirt.getCounterRating() + 1);
+        }
+        else {
+            tShirt.setRating(rating);
+            tShirt.setCounterRating(1);
+        }
+        tShirtRepo.save(tShirt);
+        return ResponseEntity.status(HttpStatus.OK).body(null);
+    }
+
+    public Integer getRating(int id) {
+        TShirt tShirt = tShirtRepo.getOne(id);
+        if(tShirt.getRating() != null) {
+            return tShirt.getRating() / tShirt.getCounterRating();
+        }
+        return 0;
+    }
+
+   public ResponseEntity setLike(Integer commentId, HttpServletRequest httpRequest) {
+        Comments comment = commentRepo.getOne(commentId);
+        if(commentLikeRepo.findByAuthorAndComments(token.readToken(httpRequest),comment)==null) {
+            CommentLike like = new CommentLike();
+            like.setAuthor(token.readToken(httpRequest));
+            like.setComments(comment);
+            commentLikeRepo.save(like);
+            return ResponseEntity.status(HttpStatus.OK).body(null);
+        }
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
     }
 }

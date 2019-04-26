@@ -38,3 +38,64 @@ p {
 .comments-list .media{
   border-bottom: 1px dotted #ccc;
 }
+.login-container{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.login-form-1 h3{
+  text-align: center;
+  color: #333;
+}
+.login-container form{
+  padding: 10%;
+}
+.btnSubmit
+{
+  width: 50%;
+  border-radius: 1rem;
+  padding: 1.5%;
+  border: none;
+  cursor: pointer;
+}
+.textarea {
+  resize: none;
+  line-height: 1em;
+  padding: 0 0 400px 0;
+}
+table {
+  width: 100%; /* Ширина таблицы */
+  border-collapse: collapse; /* Отображать только одинарные линии */
+}
+td {
+  padding: 5px; /* Поля вокруг содержимого ячеек */
+  border: 1px solid darkgrey; /* Граница вокруг ячеек */
+  border-left: none;
+  border-right: none;
+  vertical-align: bottom;
+}
+.fa-star {
+  color: orange;
+}
+.fa {
+  width: 10%;
+  height: 10%;
+}
+.table {
+  width: 40%;
+}
+.buy-btn{
+  background-color:#f76633;
+  color:#FFF;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  font-size:15px;
+  padding: 10px 50px;
+  -webkit-box-shadow: inset 0px -3px 2px 0px rgba(143,63,63,1);
+  -moz-box-shadow: inset 0px -3px 2px 0px rgba(143,63,63,1);
+  box-shadow: inset 0px -3px 2px 0px rgba(143,63,63,1);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+  outline:none;
+  border:none;
+}
+

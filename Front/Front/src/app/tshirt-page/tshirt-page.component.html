@@ -1,21 +1,68 @@
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-<div class="container-fluide">
+<div class="container-fluid">
 	<div class="row">
-		<div class="col-lg-4">
-			<div class="product-photo">
-        		<img src={{TShirt.url}}
-      						alt="" width="600" height="600">
-    		</div>
-		</div>
 		<div class="col">
-			<h1>{{TShirt.name}}</h1>
-			<p>Tags: <br>
-			{{TShirt.tags}}</p>
-			<p>Description:<br>
-			{{TShirt.description}}</p>
-			<div class="product-price">148$ <a class="cart-btn" href="#">Add to cart</a></div>
+			<div class="row">
+				<div class="col-lg-3"></div>
+				<div class="col-lg-5">
+					<div class="product-photo">
+						<img src={{TShirt?.url}}
+									alt="" width="600" height="600">
+					</div>
+				</div>
+				<div class="col">
+					<h1>{{TShirt?.name}}</h1>
+					<a *ngFor="let item of starList; let i=index ">
+						<i *ngIf="item" class="fa fa-star-o fa-2x"></i>
+						<i *ngIf="!item" class="fa fa-star fa-2x"></i>
+					</a>
+					<h3>Tags:<br>
+					{{TShirt?.tags}}</h3>
+					<h4>Sizes:</h4>
+					<table class="table table-borderless">
+						<thead>
+						</thead>
+						<tbody>
+						<tr>
+							<div class="btn-group mr-2" role="group" aria-label="First group">
+								<button type="button" class="btn btn-secondary">XS</button>
+								<button type="button" class="btn btn-secondary">S</button>
+								<button type="button" class="btn btn-secondary">M</button>
+								<button type="button" class="btn btn-secondary">L</button>
+							</div>
+						</tr>
+						<tr>
+							<div class="btn-group mr-2" role="group" aria-label="First group">
+								<button type="button" class="btn btn-secondary">Xl</button>
+								<button type="button" class="btn btn-secondary">XXl</button>
+								<button type="button" class="btn btn-secondary">XXXL</button>
+								<button type="button" class="btn btn-secondary">4XL</button>
+							</div>
+						</tr>
+						</tbody>
+					</table>
+					<div class="row">
+						<div class="col">
+							<button class="buy-btn" (click)="toBasket()">To basket</button>
+						</div>
+					</div>
+					<div>
+					<h3>Description:</h3>
+						{{TShirt?.description}}
+					</div>
+					<h5>Set rating</h5>
+					<div class="col" *ngIf="isUserCanSetRating">
+						<a *ngFor="let item of starListRating; let i=index " (click)="setStar(i)">
+							<i *ngIf="item" class="fa fa-star-o fa-1x"></i>
+							<i *ngIf="!item" class="fa fa-star fa-1x"></i>
+						</a>
+						<button class="btn-success" type="submit" (click)="setRating()">Set</button>
+					</div>
+					<div *ngIf="!isUserCanSetRating">
+						<h6>Thank you for your feedback</h6>
+					</div>
+				</div>
+				<div class="col-lg-2"></div>
+			</div>
 		</div>
 		<div class="w-100"></div>
 		<div class="col">
@@ -25,12 +72,46 @@
 		<div class="col">
 			<div class="row">
 				<div class="col login-form-1" align="center">
-					<div class="col-lg-4">
-						<h3> User: date</h3>
-						<p>Body</p>
+					<table class="table">
+						<tbody>
+							<tr *ngFor="let comment of TShirt?.comments">
+									<td> {{comment?.userName}}:<br>
+										{{comment?.lastModifiedOn}}</td>
+									<td>{{comment?.comment}}</td>
+									<td>
+										<button class="btn btn-block btn-primary" (click)="setLike(comment.id)">{{comment.likes.length}} <i class="fa fa-thumbs-up">Like</i></button>
+									</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="w-100"></div>
+			<div *ngIf="isUserCanAddComment" class="col">
+				<div class="col login-form-1" align="center">
+					<div class="form-group col-lg-6">
+					<form   [formGroup]="form">
+						<label for="comment">Comment:</label>
+						<textarea
+								class="form-control"
+								rows="5"
+								id="comment"
+								formControlName="comment"
+								placeholder="Input smth*">
+						</textarea>
+						<div *ngIf="form.controls['comment'].errors && form.controls['comment'].touched"
+							 style="color: red">
+							You need to input smth!
+						</div>
+						<button class="btn-success" (click)="addComment()">Send comment</button>
+					</form>
 					</div>
 				</div>
 			</div>
+		<div *ngIf="!isUserCanAddComment" class="col login-form-1" align="center">
+			<h3 align="center">You already commented this t-shirt!</h3>
+			<h4 align="center">You can delete your comment <br> <button class="btn-danger" (click)="deleteComment()">Delete</button></h4>
 		</div>
 	</div>
 </div>

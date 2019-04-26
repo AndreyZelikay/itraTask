@@ -22,6 +22,7 @@ export class ActivatePageComponent implements OnInit {
     this.activatedRoute.params.subscribe(
         (response) => {
           this.uid = response['uid'];
+          console.log(this.uid);
           this.loginService.activateUser(this.uid).subscribe(
               (response) => {
                 this.isActivated  = true;
@@ -29,6 +30,7 @@ export class ActivatePageComponent implements OnInit {
               },
               (error) => {
                 this.loading = false;
+                console.log(error);
               }
           );
         }

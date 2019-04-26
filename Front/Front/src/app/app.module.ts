@@ -29,6 +29,7 @@ import { ActivatePageComponent } from './activate-page/activate-page.component';
 import { SuccessfulRegistrationComponent } from './successful-registration/successful-registration.component';
 import { ConfirmPageComponent } from './confirm-page/confirm-page.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AddCommentComponent } from './add-comment/add-comment.component';
 
 const appRoutes: Routes = [
     {path: '', component: MainPageComponent},
@@ -68,6 +69,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     SuccessfulRegistrationComponent,
     ConfirmPageComponent,
     ProfileComponent,
+    AddCommentComponent,
   ],
     imports: [
         BrowserModule,

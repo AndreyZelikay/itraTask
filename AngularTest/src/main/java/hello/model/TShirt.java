@@ -25,6 +25,7 @@ public class TShirt {
     private String Name;
 
     private Integer Rating;
+    private Integer counterRating;
 
     @IndexedEmbedded
     @OneToMany(mappedBy = "tShirt")
@@ -99,5 +100,13 @@ public class TShirt {
 
     public void setRating(Integer rating) {
         Rating = rating;
+    }
+
+    public Integer getCounterRating() {
+        return counterRating;
+    }
+
+    public void setCounterRating(Integer counterRating) {
+        this.counterRating = counterRating;
     }
 }

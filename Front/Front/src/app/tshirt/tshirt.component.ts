@@ -39,7 +39,8 @@ export class TShirtComponent implements OnInit {
         description: Description,
         url: this.ImgUrl,
         tags: Tags,
-        name: Name
+        name: Name,
+        comments: []
     };
     this.tshirtService.CreateTShirt(this.TShirt);
   }

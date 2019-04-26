@@ -1,6 +1,9 @@
 export interface CommentModule {
     id: number;
-    body: string;
-    author: string;
-    date: Date;
+    comment: string;
+    userName: string;
+    lastModifiedOn: Date;
+    likes: {
+        author: string
+    }[];
 }

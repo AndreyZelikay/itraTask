@@ -3,7 +3,6 @@ package hello.controllers;
 import hello.dao.CommentForm;
 import hello.dao.TShirtForm;
 import hello.dao.TagForm;
-import hello.model.Comments;
 import hello.model.TShirt;
 import hello.model.Tag;
 import hello.service.TShirtService;
@@ -57,13 +56,28 @@ public class TShirtController {
         return tShirtService.delete(id);
     }
 
-    @GetMapping("/comments/get/{id}")
-    public List<Comments> getComments(@PathVariable ( "id" ) int id){
-        return this.tShirtService.getComments(id);
+    @PostMapping("/comments/add")
+    public ResponseEntity setComment(@RequestBody CommentForm commentForm, HttpServletRequest httpRequest) {
+        return tShirtService.setComment(commentForm, httpRequest);
     }
 
-    @PostMapping("/comments/add")
-    public Comments setComment(@RequestBody CommentForm commentForm) {
-        return tShirtService.setComment(commentForm);
+    @DeleteMapping("/comments/del/{id}")
+    public ResponseEntity deleteComment(@PathVariable ( "id" ) int id, HttpServletRequest httpRequest){
+        return tShirtService.deleteComment(id,httpRequest);
+    }
+
+    @PostMapping("/feedback/rating/set/{id}")
+    public ResponseEntity setRating(@PathVariable ("id") int id, @RequestBody Integer rating){
+        return tShirtService.setRating(id,rating);
+    }
+
+    @GetMapping("/feedback/rating/get/{id}")
+    public Integer getRating(@PathVariable ("id") int id){
+        return tShirtService.getRating(id);
+    }
+
+    @PostMapping("/feedback/likes/set/{id}")
+    public ResponseEntity setLike(@PathVariable ("id") int id, @RequestBody Integer commentId, HttpServletRequest httpRequest ){
+        return this.tShirtService.setLike( commentId,httpRequest);
     }
 }
