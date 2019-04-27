@@ -10,14 +10,6 @@
         <div class="form-group">
           <label >Name</label><br>
           <input type="text" #name><br>
-          <label >Tags</label>
-          <textarea
-            class="form-control"
-            name="feedback"
-            placeholder="Your description"
-            #tags
-            rows="3">
-        </textarea>
           <label >Description</label>
           <textarea
             class="form-control"
@@ -27,7 +19,7 @@
             rows="7">
         </textarea>
         </div>
-        <button type="submit" class="btn btn-info pull-right" (click)="createTShirt(feedback.value,name.value,tags.value)">
+        <button type="submit" class="btn btn-info pull-right" (click)="createTShirt(feedback.value,name.value,'')">
           <i class="fa fa-envelope-o"></i>
           <span> Save </span>
         </button>
@@ -35,4 +27,33 @@
     </div>
     <div class="offset-3"></div>
   </div>
+</div>
+<div class="login-container" align = "center">
+<label >Tags</label>
+<mat-form-field class="example-chip-list">
+  <mat-chip-list #chipList>
+    <mat-chip
+            *ngFor="let tag of tags"
+            [selectable]="true"
+            [removable]="true"
+            (removed)="remove(tag)">
+      {{tag}}
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+    <input
+            placeholder="New fruit..."
+            #tagInput
+            [formControl]="tagCtrl"
+            [matAutocomplete]="auto"
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            [matChipInputAddOnBlur]="true"
+            (matChipInputTokenEnd)="add($event)">
+  </mat-chip-list>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+    <mat-option *ngFor="let tag of filteredTags | async" [value]="tag">
+      {{tag}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
 </div>

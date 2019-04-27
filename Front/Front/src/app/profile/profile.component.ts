@@ -25,7 +25,13 @@ export class ProfileComponent implements OnInit {
   public deleteTshirt(id: number) {
       this.tshirtService.deleteTshirt(id).subscribe(
           (response) => {
-              location.reload();
+              this.tshirtService.getUsersThirt().subscribe(
+                  (res) => {
+                      this.TShirts = res;
+                  },
+                  (err) => {
+                      console.log(err);
+                  });
           },
       (error) => {
               console.log(error);

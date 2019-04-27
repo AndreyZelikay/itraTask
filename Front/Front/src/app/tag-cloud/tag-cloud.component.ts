@@ -30,6 +30,7 @@ export class TagCloudComponent implements OnInit {
     this.tShirtService.getAllTags().subscribe(
     (response) => {
       this.tags = response;
+      console.log(response);
       for ( let i = 0; i < this.tags.length; i++) {
         this.data.push({text: this.tags[i].body, weight: this.tags[i].number, link: '', color: '#ffaaee'});
       }

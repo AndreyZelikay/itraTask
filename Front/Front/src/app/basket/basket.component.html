@@ -1,0 +1,32 @@
+<div *ngIf="!isBasketEmpty" class="container-fluid">
+<h1 align="center">Basket:</h1>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">T-shirt</th>
+      <th scope="col">size</th>
+      <th scope="col">number</th>
+      <th scope="col">price</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let product of basket.products">
+    <th scope="col">{{product.tShirt}}</th>
+    <th scope="col">{{product.size}}</th>
+    <th>
+      <form>
+        <input type="number"
+        class="form-control"
+               [ngModel]="number"]
+               name="number";
+        value="1"/>
+      </form>
+    </th>
+    <th scope="col"> {{number}} </th>
+  </tr>
+  </tbody>
+</table>
+</div>
+<div *ngIf="isBasketEmpty" class="container-fluid">
+  <h1 align="center">Basket is Empty!</h1>
+</div>

@@ -40,6 +40,17 @@ public class TShirt {
     @JoinColumn(name="ApplicationUser_id")
     private ApplicationUser applicationUser;
 
+    @OneToOne
+    private Product product;
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
     public List<hello.model.Comments> getComments() {
         return Comments;
     }

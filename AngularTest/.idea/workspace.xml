@@ -2,62 +2,83 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb992427-d9ea-43c1-9279-3685b850f5b3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello/Repos/CommentLikeRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello/model/CommentLike.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hello/Repos/BasketRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hello/Repos/ProductRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hello/dao/ProductForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hello/function/ArrayListFind.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hello/model/Basket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hello/model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Comments/segments_1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_b.cfe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_b.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_b.si" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_c.cfe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_c.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_c.si" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_d.cfe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_d.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_d.si" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_g.cfe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_g.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_g.si" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_l.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_m.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_n.cfe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_n.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_n.si" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_p.cfe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_p.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_p.si" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_q.cfe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_q.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_q.si" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/segments_s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/Repos/CommentRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/Repos/CommentRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/config/WebSecurity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/config/WebSecurity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Comments/_p_1.liv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Comments/_s.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Comments/_s.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Comments/_s.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Comments/_t.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Comments/_t.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Comments/_t.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Comments/segments_13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_19_6.liv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_1y.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_1z.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_1z.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_1z.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/segments_24" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_0.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_0.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_0.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_1.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_1.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_1.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_2.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_2.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_2.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_3.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_3.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_3.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_4.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_4.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_4.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_5.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_5.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_5.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_6.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_6.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_6.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_7.cfe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_7.cfs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_7.si" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/segments_9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/Repos/TagRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/Repos/TagRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/dao/CommentForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/dao/CommentForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello/dao/TShirtForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/dao/TShirtForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/ApplicationUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/model/ApplicationUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/Comments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/model/Comments.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/TShirt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/model/TShirt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/Repos/CommentRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/Repos/CommentRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello/Repos/TagRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/Repos/TagRepo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hello/controllers/TShirtController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/controllers/TShirtController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/dao/CommentForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/dao/CommentForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hello/dao/TShirtForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/dao/TShirtForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/model/Comments.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/model/Comments.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hello/model/ApplicationUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/model/ApplicationUser.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hello/model/TShirt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/model/TShirt.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hello/service/TShirtService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/service/TShirtService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front/Front/MyModules/Comment.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/MyModules/Comment.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front/Front/MyModules/TShirt.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/MyModules/TShirt.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/MyServices/LogInService/login.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/MyServices/LogInService/login.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front/Front/MyServices/TShirtService/tshirt-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/MyServices/TShirtService/tshirt-service.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front/Front/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front/Front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front/Front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/add-comment/add-comment.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/MyModules/Basket.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/add-comment/add-comment.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/add-comment/add-comment.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/add-comment/add-comment.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/admin-page/admin-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/admin-page/admin-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/admin-page/admin-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/admin-page/admin-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/tshirt-page/tshirt-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/tshirt-page/tshirt-page.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/profile/profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/profile/profile.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/tag-cloud/tag-cloud.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/tag-cloud/tag-cloud.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/tshirt-page/tshirt-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/tshirt-page/tshirt-page.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/tshirt-page/tshirt-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/tshirt-page/tshirt-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/tshirt/tshirt.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/tshirt/tshirt.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/tshirt/tshirt.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/tshirt/tshirt.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/tshirt/tshirt.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/tshirt/tshirt.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -74,95 +95,80 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Comments.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="36" lean-forward="true" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+            <state relative-caret-position="299">
+              <caret line="81" column="41" selection-start-line="81" selection-start-column="41" selection-end-line="81" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#820#821#0" expanded="true" />
-                <element signature="e#872#873#0" expanded="true" />
-                <element signature="e#916#917#0" expanded="true" />
-                <element signature="e#952#953#0" expanded="true" />
-                <element signature="e#991#992#0" expanded="true" />
-                <element signature="e#1028#1029#0" expanded="true" />
-                <element signature="e#1061#1062#0" expanded="true" />
-                <element signature="e#1090#1091#0" expanded="true" />
-                <element signature="e#1120#1121#0" expanded="true" />
-                <element signature="e#1145#1146#0" expanded="true" />
-                <element signature="e#1180#1181#0" expanded="true" />
-                <element signature="e#1211#1212#0" expanded="true" />
-                <element signature="e#1259#1260#0" expanded="true" />
-                <element signature="e#1299#1300#0" expanded="true" />
-                <element signature="e#1333#1334#0" expanded="true" />
-                <element signature="e#1363#1364#0" expanded="true" />
-                <element signature="e#1409#1410#0" expanded="true" />
-                <element signature="e#1442#1443#0" expanded="true" />
-                <element signature="e#1492#1493#0" expanded="true" />
-                <element signature="e#1520#1521#0" expanded="true" />
-                <element signature="e#1573#1574#0" expanded="true" />
-                <element signature="e#1602#1603#0" expanded="true" />
+                <element signature="e#1197#1198#0" expanded="true" />
+                <element signature="e#1243#1244#0" expanded="true" />
+                <element signature="method#getUsersTshirts#0;class#TShirtController#0" />
+                <element signature="e#1522#1523#0" expanded="true" />
+                <element signature="e#1569#1570#0" expanded="true" />
+                <element signature="e#2824#2825#0" expanded="true" />
+                <element signature="e#2850#2851#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/CommentLike.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/ProductForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hello/Repos/CommentLikeRepo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hello/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="141" selection-start-line="141" selection-end-line="141" />
+            <state relative-caret-position="350">
+              <caret line="82" selection-start-line="82" selection-end-line="82" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#Create#0;class#TShirtService#0" />
-                <element signature="method#setComment#0;class#TShirtService#0" />
-                <element signature="method#setTag#0;class#TShirtService#0" />
-                <element signature="method#getUsersTshirts#0;class#TShirtService#0" />
-                <element signature="method#delete#0;class#TShirtService#0" />
-                <element signature="method#deleteComment#0;class#TShirtService#0" />
-                <element signature="method#setRating#0;class#TShirtService#0" />
+                <element signature="method#SignUp#0;class#UserService#0" />
+                <element signature="method#setRole#0;class#UserService#0" />
+                <element signature="method#deleteUser#0;class#UserService#0" />
+                <element signature="method#activateUser#0;class#UserService#0" />
+                <element signature="method#setActivity#0;class#UserService#0" />
+                <element signature="method#resetActivity#0;class#UserService#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/TShirt.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+            <state relative-caret-position="404">
+              <caret line="182" column="78" selection-start-line="182" selection-start-column="78" selection-end-line="182" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2187#2188#0" expanded="true" />
-                <element signature="e#2218#2219#0" expanded="true" />
-                <element signature="e#2259#2260#0" expanded="true" />
-                <element signature="e#2295#2296#0" expanded="true" />
-                <element signature="e#2354#2355#0" expanded="true" />
-                <element signature="e#2404#2405#0" expanded="true" />
+                <element signature="method#Create#0;class#TShirtService#0" />
+                <element signature="method#setComment#0;class#TShirtService#0" />
+                <element signature="method#getTags#0;class#TShirtService#0" />
+                <element signature="method#getUsersTshirts#0;class#TShirtService#0" />
+                <element signature="method#delete#0;class#TShirtService#0" />
+                <element signature="method#deleteComment#0;class#TShirtService#0" />
+                <element signature="method#setRating#0;class#TShirtService#0" />
+                <element signature="method#getRating#0;class#TShirtService#0" />
+                <element signature="method#setLike#0;class#TShirtService#0" />
+                <element signature="method#deleteFromBasket#0;class#TShirtService#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Basket.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -173,8 +179,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -185,12 +191,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/hello/function/AuthUpdatedApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/model/UserDetails.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/model/UserDetailsImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/model/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/model/UserImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/model/Role.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/model/Roles.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/dao/RoleForm.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/dao/UserForm.java" />
@@ -202,11 +202,9 @@
         <option value="$PROJECT_DIR$/src/main/java/hello/config/MailConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/Repos/UserRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/config/CorsEnable.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/Repos/TagRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/Repos/SearchTShirts.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/config/HibernateSearchConfiguration.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/model/Tag.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/service/HibernateSearchService.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/config/RestConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/service/UserDetailsServiceImpl.java" />
@@ -223,18 +221,26 @@
         <option value="$PROJECT_DIR$/src/main/java/hello/dao/CommentForm.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/Repos/CommentRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/Repos/TShirtRepo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/dao/TShirtForm.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/model/TShirt.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/Repos/LikeRepo.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/model/Like.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/hello/config/WebSecurity.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/model/Comments.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/model/ApplicationUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/model/CommentLike.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/Repos/CommentLikeRepo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/model/Tag.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/Repos/TagRepo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/dao/TShirtForm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/function/ArrayListFind.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/model/ApplicationUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/dao/BasketForm.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/model/Basket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/model/TShirt.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/model/Product.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/Repos/BasketRepo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/Repos/ProductRepo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java" />
       </list>
     </option>
@@ -246,7 +252,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="264" />
     <option name="y" value="559" />
     <option name="width" value="1223" />
@@ -292,15 +298,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="hello" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AngularTest" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AngularTest" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="hello" type="462c0819:PsiDirectoryNode" />
-              <item name="Repos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AngularTest" type="b2602c69:ProjectViewProjectNode" />
@@ -393,12 +390,12 @@
       <workItem from="1555519687491" duration="10432000" />
       <workItem from="1555595755357" duration="19409000" />
       <workItem from="1555666586590" duration="128922000" />
-      <workItem from="1556116245171" duration="39364000" />
+      <workItem from="1556116245171" duration="58129000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240550000" />
+    <option name="totallyTimeSpent" value="259315000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -414,8 +411,8 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.29144096" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.29144096" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -452,7 +449,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.29144096" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -481,47 +478,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java</url>
-          <line>143</line>
-          <properties />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/function/AuthUpdatedApplication.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/UserImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/service/CloudinaryService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Role.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/RoleForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding>
-            <element signature="e#194#195#0" expanded="true" />
-            <element signature="e#221#222#0" expanded="true" />
-            <element signature="e#261#262#0" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
-            <element signature="e#318#319#0" expanded="true" />
-            <element signature="e#343#344#0" expanded="true" />
-            <element signature="e#380#381#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.8/jackson-databind-2.9.8.jar!/com/fasterxml/jackson/databind/exc/InvalidDefinitionException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="60" selection-start-line="60" selection-end-line="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/5.1.4.RELEASE/spring-security-core-5.1.4.RELEASE.jar!/org/springframework/security/authentication/dao/DaoAuthenticationProvider.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -563,16 +520,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Comment.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/Repos/TagRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/Repos/SearchTShirts.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/config/HibernateSearchConfiguration.java" />
     <entry file="file://$PROJECT_DIR$/pom.xml">
@@ -653,19 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/TagForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#102#103#0" expanded="true" />
-            <element signature="e#133#134#0" expanded="true" />
-            <element signature="e#182#183#0" expanded="true" />
-            <element signature="e#222#223#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/function/Token.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
@@ -735,84 +669,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/TShirtForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Roles.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Tag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/Repos/TShirtRepo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="80" column="66" lean-forward="true" selection-start-line="80" selection-start-column="66" selection-end-line="80" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getUsersTshirts#0;class#TShirtController#0" />
-            <element signature="e#2306#2307#0" expanded="true" />
-            <element signature="e#2335#2336#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/config/WebSecurity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="36" selection-start-column="36" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="67" column="52" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#SignUp#0;class#UserService#0" />
-            <element signature="method#setRole#0;class#UserService#0" />
-            <element signature="method#deleteUser#0;class#UserService#0" />
-            <element signature="method#activateUser#0;class#UserService#0" />
-            <element signature="method#getActivity#0;class#UserService#0" />
-            <element signature="method#setActivity#0;class#UserService#0" />
-            <element signature="method#resetActivity#0;class#UserService#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -832,78 +692,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/ApplicationUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/TShirt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2187#2188#0" expanded="true" />
-            <element signature="e#2218#2219#0" expanded="true" />
-            <element signature="e#2259#2260#0" expanded="true" />
-            <element signature="e#2295#2296#0" expanded="true" />
-            <element signature="e#2354#2355#0" expanded="true" />
-            <element signature="e#2404#2405#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Comments.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="36" lean-forward="true" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#820#821#0" expanded="true" />
-            <element signature="e#872#873#0" expanded="true" />
-            <element signature="e#916#917#0" expanded="true" />
-            <element signature="e#952#953#0" expanded="true" />
-            <element signature="e#991#992#0" expanded="true" />
-            <element signature="e#1028#1029#0" expanded="true" />
-            <element signature="e#1061#1062#0" expanded="true" />
-            <element signature="e#1090#1091#0" expanded="true" />
-            <element signature="e#1120#1121#0" expanded="true" />
-            <element signature="e#1145#1146#0" expanded="true" />
-            <element signature="e#1180#1181#0" expanded="true" />
-            <element signature="e#1211#1212#0" expanded="true" />
-            <element signature="e#1259#1260#0" expanded="true" />
-            <element signature="e#1299#1300#0" expanded="true" />
-            <element signature="e#1333#1334#0" expanded="true" />
-            <element signature="e#1363#1364#0" expanded="true" />
-            <element signature="e#1409#1410#0" expanded="true" />
-            <element signature="e#1442#1443#0" expanded="true" />
-            <element signature="e#1492#1493#0" expanded="true" />
-            <element signature="e#1520#1521#0" expanded="true" />
-            <element signature="e#1573#1574#0" expanded="true" />
-            <element signature="e#1602#1603#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/Repos/CommentRepo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/CommentLike.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -920,19 +712,214 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/CommentLike.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="423">
+          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Tag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/Repos/TagRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/function/ArrayListFind.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/TagForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/TShirtForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/Repos/TShirtRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="67" lean-forward="true" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/config/WebSecurity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Comments.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1492#1493#0" expanded="true" />
+            <element signature="e#1520#1521#0" expanded="true" />
+            <element signature="e#1573#1574#0" expanded="true" />
+            <element signature="e#1602#1603#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/ApplicationUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/TShirt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/Repos/ProductRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/Repos/BasketRepo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="81" column="41" selection-start-line="81" selection-start-column="41" selection-end-line="81" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1197#1198#0" expanded="true" />
+            <element signature="e#1243#1244#0" expanded="true" />
+            <element signature="method#getUsersTshirts#0;class#TShirtController#0" />
+            <element signature="e#1522#1523#0" expanded="true" />
+            <element signature="e#1569#1570#0" expanded="true" />
+            <element signature="e#2824#2825#0" expanded="true" />
+            <element signature="e#2850#2851#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/ProductForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="141" selection-start-line="141" selection-end-line="141" />
+        <state relative-caret-position="404">
+          <caret line="182" column="78" selection-start-line="182" selection-start-column="78" selection-end-line="182" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#Create#0;class#TShirtService#0" />
             <element signature="method#setComment#0;class#TShirtService#0" />
-            <element signature="method#setTag#0;class#TShirtService#0" />
+            <element signature="method#getTags#0;class#TShirtService#0" />
             <element signature="method#getUsersTshirts#0;class#TShirtService#0" />
             <element signature="method#delete#0;class#TShirtService#0" />
             <element signature="method#deleteComment#0;class#TShirtService#0" />
             <element signature="method#setRating#0;class#TShirtService#0" />
+            <element signature="method#getRating#0;class#TShirtService#0" />
+            <element signature="method#setLike#0;class#TShirtService#0" />
+            <element signature="method#deleteFromBasket#0;class#TShirtService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="36" lean-forward="true" selection-start-column="36" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/Basket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#SignUp#0;class#UserService#0" />
+            <element signature="method#setRole#0;class#UserService#0" />
+            <element signature="method#deleteUser#0;class#UserService#0" />
+            <element signature="method#activateUser#0;class#UserService#0" />
+            <element signature="method#setActivity#0;class#UserService#0" />
+            <element signature="method#resetActivity#0;class#UserService#0" />
           </folding>
         </state>
       </provider>

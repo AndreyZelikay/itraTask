@@ -5,6 +5,6 @@ export interface TShirt {
 	description: String;
 	url: String;
 	name: String;
-	tags: String;
+	tags: String[];
 	comments: CommentModule[];
 }

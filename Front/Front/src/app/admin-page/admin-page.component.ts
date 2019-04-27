@@ -21,11 +21,23 @@ export class AdminPageComponent implements OnInit {
          this.Users = response;
      },
      (error) => {
-       alert('an error with get');
+         console.log(error);
      });
   }
   delete(id) {
-      this.loginService.DeleteUser(id);
+      this.loginService.DeleteUser(id).subscribe(
+          (res) => {
+              this.loginService.GetAll().subscribe(
+                  (response) => {
+                      this.Users = response;
+                  },
+                  (error) => {
+                      console.log(error);
+                  });
+          },
+          (error) => {
+              console.log(error);
+          });
   }
   changeRole(event: any) {
       this.ChosenRole = event.target.value;
@@ -35,15 +47,25 @@ export class AdminPageComponent implements OnInit {
           id: Id,
           role: this.ChosenRole
       };
-      this.loginService.SetRole(this.Role);
+      this.loginService.SetRole(this.Role).subscribe(
+          (res) => {
+              this.loginService.GetAll().subscribe(
+                  (response) => {
+                      this.Users = response;
+                  },
+                  (error) => {
+                      console.log(error);
+                  });
+          },
+          (error) => {
+              alert('an error with post');
+          });
       this.loginService.SetActive(Id).subscribe(
           (response) => {
-              location.reload();
           },
           (error1) => {
               alert('an error with post');
           }
       );
   }
-
 }

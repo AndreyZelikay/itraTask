@@ -5,6 +5,7 @@ import {Tag} from '../../MyModules/TagModule';
 import {Router} from '@angular/router';
 import {FormGroup} from '@angular/forms';
 import {Subject} from 'rxjs';
+import {BasketModule} from '../../MyModules/Basket.module';
 
 @Injectable({
   providedIn: 'root'
@@ -74,7 +75,24 @@ export class TShirtService {
         return this.http.get<number>(this.URL + '/feedback/rating/get/' + ID);
     }
 
-  public  setLike(ID: number, commentId: number) {
-      return this.http.post(this.URL + '/feedback/likes/set/' + ID, commentId);
+  public  setLike(commentId: number) {
+      return this.http.post(this.URL + '/feedback/likes/set', commentId);
+  }
+
+  public getBasket() {
+      return this.http.get<BasketModule>(this.URL  + '/basket/get');
+  }
+
+  public deleteFromBasket(id: number) {
+        return this.http.delete('/basket/del/' + id);
+  }
+
+  public setBasket(form: FormGroup) {
+      const requestBody: object = {};
+      const fields = Object.keys(form.controls);
+      for (const field of fields) {
+          requestBody[field] = form.controls[field].value;
+      }
+      return this.http.post(this.URL + '/basket/put', requestBody);
   }
 }

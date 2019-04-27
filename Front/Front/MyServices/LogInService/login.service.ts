@@ -48,22 +48,10 @@ export class LoginService {
     return this.http.get<LoginForm[]>(this.url + '/users/admin/all');
   }
   public DeleteUser(id: number) {
-    this.http.delete(this.url + '/users/admin/' + id).subscribe(
-        (res) => {
-         location.reload();
-      },
-        (error) => {
-          console.log(error);
-      });
+    return this.http.delete(this.url + '/users/admin/' + id);
   }
   public SetRole(role: RoleForm) {
-    this.http.post(this.url + '/users/admin/role', role).subscribe(
-      (response) => {
-          location.reload();
-      },
-      (error) => {
-           alert('an error with post');
-      });
+    return this.http.post(this.url + '/users/admin/role', role);
   }
   public getRole() {
     if (localStorage.getItem('token')) {

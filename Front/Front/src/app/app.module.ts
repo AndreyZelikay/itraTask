@@ -8,7 +8,7 @@ import {
     MatAutocompleteModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatFormFieldModule,
+    MatFormFieldModule, MatIconModule,
     MatInputModule,
 } from '@angular/material';
 import { TagCloudModule } from 'angular-tag-cloud-module';
@@ -29,7 +29,8 @@ import { ActivatePageComponent } from './activate-page/activate-page.component';
 import { SuccessfulRegistrationComponent } from './successful-registration/successful-registration.component';
 import { ConfirmPageComponent } from './confirm-page/confirm-page.component';
 import { ProfileComponent } from './profile/profile.component';
-import { AddCommentComponent } from './add-comment/add-comment.component';
+import {MatChipsModule} from '@angular/material';
+import { BasketComponent } from './basket/basket.component';
 
 const appRoutes: Routes = [
     {path: '', component: MainPageComponent},
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
     {path: 'login', component: LogInComponent},
     {path: 'registration', component: RegistrationComponent},
     {path: 'admin', component: AdminPageComponent, canActivate: [AuthGuard]},
-    {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]}
+    {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+    {path: 'basket', component: BasketComponent, canActivate: [AuthGuard]}
 ];
 
 export function tokenGetter() {
@@ -69,7 +71,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     SuccessfulRegistrationComponent,
     ConfirmPageComponent,
     ProfileComponent,
-    AddCommentComponent,
+    BasketComponent,
   ],
     imports: [
         BrowserModule,
@@ -85,7 +87,9 @@ const JWT_Module_Options: JwtModuleOptions = {
         MatFormFieldModule,
         MatAutocompleteModule,
         MatInputModule,
-        TagCloudModule
+        TagCloudModule,
+        MatChipsModule,
+        MatIconModule
     ],
   providers: [{
       provide : HTTP_INTERCEPTORS,

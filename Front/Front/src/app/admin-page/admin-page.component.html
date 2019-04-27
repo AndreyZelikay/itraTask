@@ -17,7 +17,7 @@
       <a href="#"><td>{{user.username}}</td></a>
       <td>{{user.email}}</td>
       <td>{{user.role}}</td>
-      <td><a class="btn btn-outline-primary" href="/AdminPage" (click)="delete(user.id)"><font style="vertical-align: inherit;">
+      <td><a class="btn btn-outline-primary" (click)="delete(user.id)"><font style="vertical-align: inherit;">
     <font style="vertical-align: inherit;">Delete</font></font></a></td>
     <td>
     	<div class="container-fluide">
@@ -35,7 +35,7 @@
 					</div>
 				</div>
 				<div class="col">
-					<a class="btn btn-outline-primary" href="/AdminPage" (click)="setRole(user.id)"><span style="vertical-align: inherit;">
+					<a class="btn btn-outline-primary" (click)="setRole(user.id)"><span style="vertical-align: inherit;">
 			    	<span style="vertical-align: inherit;">Set Role</span></span></a>
 			    </div>
 			</div>

@@ -16,7 +16,8 @@
 						<i *ngIf="!item" class="fa fa-star fa-2x"></i>
 					</a>
 					<h3>Tags:<br>
-					{{TShirt?.tags}}</h3>
+						<i *ngFor="let tag of TShirt?.tags">
+						{{tag.body}} </i></h3>
 					<h4>Sizes:</h4>
 					<table class="table table-borderless">
 						<thead>
@@ -24,18 +25,12 @@
 						<tbody>
 						<tr>
 							<div class="btn-group mr-2" role="group" aria-label="First group">
-								<button type="button" class="btn btn-secondary">XS</button>
-								<button type="button" class="btn btn-secondary">S</button>
-								<button type="button" class="btn btn-secondary">M</button>
-								<button type="button" class="btn btn-secondary">L</button>
+								<button *ngFor="let size of sizes1" type="button" class="btn btn-secondary" (click)="setSize(size)">{{size}}</button>
 							</div>
 						</tr>
 						<tr>
 							<div class="btn-group mr-2" role="group" aria-label="First group">
-								<button type="button" class="btn btn-secondary">Xl</button>
-								<button type="button" class="btn btn-secondary">XXl</button>
-								<button type="button" class="btn btn-secondary">XXXL</button>
-								<button type="button" class="btn btn-secondary">4XL</button>
+								<button *ngFor="let size of sizes2" type="button" class="btn btn-secondary" (click)="setSize(size)">{{size}}</button>
 							</div>
 						</tr>
 						</tbody>

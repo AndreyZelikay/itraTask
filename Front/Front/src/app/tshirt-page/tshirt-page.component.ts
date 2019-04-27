@@ -14,6 +14,7 @@ export class TShirtPageComponent implements OnInit {
     public TShirt: TShirt;
     public ID: number;
     public form: FormGroup = form;
+    public basketform: FormGroup;
     public isUserCanAddComment: boolean = true;
     public starList: boolean[] = [true, true, true, true, true ];
     public starListRating: boolean[] = [true, true, true, true, true ];
@@ -21,6 +22,9 @@ export class TShirtPageComponent implements OnInit {
     public tShirtRating: number;
     public isUserCanSetRating: boolean = true;
     public isUserCanSetLike: boolean = true;
+    public sizes1: string[] = [ 'XS', 'S', 'M', 'L'];
+    public sizes2: string[] = ['XL', 'XXl', 'XXXL', '4XL'];
+    public size: string;
 
     constructor(private tshirtService: TShirtService, private route: ActivatedRoute, private fb: FormBuilder) {
     }
@@ -30,10 +34,9 @@ export class TShirtPageComponent implements OnInit {
         this.tshirtService.GetOneTShirt(this.ID).subscribe(
             res => {
                 this.TShirt = res;
-                console.log(this.TShirt);
             },
             err => {
-                this.isUserCanAddComment = false;
+               console.log(err);
             });
         this.form = this.fb.group({
             comment: [null],
@@ -54,6 +57,13 @@ export class TShirtPageComponent implements OnInit {
         if (this.form.valid) {
             this.tshirtService.addComment(this.form).subscribe(
                 (response) => {
+                    this.tshirtService.GetOneTShirt(this.ID).subscribe(
+                        res => {
+                            this.TShirt = res;
+                        },
+                        err => {
+                            console.log(err);
+                        });
                 },
                 (error) => {
                     this.isUserCanAddComment = false;
@@ -66,6 +76,13 @@ export class TShirtPageComponent implements OnInit {
         this.tshirtService.deleteComment(this.ID).subscribe(
             (response) => {
                 this.isUserCanAddComment = true;
+                this.tshirtService.GetOneTShirt(this.ID).subscribe(
+                    res => {
+                        this.TShirt = res;
+                    },
+                    err => {
+                        console.log(err);
+                    });
             },
             (error) => {
                 this.isUserCanAddComment = false;
@@ -83,9 +100,22 @@ export class TShirtPageComponent implements OnInit {
             }
         }
     }
+    public setSize(size: string) {
+       this.size = size;
+    }
     public setRating() {
         this.tshirtService.setRating(this.ID, this.rating).subscribe(
-            (response) => {},
+            (res) => {
+                this.tshirtService.getRating(this.ID).subscribe(
+                    (response) => {
+                        this.tShirtRating = response;
+                        for (var i = 0; i < this.tShirtRating; i++)
+                            this.starList[i] = false;
+                    },
+                    (error) => {
+                        console.log(error);
+                    });
+            },
             (error) => {
                 console.log(error);
             }
@@ -93,13 +123,27 @@ export class TShirtPageComponent implements OnInit {
         this.isUserCanSetRating = false;
     }
     public setLike(commentId) {
-        this.tshirtService.setLike(this.ID, commentId).subscribe(
+        this.tshirtService.setLike(commentId).subscribe(
             (response) => {
                 this.isUserCanSetLike = true;
+                this.tshirtService.GetOneTShirt(this.ID).subscribe(
+                    res => {
+                        this.TShirt = res;
+                    },
+                    err => {
+                        console.log(err);
+                    });
             },
             (error) => {
                 this.isUserCanSetLike = false;
             }
         );
+    }
+    public toBasket() {
+        this.basketform = this.fb.group({
+            sizes: this.size,
+            tShirtID: this.ID
+            });
+        this.tshirtService.setBasket(this.basketform).subscribe();
     }
 }

@@ -13,9 +13,10 @@
   <nav class="my-2 my-md-0 mr-md-3">
     <a class="p-2 text-dark" [routerLink]="['']"><span style="vertical-align: inherit;"><span
             style="vertical-align: inherit;">Home</span></span></a>
-    <a *ngIf="isAuthorized && role == 'USER'" class="p-2 text-dark" [routerLink]="['/add']"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Create your design</span></span></a>
+    <a *ngIf="isAuthorized && role == 'USER'" class="p-2 text-dark" [routerLink]="['add']"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Create your design</span></span></a>
     <a *ngIf="isAuthorized && role == 'ADMIN'" class="p-2 text-dark" [routerLink]="['admin']"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Admin page</span></span></a>
     <a *ngIf="isAuthorized && role == 'USER'" class="p-2 text-dark" [routerLink]="['profile']"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">profile</span></span></a>
+    <a *ngIf="isAuthorized && role == 'USER'" class="p-2 text-dark" [routerLink]="['basket']"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Basket</span></span></a>
   </nav>
   <a *ngIf="!isAuthorized"
      class="btn btn-outline-primary" href="/login"><span style="vertical-align: inherit;">

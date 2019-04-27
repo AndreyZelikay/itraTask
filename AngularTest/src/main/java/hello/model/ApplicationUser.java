@@ -1,10 +1,8 @@
 package hello.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.List;
 
 @Entity
@@ -23,6 +21,17 @@ public class ApplicationUser {
 
     @OneToMany(mappedBy = "applicationUser")
     private List<TShirt> TShirts;
+
+    @OneToOne
+    private Basket basket;
+
+    public Basket getBasket() {
+        return basket;
+    }
+
+    public void setBasket(Basket basket) {
+        this.basket = basket;
+    }
 
     public List<TShirt> getTShirts() {
         return TShirts;
