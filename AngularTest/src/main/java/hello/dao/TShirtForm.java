@@ -5,6 +5,15 @@ public class TShirtForm {
     private String Description;
     private String Name;
     private String[] tags;
+    private String theme;
+
+    public String getTheme() {
+        return theme;
+    }
+
+    public void setTheme(String theme) {
+        this.theme = theme;
+    }
 
     public String[] getTags() {
         return tags;

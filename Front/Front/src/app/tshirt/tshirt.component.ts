@@ -4,10 +4,12 @@ import {TShirtService} from '../../../MyServices/TShirtService/tshirt-service.se
 declare var $: any;
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {ElementRef, ViewChild} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {MatAutocompleteSelectedEvent, MatChipInputEvent, MatAutocomplete} from '@angular/material';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import {form} from '../registration/registration.form';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-tshirt',
@@ -16,19 +18,21 @@ import {map, startWith} from 'rxjs/operators';
 })
 export class TShirtComponent implements OnInit {
 
-  constructor(private tshirtService: TShirtService) {
+  constructor(private tshirtService: TShirtService, private fb: FormBuilder, private router: Router) {
       this.filteredTags = this.tagCtrl.valueChanges.pipe(
           startWith(null),
           map((tag: string | null) => tag ? this._filter(tag) : this.alltags.slice()));
   }
-
+    public form: FormGroup = form;
     public	TShirt: TShirt;
     public  ImgUrl: string;
-    separatorKeysCodes: number[] = [ENTER, COMMA];
-    tagCtrl = new FormControl();
-    filteredTags: Observable<string[]>;
-    tags: string[] = [];
-    alltags: string[] = [];
+    public separatorKeysCodes: number[] = [ENTER, COMMA];
+    public tagCtrl = new FormControl();
+    public filteredTags: Observable<string[]>;
+    public tags: string[] = [];
+    public alltags: string[] = [];
+    public selectedTheme: string;
+    public themes: string[] = ['hipster', 'science', 'sport', 'history', 'premium'];
 
     @ViewChild('tagInput') tagInput: ElementRef<HTMLInputElement>;
     @ViewChild('auto') matAutocomplete: MatAutocomplete;
@@ -59,19 +63,35 @@ export class TShirtComponent implements OnInit {
          (error) => {
             console.log(error);
          });
+     this.form = this.fb.group({
+          Description: [null],
+          Name: [null],
+          url: [null],
+          tags: [null],
+          theme: [null]
+      });
   }
 
-  createTShirt(Description, Name, Tags) {
+  createTShirt() {
     this.ImgUrl = $('#meme').memeGenerator('save');
-    this.TShirt = {
-        id: 0,
-        description: Description,
+    this.form.setValue({
         url: this.ImgUrl,
         tags: this.tags,
-        name: Name,
-        comments: []
-    };
-    this.tshirtService.CreateTShirt(this.TShirt);
+        theme: this.selectedTheme
+    });
+    this.form.updateValueAndValidity({
+        url: this.ImgUrl,
+        tags: this.tags,
+        theme: this.selectedTheme
+    });
+    this.tshirtService.CreateTShirt(this.form).subscribe(
+        res => {
+            this.router.navigate(['profile']);
+        },
+        err => {
+            alert('an error whith create');
+        }
+    );;
   }
 
   public add(event: MatChipInputEvent): void {

@@ -45,13 +45,13 @@ export class LoginService {
     return this.http.post(this.url + '/users/sign-up', requestBody);
   }
   public GetAll() {
-    return this.http.get<LoginForm[]>(this.url + '/users/admin/all');
+    return this.http.get<LoginForm[]>(this.url + '/admin/all');
   }
   public DeleteUser(id: number) {
-    return this.http.delete(this.url + '/users/admin/' + id);
+    return this.http.delete(this.url + '/admin/' + id);
   }
   public SetRole(role: RoleForm) {
-    return this.http.post(this.url + '/users/admin/role', role);
+    return this.http.post(this.url + '/admin/role', role);
   }
   public getRole() {
     if (localStorage.getItem('token')) {

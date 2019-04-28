@@ -23,6 +23,8 @@ public class TShirt {
     private String Description;
     @Field
     private String Name;
+    @Field
+    private String theme;
 
     private Integer Rating;
     private Integer counterRating;
@@ -120,4 +122,13 @@ public class TShirt {
     public void setCounterRating(Integer counterRating) {
         this.counterRating = counterRating;
     }
+
+    public String getTheme() {
+        return theme;
+    }
+
+    public void setTheme(String theme) {
+        this.theme = theme;
+    }
+
 }

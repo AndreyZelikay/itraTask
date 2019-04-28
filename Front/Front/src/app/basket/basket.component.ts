@@ -10,8 +10,7 @@ import {BasketModule} from '../../../MyModules/Basket.module';
 export class BasketComponent implements OnInit {
 
   public basket: BasketModule;
-  public number: number;
-  public price: number;
+  public number: number = 1;
   public isBasketEmpty: boolean = true;
   constructor(private tShirtService: TShirtService) {}
 
@@ -25,7 +24,7 @@ export class BasketComponent implements OnInit {
         });
   }
 
-  public deleteFromBasket(id: number){
+  public deleteFromBasket(id: number) {
     this.tShirtService.deleteFromBasket(id).subscribe(
         (res) => {
           this.tShirtService.getBasket().subscribe(
@@ -40,5 +39,4 @@ export class BasketComponent implements OnInit {
           console.log(error);
         });
   }
-
 }

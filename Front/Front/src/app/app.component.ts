@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   public isAuthorized = false;
   public role: string;
   public myControl = new FormControl();
-  public options: string[] = ['One', 'Two', 'Three'];
+  public options: string[] = [];
   public filteredOptions: Observable<string[]>;
   public searchedTshirt: TShirt[];
   public isSearchNow: boolean = false;

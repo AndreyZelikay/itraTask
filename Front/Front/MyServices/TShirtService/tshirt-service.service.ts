@@ -11,47 +11,52 @@ import {BasketModule} from '../../MyModules/Basket.module';
   providedIn: 'root'
 })
 export class TShirtService {
-    private URL = 'http://localhost:8080/TShirts';
+    private tShirtUrl = 'http://localhost:8080/TShirts';
+    private feedBackUrl = 'http://localhost:8080/feedback';
+    private adminUrl = 'http://localhost:8080/admin';
+    private searchUrl = 'http://localhost:8080/search';
+    private basketUrl = 'http://localhost:8080/basket';
 
   constructor(private http: HttpClient, private router: Router) { }
 
   public comment = new Subject<any>();
-  public onCommentChanged$ = this.comment.asObservable();
 
-  public CreateTShirt(TShirt: TShirt) {
-      this.http.post(this.URL + '/add', TShirt).subscribe(
-          res => {
-          location.reload();
-          },
-        err => {
-          alert('an error whith create');
-          }
-     );
-      this.router.navigate(['profile']);
+  public CreateTShirt(form: FormGroup) {
+      const requestBody: object = {};
+      const fields = Object.keys(form.controls);
+      for (const field of fields) {
+          requestBody[field] = form.controls[field].value;
+      }
+      console.log(requestBody);
+      return this.http.post(this.tShirtUrl + '/add', requestBody);
   }
 
   public GetAllTShirt() {
-      return this.http.get<TShirt[]>(this.URL + '/all');
+      return this.http.get<TShirt[]>(this.tShirtUrl + '/all');
   }
 
   public GetOneTShirt(id: number) {
-    return this.http.get<TShirt>(this.URL + '/TShirt/' + id);
+    return this.http.get<TShirt>(this.tShirtUrl + '/TShirt/' + id);
   }
 
   public getAllTags() {
-      return this.http.get<Tag[]>(this.URL + '/tag/all');
+      return this.http.get<Tag[]>(this.feedBackUrl + '/tag/all');
   }
 
   public searchTshirt(searchParam: string) {
-      return this.http.post<TShirt[]>('http://localhost:8080/search/tshirt', searchParam);
+      return this.http.post<TShirt[]>(this.searchUrl + '/tshirt', searchParam);
   }
 
   public getUsersThirt() {
-   return  this.http.get<TShirt[]>(this.URL + '/user/tshirts');
+   return  this.http.get<TShirt[]>(this.tShirtUrl + '/user/tshirts');
+  }
+
+  public getUsersTshirtByAdmin(id: number) {
+      return this.http.get<TShirt[]>(this.adminUrl + '/user/' + id + '/tshirts');
   }
 
   public deleteTshirt(id: number) {
-   return this.http.delete(this.URL + '/delete/' + id);
+   return this.http.delete(this.tShirtUrl + '/delete/' + id);
   }
 
   public addComment(form: FormGroup) {
@@ -60,31 +65,31 @@ export class TShirtService {
       for (const field of fields) {
           requestBody[field] = form.controls[field].value;
       }
-      return this.http.post(this.URL + '/comments/add', requestBody);
+      return this.http.post(this.feedBackUrl + '/comments/add', requestBody);
   }
 
   public deleteComment(ID: number) {
-      return this.http.delete(this.URL + '/comments/del/' + ID);
+      return this.http.delete(this.feedBackUrl + '/comments/del/' + ID);
   }
 
   public setRating(id: number, rating) {
-      return this.http.post(this.URL + '/feedback/rating/set/' + id, rating);
+      return this.http.post(this.feedBackUrl + '/feedback/rating/set/' + id, rating);
   }
 
   public getRating(ID: number) {
-        return this.http.get<number>(this.URL + '/feedback/rating/get/' + ID);
+        return this.http.get<number>(this.feedBackUrl + '/feedback/rating/get/' + ID);
     }
 
   public  setLike(commentId: number) {
-      return this.http.post(this.URL + '/feedback/likes/set', commentId);
+      return this.http.post(this.feedBackUrl + '/feedback/likes/set', commentId);
   }
 
   public getBasket() {
-      return this.http.get<BasketModule>(this.URL  + '/basket/get');
+      return this.http.get<BasketModule>(this.basketUrl  + '/get');
   }
 
   public deleteFromBasket(id: number) {
-        return this.http.delete('/basket/del/' + id);
+        return this.http.delete(this.basketUrl + '/delete/' + id);
   }
 
   public setBasket(form: FormGroup) {
@@ -93,6 +98,6 @@ export class TShirtService {
       for (const field of fields) {
           requestBody[field] = form.controls[field].value;
       }
-      return this.http.post(this.URL + '/basket/put', requestBody);
+      return this.http.post(this.basketUrl + '/put', requestBody);
   }
 }

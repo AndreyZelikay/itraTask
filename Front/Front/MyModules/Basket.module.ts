@@ -4,5 +4,6 @@ export interface BasketModule {
     products: {
         tShirt: TShirt,
         size: string,
+        id: number
     }[];
 }

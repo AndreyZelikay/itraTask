@@ -33,7 +33,7 @@ public class HibernateSearchService {
         Query TShirtWildcardQuery = TShirt
                 .keyword()
                 .wildcard()
-                .onFields("Name","Description","Tags.body","Comments.Comment")
+                .onFields("Name","Description","Comments.Comment","theme")
                 .matching(searchTerm)
                 .createQuery();
         FullTextQuery fullTextQuery = fullTextEntityManager.createFullTextQuery(TShirtWildcardQuery , TShirt.class);

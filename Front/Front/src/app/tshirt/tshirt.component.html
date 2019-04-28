@@ -6,20 +6,29 @@
   <div class="row">
     <div class="offset-3"></div>
     <div class="col-md-6">
-      <form name="form" #f="ngForm" >
-        <div class="form-group">
+      <div class="form-group">
+      <form   [formGroup]="form">
           <label >Name</label><br>
-          <input type="text" #name><br>
+          <input class="form-control"
+                 id="comment"
+                 formControlName="Name"
+                 placeholder="Input name*"/>
+          <label >Theme</label><br>
+              <mat-form-field>
+                <mat-select [(value)]="selectedTheme">
+                  <mat-option>None</mat-option>
+                  <mat-option *ngFor="let theme of themes" value="theme">{{theme}}</mat-option>
+                </mat-select>
+              </mat-form-field><br>
           <label >Description</label>
           <textarea
-            class="form-control"
-            name="feedback"
-            placeholder="Your description"
-            #feedback
-            rows="7">
-        </textarea>
-        </div>
-        <button type="submit" class="btn btn-info pull-right" (click)="createTShirt(feedback.value,name.value,'')">
+                  class="form-control"
+                  rows="5"
+                  id="description"
+                  formControlName="Description"
+                  placeholder="Input smth*">
+          </textarea>
+        <button type="submit" class="btn btn-success" (click)="createTShirt()">
           <i class="fa fa-envelope-o"></i>
           <span> Save </span>
         </button>

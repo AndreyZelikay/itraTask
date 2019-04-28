@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.util.List;
 
 @Service
 public class UserService {
@@ -24,8 +23,6 @@ public class UserService {
     private  UserRegistrationSuccess registrationSuccess;
     @Autowired
     private Token token;
-    @Autowired
-    private JsonString jsonString;
 
     public ResponseEntity SignUp(UserForm userForm) {
         JsonString jsonString= new JsonString();
@@ -48,21 +45,6 @@ public class UserService {
             }
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         }
-    }
-
-    public List<ApplicationUser> getAll(){
-        return userRepo.findAll();
-    }
-
-    public ApplicationUser setRole(RoleForm roleForm){
-        ApplicationUser user=userRepo.getOne(roleForm.getId());
-        user.setRole(roleForm.getRole());
-        return userRepo.save(user);
-    }
-
-    public ResponseEntity deleteUser(Integer id){
-        userRepo.deleteById(id);
-        return ResponseEntity.status(HttpStatus.OK).body(null);
     }
 
     public ResponseEntity activateUser(String code) {
