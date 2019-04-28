@@ -33,7 +33,7 @@ import {MatChipsModule} from '@angular/material';
 import { BasketComponent } from './basket/basket.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { ManageUserProfileComponent } from './manage-user-profile/manage-user-profile.component';
-import { ToastUiImageEditorModule } from 'ngx-tui-image-editor';
+import { ToastUiImageEditorModule } from 'zelikov-ngx-tui-image-editor';
 
 const appRoutes: Routes = [
     {path: '', component: MainPageComponent},
