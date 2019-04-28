@@ -29,10 +29,10 @@
     "jquery": "^1.12.4",
     "jquery-meme-generator": "^1.0.4",
     "jquery-ui-1-11-4": "^1.11.4",
+    "material-design-icons": "^3.0.1",
     "rxjs": "~6.3.3",
     "rxjs-compat": "^6.5.1",
     "tslib": "^1.9.0",
-    "zelikov-ngx-tui-image-editor": "^7.0.5",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

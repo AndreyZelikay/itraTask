@@ -33,7 +33,7 @@ import {MatChipsModule} from '@angular/material';
 import { BasketComponent } from './basket/basket.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { ManageUserProfileComponent } from './manage-user-profile/manage-user-profile.component';
-import { ToastUiImageEditorModule } from 'zelikov-ngx-tui-image-editor';
+import { RefactorTshirtComponent } from './refactor-tshirt/refactor-tshirt.component';
 
 const appRoutes: Routes = [
     {path: '', component: MainPageComponent},
@@ -48,7 +48,8 @@ const appRoutes: Routes = [
     {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
     {path: 'basket', component: BasketComponent, canActivate: [AuthGuard]},
     {path: 'basket/pay', component: BasketComponent},
-    {path: 'profile/:id', component: ManageUserProfileComponent, canActivate: [AuthGuard]}
+    {path: 'profile/:id', component: ManageUserProfileComponent, canActivate: [AuthGuard]},
+    {path: 'refactor/:id', component: RefactorTshirtComponent, canActivate: [AuthGuard]}
 ];
 
 export function tokenGetter() {
@@ -79,6 +80,7 @@ const JWT_Module_Options: JwtModuleOptions = {
     BasketComponent,
     PaymentPageComponent,
     ManageUserProfileComponent,
+    RefactorTshirtComponent
   ],
     imports: [
         BrowserModule,
@@ -98,7 +100,6 @@ const JWT_Module_Options: JwtModuleOptions = {
         MatChipsModule,
         MatIconModule,
         MatSelectModule,
-        ToastUiImageEditorModule
     ],
   providers: [{
       provide : HTTP_INTERCEPTORS,

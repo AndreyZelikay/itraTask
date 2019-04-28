@@ -2,6 +2,7 @@ package hello.dao;
 
 public class TShirtForm {
     private String url;
+    private String json;
     private String Description;
     private String Name;
     private String[] tags;
@@ -9,6 +10,14 @@ public class TShirtForm {
 
     public String getTheme() {
         return theme;
+    }
+
+    public String getJson() {
+        return json;
+    }
+
+    public void setJson(String json) {
+        this.json = json;
     }
 
     public void setTheme(String theme) {

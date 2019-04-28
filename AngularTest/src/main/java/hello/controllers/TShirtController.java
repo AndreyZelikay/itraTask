@@ -47,4 +47,9 @@ public class TShirtController {
     public ResponseEntity deleteTshirt(@PathVariable ( "id" ) int id){
         return tShirtService.delete(id);
     }
+
+    @PostMapping("/update/{id}")
+    public TShirt updateTShirt(@PathVariable ( "id" ) int id, @RequestBody TShirtForm tShirtForm, HttpServletRequest request){
+        return this.tShirtService.updateTShirt(tShirtForm,request,id);
+    }
 }

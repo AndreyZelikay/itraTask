@@ -1,0 +1,99 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<h1 align="center">T-Shirt creating</h1>
+<div class="container-fluide">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col">
+      <form>
+        <label >Name</label><br>
+        <input class="form-control"
+               id="comment"
+               [(ngModel)]="name"
+               name="name"
+               value = {{tShirt?.name}}
+               placeholder="Input name*"/>
+      </form>
+    </div>
+    <div class="col-lg-4"></div>
+    <div class="w-100"></div>
+    <div class="col-lg-2"></div>
+    <div class="col">
+      <img src='assets/T-ShirtsModels/Male.png' id="meme">
+    </div>
+    <div class="col-lg-2"></div>
+    <div class="w-100"></div>
+    <div class="col-lg-4"></div>
+    <div class="col">
+      <div class="form-group">
+        <form>
+              <label >Theme</label><br>
+              <mat-form-field>
+                <mat-select [(value)]="selectedTheme">
+                  <mat-option>None</mat-option>
+                  <mat-option *ngFor="let theme of themes" value="theme">{{theme}}</mat-option>
+                </mat-select>
+              </mat-form-field><br>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col">
+                <label >Tags</label>
+                <mat-form-field class="chip-list">
+                  <mat-chip-list #chipList>
+                    <mat-chip
+                            *ngFor="let tag of tags"
+                            [selectable]="true"
+                            [removable]="true"
+                            (removed)="remove(tag)"
+                            color="accent"
+                            selected>
+                      {{tag}}
+                      <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip>
+                    <input
+                            placeholder="New tag..."
+                            #tagInput
+                            [formControl]="tagCtrl"
+                            [matAutocomplete]="auto"
+                            [matChipInputFor]="chipList"
+                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                            [matChipInputAddOnBlur]="true"
+                            (matChipInputTokenEnd)="add($event)">
+                  </mat-chip-list>
+                  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                    <mat-option *ngFor="let tag of filteredTags | async" [value]="tag">
+                      {{tag}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </mat-form-field>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                <label >Description</label>
+                <textarea
+                        class="form-control"
+                        rows="5"
+                        id="description"
+                        [(ngModel)]="descr"
+                        name="descr"
+                        placeholder="Input smth*">{{tShirt?.description}}
+                        </textarea>
+                <div class="row">
+                </div>
+                  <div class="w-100"></div>
+                  <div class="col-lg-5"></div>
+                  <div class="col">
+                    <button type="submit" class="btn-lg btn-success" (click)="updateTShirt()">
+                      <span>   Save  </span>
+                    </button>
+                  </div>
+                  <div class="col-lg-5"></div>
+                </div>
+              </div>
+            </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>

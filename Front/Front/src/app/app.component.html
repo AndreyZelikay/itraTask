@@ -19,11 +19,11 @@
     <a *ngIf="isAuthorized && role == 'USER'" class="p-2 text-dark" [routerLink]="['basket']"><span style="vertical-align: inherit;"><span style="vertical-align: inherit;">Basket</span></span></a>
   </nav>
   <a *ngIf="!isAuthorized"
-     class="btn btn-outline-primary" href="/login"><span style="vertical-align: inherit;">
+     class="btn btn-outline-primary" [routerLink]="['/login']"><span style="vertical-align: inherit;">
   	<span style="vertical-align: inherit;">Log In</span></span>
   </a>
   <a *ngIf="isAuthorized"
-     class="btn btn-outline-primary" href="/login"><span style="vertical-align: inherit;" (click)="singOut()" >
+     class="btn btn-outline-primary" [routerLink]="['/login']"><span style="vertical-align: inherit;" (click)="singOut()" >
   	<span style="vertical-align: inherit;">Log out</span></span>
   </a>
 </div>

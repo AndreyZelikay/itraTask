@@ -7,16 +7,16 @@ import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {MatAutocompleteSelectedEvent, MatChipInputEvent, MatAutocomplete} from '@angular/material';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
-import {form} from '../registration/registration.form';
 import {Router} from '@angular/router';
 
 declare var $: any;
 
 @Component({
-  selector: 'app-tshirt',
-  templateUrl: './tshirt.component.html',
-  styleUrls: ['./tshirt.component.css']
+    selector: 'app-tshirt',
+    templateUrl: './tshirt.component.html',
+    styleUrls: ['./tshirt.component.css']
 })
+
 export class TShirtComponent implements OnInit {
 
   constructor(private tshirtService: TShirtService, private fb: FormBuilder, private router: Router) {
@@ -24,9 +24,12 @@ export class TShirtComponent implements OnInit {
           startWith(null),
           map((tag: string | null) => tag ? this._filter(tag) : this.alltags.slice()));
   }
-    public form: FormGroup = form;
+    public name: string;
+    public form: FormGroup;
+    public descr: string;
     public	TShirt: TShirt;
     public  ImgUrl: string;
+    public json: string;
     public separatorKeysCodes: number[] = [ENTER, COMMA];
     public tagCtrl = new FormControl();
     public filteredTags: Observable<string[]>;
@@ -37,7 +40,6 @@ export class TShirtComponent implements OnInit {
 
     @ViewChild('tagInput') tagInput: ElementRef<HTMLInputElement>;
     @ViewChild('auto') matAutocomplete: MatAutocomplete;
-
   ngOnInit() {
      $(document).ready( function() {
             $('#meme').memeGenerator({
@@ -64,32 +66,27 @@ export class TShirtComponent implements OnInit {
          (error) => {
             console.log(error);
          });
-     this.form = this.fb.group({
-          Description: [null],
-          Name: [null],
-          url: [null],
-          tags: [null],
-          theme: [null]
-      });
   }
 
   createTShirt() {
     this.ImgUrl = $('#meme').memeGenerator('save');
-    this.form.setValue({
-        Description: [null],
-        Name: [null],
-        url: this.ImgUrl,
-        tags: this.tags,
-        theme: this.selectedTheme
-    });
-    this.tshirtService.CreateTShirt(this.form).subscribe(
+    this.json = $('#meme').memeGenerator('serialize');
+      const requestBody: object = {
+          description: this.descr,
+          name: this.name,
+          url: this.ImgUrl,
+          tags: this.tags,
+          theme: this.selectedTheme,
+          json: this.json
+      };
+    this.tshirtService.CreateTShirt(requestBody).subscribe(
         res => {
             this.router.navigate(['profile']);
         },
         err => {
             alert('an error whith create');
         }
-    );;
+    );
   }
 
   public add(event: MatChipInputEvent): void {

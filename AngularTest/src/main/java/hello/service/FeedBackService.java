@@ -82,11 +82,14 @@ public class FeedBackService {
 
     public Integer getRating(int id) {
         TShirt tShirt = tShirtRepo.getOne(id);
-        Integer counter = 0;
-        for (Rating rating : tShirt.getRatings()){
-            counter +=rating.getRating();
+        if(tShirt.getRatings().size()!= 0) {
+            Integer counter = 0;
+            for (Rating rating : tShirt.getRatings()) {
+                counter += rating.getRating();
+            }
+            return counter / tShirt.getRatings().size();
         }
-        return counter/tShirt.getRatings().size();
+        return 0;
     }
 
     public ResponseEntity setLike(Integer commentId, HttpServletRequest httpRequest) {

@@ -30,13 +30,13 @@ public class TShirtService {
     }
 
     public TShirt Create(TShirtForm tShirtForm, HttpServletRequest request){
-        Token token=new Token();
         TShirt tShirt=new TShirt();
         ArrayList<Tag> tags = new ArrayList<Tag>();
         tShirt.setUrl(tShirtForm.getUrl());
         tShirt.setDescription(tShirtForm.getDescription());
         tShirt.setName(tShirtForm.getName());
         tShirt.setTheme(tShirtForm.getTheme());
+        tShirt.setJson(tShirtForm.getJson());
         tShirt.setApplicationUser(userRepo.findByUsername(token.readToken(request)));
         tShirtRepo.save(tShirt);
         for (String name: tShirtForm.getTags()){
@@ -69,5 +69,26 @@ public class TShirtService {
         }
         tShirtRepo.deleteById(id);
         return ResponseEntity.status(HttpStatus.OK).body(null);
+    }
+
+    public TShirt updateTShirt(TShirtForm tShirtForm, HttpServletRequest request,Integer id) {
+        TShirt tShirt = tShirtRepo.getOne(id);
+        ArrayList<Tag> tags = new ArrayList<Tag>();
+        tShirt.setUrl(tShirtForm.getUrl());
+        tShirt.setDescription(tShirtForm.getDescription());
+        tShirt.setName(tShirtForm.getName());
+        tShirt.setTheme(tShirtForm.getTheme());
+        tShirt.setJson(tShirtForm.getJson());
+        tShirt.setApplicationUser(userRepo.findByUsername(token.readToken(request)));
+        tShirtRepo.save(tShirt);
+        for (String name: tShirtForm.getTags()){
+            Tag tag = new Tag();
+            tag.settShirt(tShirt);
+            tag.setBody(name);
+            tagRepo.save(tag);
+            tags.add(tag);
+        }
+        tShirt.setTags(tags);
+        return tShirtRepo.save(tShirt);
     }
 }

@@ -1,6 +1,7 @@
 package hello.controllers;
 
 import hello.dao.RoleForm;
+import hello.dao.TShirtForm;
 import hello.model.ApplicationUser;
 import hello.model.TShirt;
 import hello.service.AdminService;
@@ -31,5 +32,9 @@ public class AdminController {
     @GetMapping("/user/{id}/tshirts")
     public List<TShirt> getUsersTShirts(@PathVariable( "id" ) int id){
         return this.adminService.getUsersTShirts(id);
+    }
+    @PostMapping("/user/{id}/tshirts")
+    public TShirt updateTshirtByAdmin(@PathVariable( "id" ) int id, TShirtForm tShirtForm){
+        return this.adminService.updateTshirtByAdmin(id,tShirtForm);
     }
 }

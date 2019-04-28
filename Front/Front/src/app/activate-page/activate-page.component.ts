@@ -24,7 +24,7 @@ export class ActivatePageComponent implements OnInit {
           this.uid = response['uid'];
           console.log(this.uid);
           this.loginService.activateUser(this.uid).subscribe(
-              (response) => {
+              (res) => {
                 this.isActivated  = true;
                 this.loading = false;
               },

@@ -13,7 +13,7 @@ export class MainPageComponent implements OnInit {
 
     public TShirts: TShirt[];
     public role: string;
-    public starList: boolean[][] = [];
+    public starList: boolean[];
 
   constructor(private tshirtService: TShirtService, private loginService: LoginService) { }
 
@@ -21,17 +21,15 @@ export class MainPageComponent implements OnInit {
       this.tshirtService.GetAllTShirt().subscribe(
           (res) => {
            this.TShirts = res;
-           for (var i = 0; i < this.TShirts.length; i++) {
-               this.tshirtService.getRating(this.TShirts[i].id).subscribe(
-                   (response) => {
-                       for (var j = 0; j < response; j++)
-                           this.starList[i][j] = false;
-                   },
-                   (error) => {
-                       console.log(error);
-                   });
-            }
-            },
+           for(var i = 0; i < res.length; i++) {
+               var result: number = 0;
+               for(var j = 0; j < res[i].ratings.length; j++)
+                result += res[i].ratings[j].rating;
+               this.TShirts[i].rating = result/res[i].ratings.length;
+               console.log(this.TShirts[i].rating);
+           }
+              console.log(this.TShirts[0].rating);
+           },
           (err) => {
                 console.log(err);
         });

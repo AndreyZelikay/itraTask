@@ -19,6 +19,9 @@ public class TShirt {
 
     @Column( length = 100000 )
     private String url;
+    @Column( length = 1000)
+    private String json;
+
     @Field
     private String Description;
     @Field
@@ -121,6 +124,13 @@ public class TShirt {
 
     public void setTheme(String theme) {
         this.theme = theme;
+    }
+    public String getJson() {
+        return json;
+    }
+
+    public void setJson(String json) {
+        this.json = json;
     }
 
 }

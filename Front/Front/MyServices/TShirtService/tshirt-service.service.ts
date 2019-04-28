@@ -21,12 +21,7 @@ export class TShirtService {
 
   public comment = new Subject<any>();
 
-  public CreateTShirt(form: FormGroup) {
-      const requestBody: object = {};
-      const fields = Object.keys(form.controls);
-      for (const field of fields) {
-          requestBody[field] = form.controls[field].value;
-      }
+  public CreateTShirt(requestBody) {
       console.log(requestBody);
       return this.http.post(this.tShirtUrl + '/add', requestBody);
   }
@@ -100,4 +95,8 @@ export class TShirtService {
       }
       return this.http.post(this.basketUrl + '/put', requestBody);
   }
+
+  public updateTshirt(requestBody: object, id: number) {
+        return this.http.post(this.tShirtUrl + '/update/' + id, requestBody);
+    }
 }

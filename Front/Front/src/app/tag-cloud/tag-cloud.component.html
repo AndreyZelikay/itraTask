@@ -1,8 +1,4 @@
-<div>
-    <angular-tag-cloud
-            [data]= "data"
-            [width]="options.width"
-            [height]="options.height"
-            [overflow]="options.overflow">
-    </angular-tag-cloud>
+<h3>Tags:</h3>
+<div class="btn-group" role="group" aria-label="Basic example">
+    <button *ngFor="let tag of tags" type="button" class="btn btn-secondary" style="width:tag.number;50px">{{tag.body}}</button>
 </div>
