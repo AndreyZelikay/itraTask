@@ -1,5 +1,7 @@
 package hello.service;
 
+import hello.Repos.CommentLikeRepo;
+import hello.Repos.CommentRepo;
 import hello.Repos.UserRepo;
 import hello.dao.RoleForm;
 import hello.dao.UserForm;
@@ -7,6 +9,7 @@ import hello.function.JsonString;
 import hello.function.Token;
 import hello.function.UserRegistrationSuccess;
 import hello.model.ApplicationUser;
+import hello.model.CommentLike;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +26,12 @@ public class UserService {
     private  UserRegistrationSuccess registrationSuccess;
     @Autowired
     private Token token;
+    @Autowired
+    private CommentLikeRepo likeRepo;
+    @Autowired
+    private CommentRepo commentRepo;
+    @Autowired
+    private JsonString jsonString;
 
     public ResponseEntity SignUp(UserForm userForm) {
         JsonString jsonString= new JsonString();
@@ -75,5 +84,28 @@ public class UserService {
         ApplicationUser user = userRepo.findByUsername(token.readToken(request));
         user.setActive(true);
         return userRepo.save(user);
+    }
+
+    public String getAchievements(HttpServletRequest request){
+        ApplicationUser user = userRepo.findByUsername(token.readToken(request));
+        String achievements = "";
+        if(user.getTShirts().size() >= 5){
+            achievements += "5 designs \n";
+        }
+        if(user.getActivationCode() == null){
+            achievements +="successful registration \n";
+        }
+        if(likeRepo.findAllByAuthor(token.readToken(request)).size() >= 5){
+            achievements += "5 likes \n";
+        }
+        if(commentRepo.findAllByUserName(token.readToken(request)).size() >= 5){
+            achievements +="5 comments \n";
+        }
+        try {
+            achievements = jsonString.ReturnInfo(achievements);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return achievements;
     }
 }

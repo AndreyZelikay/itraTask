@@ -26,9 +26,6 @@ public class TShirt {
     @Field
     private String theme;
 
-    private Integer Rating;
-    private Integer counterRating;
-
     @IndexedEmbedded
     @OneToMany(mappedBy = "tShirt")
     private List<Comments> Comments;
@@ -36,6 +33,9 @@ public class TShirt {
     @IndexedEmbedded
     @OneToMany(mappedBy = "tShirt")
     private List<Tag> Tags;
+
+    @OneToMany(mappedBy = "tShirt")
+    private List<Rating> ratings;
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
@@ -107,20 +107,12 @@ public class TShirt {
         Description = description;
     }
 
-    public Integer getRating() {
-        return Rating;
+    public List<Rating> getRatings() {
+        return ratings;
     }
 
-    public void setRating(Integer rating) {
-        Rating = rating;
-    }
-
-    public Integer getCounterRating() {
-        return counterRating;
-    }
-
-    public void setCounterRating(Integer counterRating) {
-        this.counterRating = counterRating;
+    public void setRatings(List<Rating> ratings) {
+        this.ratings = ratings;
     }
 
     public String getTheme() {

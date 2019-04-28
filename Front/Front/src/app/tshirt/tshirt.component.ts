@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TShirt} from '../../../MyModules/TShirt.module';
 import {TShirtService} from '../../../MyServices/TShirtService/tshirt-service.service';
-declare var $: any;
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {ElementRef, ViewChild} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
@@ -10,6 +9,8 @@ import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import {form} from '../registration/registration.form';
 import {Router} from '@angular/router';
+
+declare var $: any;
 
 @Component({
   selector: 'app-tshirt',
@@ -75,11 +76,8 @@ export class TShirtComponent implements OnInit {
   createTShirt() {
     this.ImgUrl = $('#meme').memeGenerator('save');
     this.form.setValue({
-        url: this.ImgUrl,
-        tags: this.tags,
-        theme: this.selectedTheme
-    });
-    this.form.updateValueAndValidity({
+        Description: [null],
+        Name: [null],
         url: this.ImgUrl,
         tags: this.tags,
         theme: this.selectedTheme

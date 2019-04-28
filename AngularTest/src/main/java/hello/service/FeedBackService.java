@@ -1,16 +1,10 @@
 package hello.service;
 
-import hello.Repos.CommentLikeRepo;
-import hello.Repos.CommentRepo;
-import hello.Repos.TShirtRepo;
-import hello.Repos.TagRepo;
+import hello.Repos.*;
 import hello.dao.CommentForm;
 import hello.function.ArrayListFind;
 import hello.function.Token;
-import hello.model.CommentLike;
-import hello.model.Comments;
-import hello.model.TShirt;
-import hello.model.Tag;
+import hello.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,6 +29,8 @@ public class FeedBackService {
     private TShirtRepo tShirtRepo;
     @Autowired
     private Token token;
+    @Autowired
+    private RatingRepo ratingRepo;
 
     public ResponseEntity setComment(CommentForm commentForm, HttpServletRequest httpRequest) {
         Date date = new Date();
@@ -71,26 +67,26 @@ public class FeedBackService {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
     }
 
-    public ResponseEntity setRating(int id, Integer rating) {
+    public ResponseEntity setRating(int id, Integer chosenRating, HttpServletRequest httpRequest) {
         TShirt tShirt = tShirtRepo.getOne(id);
-        if(tShirt.getRating() != null) {
-            tShirt.setRating(tShirt.getRating() + rating);
-            tShirt.setCounterRating(tShirt.getCounterRating() + 1);
+        if(ratingRepo.findByAuthorAndTShirt(token.readToken(httpRequest),tShirt) == null) {
+            Rating rating = new Rating();
+            rating.setAuthor(token.readToken(httpRequest));
+            rating.setRating(chosenRating);
+            rating.settShirt(tShirt);
+            ratingRepo.save(rating);
+            return ResponseEntity.status(HttpStatus.OK).body(null);
         }
-        else {
-            tShirt.setRating(rating);
-            tShirt.setCounterRating(1);
-        }
-        tShirtRepo.save(tShirt);
-        return ResponseEntity.status(HttpStatus.OK).body(null);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
     }
 
     public Integer getRating(int id) {
         TShirt tShirt = tShirtRepo.getOne(id);
-        if(tShirt.getRating() != null) {
-            return tShirt.getRating() / tShirt.getCounterRating();
+        Integer counter = 0;
+        for (Rating rating : tShirt.getRatings()){
+            counter +=rating.getRating();
         }
-        return 0;
+        return counter/tShirt.getRatings().size();
     }
 
     public ResponseEntity setLike(Integer commentId, HttpServletRequest httpRequest) {

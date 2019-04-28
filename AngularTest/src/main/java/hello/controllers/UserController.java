@@ -40,4 +40,9 @@ public class UserController {
     public ApplicationUser resetActive(HttpServletRequest request){
         return userService.resetActivity(request);
     }
+
+    @GetMapping("/achievements")
+    public String getAchievements(HttpServletRequest request){
+        return userService.getAchievements(request);
+    }
 }

@@ -1,18 +1,32 @@
 <ul class="products clearfix">
-  <li *ngFor="let tshirt of TShirts" class="product-wrapper">
+  <li *ngFor="let tshirt of TShirts; let i=index " class="product-wrapper">
     <a [routerLink]="['/TShirtPage', tshirt.id]" class="product">
       <div class="container-fluid">
         <div class="row">
           <div class="col">
+          <h1 align="center">{{tshirt.name}}</h1>
           </div>
+          <div class="w-100"></div>
+          <div class="col-lg-2"></div>
           <div class="col">
             <div class="product-photo">
               <img src={{tshirt.url}} alt="">
             </div>
           </div>
+          <div class="col-lg-2"></div>
+          <div class="w-100"></div>
           <div class="col">
-           <p>Description:</p>
-           <p>{{tshirt.description}}</p>
+            <a *ngFor="let item of starList[i]">
+              <i *ngIf="item" class="fa fa-star-o fa-2x"></i>
+              <i *ngIf="!item" class="fa fa-star fa-2x"></i>
+            </a>
+          </div>
+          <div class="w-100"></div>
+          <div class="col"><h3>{{tshirt.theme}}</h3></div>
+          <div class="w-100"></div>
+          <div class="col">
+           <p align="center">Description:<br>
+           {{tshirt.description}}</p>
           </div>
         </div>
       </div>

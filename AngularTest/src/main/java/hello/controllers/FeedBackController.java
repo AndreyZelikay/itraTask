@@ -28,8 +28,8 @@ public class FeedBackController {
     }
 
     @PostMapping("/feedback/rating/set/{id}")
-    public ResponseEntity setRating(@PathVariable ("id") int id, @RequestBody Integer rating){
-        return feedBackService.setRating(id,rating);
+    public ResponseEntity setRating(@PathVariable ("id") int id, @RequestBody Integer rating,HttpServletRequest request){
+        return feedBackService.setRating(id,rating,request);
     }
     @GetMapping("/tag/all")
     public List<Tag> getAllTags() {
