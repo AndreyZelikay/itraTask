@@ -90,7 +90,8 @@
 </div>
 <div *ngIf="isSearchNow" class="container-fluid">
   <div class="col">
-    <h3 align="center">Searched tshirt</h3>
+    <h3 align="center">Searched tshirt by {{tag}}</h3>
+    <a [routerLink]="['']"  (click)="changeState()">Go to main page</a>
     <ul class="products clearfix">
       <li *ngFor="let tshirt of searchedTshirts; let i=index " class="product-wrapper">
         <a [routerLink]="['/TShirtPage', tshirt?.id]" class="product">

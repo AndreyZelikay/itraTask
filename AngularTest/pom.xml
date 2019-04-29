@@ -83,7 +83,11 @@
           <artifactId>android-json</artifactId>
           <version>0.0.20131108.vaadin1</version>
       </dependency>
-
+      <dependency>
+          <groupId>com.stripe</groupId>
+          <artifactId>stripe-java</artifactId>
+          <version>5.21.0</version>
+      </dependency>
   </dependencies>
 
 

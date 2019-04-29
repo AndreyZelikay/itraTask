@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {TShirt} from '../../../MyModules/TShirt.module';
 import {TShirtService} from '../../../MyServices/TShirtService/tshirt-service.service';
 import {LoginService} from '../../../MyServices/LogInService/login.service';
-import {Tag} from "../../../MyModules/TagModule";
+import {Tag} from '../../../MyModules/TagModule';
 
 @Component({
   selector: 'app-main-page',
@@ -19,6 +19,7 @@ export class MainPageComponent implements OnInit {
     public isSearchNow: boolean = false;
     public searchedTshirts: TShirt[];
     public tags: Tag[];
+    public tag: string;
 
   constructor(private tshirtService: TShirtService, private loginService: LoginService) { }
 
@@ -43,9 +44,7 @@ export class MainPageComponent implements OnInit {
                this.TShirts[i].ratingNumber = result/res[i].ratings.length;
            }
            this.popularTshirts = this.TShirts;
-           console.log(this.TShirts);
            this.popularTshirts = this.popularTshirts.sort((a, b) => a.ratingNumber - b.ratingNumber).slice(this.popularTshirts.length - 5);
-           console.log(this.popularTshirts);
            if(this.TShirts.length > 5)
             this.lastTshirts = this.TShirts.slice(this.TShirts.length - 5);
            else
@@ -58,6 +57,7 @@ export class MainPageComponent implements OnInit {
   }
 
   public searchTag(body: string) {
+      this.tag = body;
       this.isSearchNow = true;
       this.tshirtService.searchTag(body).subscribe(
           (response) => {
@@ -66,5 +66,9 @@ export class MainPageComponent implements OnInit {
           (error) => {
                 this.isSearchNow = false;
           });
+  }
+
+  public changeState() {
+      this.isSearchNow = false;
   }
 }

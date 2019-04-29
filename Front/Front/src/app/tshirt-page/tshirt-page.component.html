@@ -39,6 +39,11 @@
 						<div *ngIf="isAuthorized" class="col">
 							<button class="buy-btn" (click)="toBasket()">To basket</button>
 						</div>
+						<div *ngIf="isProductPuttedToBasket">
+							<button (click)="changeBasketState()"><div class="alert alert-primary" role="alert" data-auto-dismiss="10">
+								Putted to basket!
+							</div></button>
+						</div>
 						<div *ngIf="!isAuthorized">
 							<a [routerLink]="['/pay']">buy</a>
 						</div>
@@ -48,7 +53,7 @@
 						{{TShirt?.description}}
 					</div>
 					<h5>Set rating</h5>
-					<div class="col" *ngIf="isUserCanSetRating && isAuthorized">
+					<div class="col" *ngIf="isUserCanSetRating && isAuthorized && isUserSendRating">
 						<a *ngFor="let item of starListRating; let i=index " (click)="setStar(i)">
 							<i *ngIf="item" class="fa fa-star-o fa-1x"></i>
 							<i *ngIf="!item" class="fa fa-star fa-1x"></i>
@@ -57,6 +62,9 @@
 					</div>
 					<div *ngIf="!isUserCanSetRating">
 						<h6>Thank you for your feedback</h6>
+					</div>
+					<div *ngIf="!isUserSendRating">
+						<h6>You already set rating for this t-shirt</h6>
 					</div>
 				</div>
 				<div class="col-lg-2"></div>

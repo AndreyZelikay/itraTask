@@ -10,8 +10,8 @@ import {BasketModule} from '../../../MyModules/Basket.module';
 export class BasketComponent implements OnInit {
 
   public basket: BasketModule;
-  public number: number = 1;
-  public isBasketEmpty: boolean = true;
+  public result = 0;
+  public isBasketEmpty = true;
   constructor(private tShirtService: TShirtService) {}
 
   ngOnInit() {
@@ -19,8 +19,9 @@ export class BasketComponent implements OnInit {
         (response) => {
           this.basket = response;
           console.log(response);
-          if(this.basket != null)
+          if (this.basket != null) {
             this.isBasketEmpty = false;
+          }
         });
   }
 

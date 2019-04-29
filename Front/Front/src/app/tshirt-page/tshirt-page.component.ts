@@ -10,11 +10,13 @@ import {LoginService} from "../../../MyServices/LogInService/login.service";
   templateUrl: './tshirt-page.component.html',
   styleUrls: ['./tshirt-page.component.css']
 })
+
 export class TShirtPageComponent implements OnInit {
 
     public TShirt: TShirt;
     public ID: number;
     public isAuthorized: boolean = false;
+    public isProductPuttedToBasket: boolean = false;
     public form: FormGroup = form;
     public basketform: FormGroup;
     public isUserCanAddComment: boolean = true;
@@ -23,6 +25,7 @@ export class TShirtPageComponent implements OnInit {
     public  rating: number;
     public tShirtRating: number;
     public isUserCanSetRating: boolean = true;
+    public isUserSendRating: boolean = true;
     public isUserCanSetLike: boolean = true;
     public sizes1: string[] = [ 'XS', 'S', 'M', 'L'];
     public sizes2: string[] = ['XL', 'XXl', 'XXXL', '4XL'];
@@ -120,13 +123,13 @@ export class TShirtPageComponent implements OnInit {
                     (error) => {
                         console.log(error);
                     });
+                this.isUserCanSetRating = false;
             },
             (error) => {
                 console.log(error);
-                this.isUserCanSetRating = false;
+                this.isUserSendRating = false;
             }
         );
-        this.isUserCanSetRating = false;
     }
     public setLike(commentId) {
         this.tshirtService.setLike(commentId).subscribe(
@@ -150,6 +153,10 @@ export class TShirtPageComponent implements OnInit {
             sizes: this.size,
             tShirtID: this.ID
             });
+        this.isProductPuttedToBasket = true;
         this.tshirtService.setBasket(this.basketform).subscribe();
+    }
+    public changeBasketState() {
+        this.isProductPuttedToBasket = false;
     }
 }

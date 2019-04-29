@@ -14,13 +14,76 @@
                    placeholder="Input name*"/>
         </form>
         </div>
-        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+        </div>
+        <div class="w-100"></div>
+        <div class="col-lg-5"></div>
+        <div class="col">
+            <button type="btn" (click)="setTshirtGender('Male')">Male</button>
+            <button type="btn" (click)="setTshirtGender('Female')">Female</button>
+        </div>
+        <div class="col-lg-5"></div>
         <div class="w-100"></div>
         <div class="col-lg-2"></div>
         <div class="col">
-            <img src="assets/T-ShirtsModels/Male.png" id="meme">
+            <img src="assets/T-ShirtsModels/{{gender}}.png" id="meme">
         </div>
-        <div class="col-lg-2"></div>
+        <div class="col-lg-2">
+            <table width="100%">
+            <thead>
+            <tr>
+                <th scope="col">code</th>
+                <th scope="col">color</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th class="col">#ffffff</th>
+                <th class="col">white</th>
+            </tr>
+            <tr>
+                <th class="col">#c0c0c0</th>
+                <th class="col">silver</th>
+            </tr>
+            <tr>
+                <th class="col">#808080</th>
+                <th class="col">gray</th>
+            </tr>
+            <tr>
+                <th class="col">#000000</th>
+                <th class="col">black</th>
+            </tr>
+            <tr>
+                <th class="col">#ff0000</th>
+                <th class="col">red </th>
+            </tr>
+            <tr>
+                <th class="col">#800000</th>
+                <th class="col">maroon</th>
+            </tr>
+            <tr>
+                <th class="col">#ffff00</th>
+                <th class="col">yellow</th>
+            </tr>
+            <tr>
+                <th class="col">#808000</th>
+                <th class="col">olive</th>
+            </tr>
+            <tr>
+                <th class="col">#00ff00</th>
+                <th class="col">lime</th>
+            </tr>
+            <tr>
+                <th class="col">#008000</th>
+                <th class="col">green</th>
+            </tr>
+            <tr>
+                <th class="col">#0000ff</th>
+                <th class="col"> blue</th>
+            </tr>
+            </tbody>
+        </table>
+        </div>
         <div class="w-100"></div>
         <div class="col-lg-4"></div>
         <div class="col">

@@ -78,7 +78,11 @@ export class LoginService {
     for (const field of fields) {
       requestBody[field] = form.controls[field].value;
     }
-    console.log(requestBody);
     return this.http.post(this.url + '/users/email', requestBody['email']);
+  }
+  public chargeCard(token: string) {
+    const requestBody: object = {
+      'token': token, 'amount': 100};
+    return this.http.post(this.url + '/payment', requestBody);
   }
 }

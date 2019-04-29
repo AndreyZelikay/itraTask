@@ -25,6 +25,7 @@ export class TShirtComponent implements OnInit {
           map((tag: string | null) => tag ? this._filter(tag) : this.alltags.slice()));
   }
     public name: string;
+    public gender: string = 'Male';
     public theme: FormControl;
     public form: FormGroup;
     public descr: string;
@@ -89,6 +90,9 @@ export class TShirtComponent implements OnInit {
             alert('an error whith create');
         }
     );
+  }
+  public setTshirtGender(gender: string) {
+      this.gender = gender;
   }
 
   public add(event: MatChipInputEvent): void {

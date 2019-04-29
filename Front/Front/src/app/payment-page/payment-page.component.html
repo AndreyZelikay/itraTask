@@ -1,25 +1,74 @@
-<div class="container-fluid">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+<link href="http://bootstraptema.ru/snippets/form/2017/styles.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://bootstraptema.ru/snippets/form/2017/jquery.payform.min.js"></script>
+<script src="http://bootstraptema.ru/snippets/form/2017/script.js"></script>
+
+<div class="container">
   <div class="row">
-    <div class="col">
-    <h1 align="center">Payment Page</h1>
-    </div>
-    <div class="w-100"></div>
-    <div class="col-lg-4"></div>
-    <div class="col">
-      <form   [formGroup]="form">
-        <div class="form-group">
-          <input  type="text"
-                  class="form-control"
-                  formControlName="email"
-                  placeholder="Your email"/>
-          <div *ngIf="form.controls['email'].errors && form.controls['email'].touched"
-               style="color: red">
-            Invalid Email!
+
+    <div class="creditCardForm">
+      <div class="heading">
+        <h1>Bootstrap Credit Card Form Validation</h1>
+      </div>
+      <div class="payment">
+        <form>
+          <div class="form-group owner">
+            <label>Email</label>
+            <form  [formGroup]="form">
+              <div class="form-group">
+                <input  type="text"
+                        class="form-control"
+                        formControlName="email"
+                        placeholder="Your email"/>
+                <div *ngIf="form.controls['email'].errors && form.controls['email'].touched"
+                     style="color: red">
+                  Invalid Email!
+                </div>
+              </div>
+            </form>
           </div>
-        </div>
-      </form>
-      <button class="btn-success" tybe="submit" (click)="buy()">Buy</button>
+          <div class="form-group CVV">
+            <label for="cvv">CVV</label>
+            <input type="text" class="form-control" [(ngModel)]="cvc" name="cvc" id="cvv">
+          </div>
+          <div class="form-group" id="card-number-field">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" class="form-control" [(ngModel)]="cardNumber" name="cardNumber" id="cardNumber">
+          </div>
+          <div class="form-group" id="expiration-date">
+            <label>Expiration Date</label>
+            <select id="month">
+              <option value="01">January</option>
+              <option value="02">February </option>
+              <option value="03">March</option>
+              <option value="04">April</option>
+              <option value="05">May</option>
+              <option value="06">June</option>
+              <option value="07">July</option>
+              <option value="08">August</option>
+              <option value="09">September</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+            <select id="year">
+              <option value="19"> 2019</option>
+              <option value="20"> 2020</option>
+              <option value="21"> 2021</option>
+            </select>
+          </div>
+          <div class="form-group" id="credit_cards">
+            <img src="http://bootstraptema.ru/snippets/form/2017/visa.jpg" id="visa">
+            <img src="http://bootstraptema.ru/snippets/form/2017/mastercard.jpg" id="mastercard">
+            <img src="http://bootstraptema.ru/snippets/form/2017/amex.jpg" id="amex">
+          </div>
+          <div class="form-group" id="pay-now">
+            <button type="submit" class="btn btn-default" id="confirm-purchase" (click)="chargeCreditCard()">Confirm</button>
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="col-lg-4"></div>
   </div>
 </div>

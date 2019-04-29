@@ -34,6 +34,7 @@ import { BasketComponent } from './basket/basket.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { ManageUserProfileComponent } from './manage-user-profile/manage-user-profile.component';
 import { RefactorTshirtComponent } from './refactor-tshirt/refactor-tshirt.component';
+import { SuccessfulPayComponent } from './successful-pay/successful-pay.component';
 
 const appRoutes: Routes = [
     {path: '', component: MainPageComponent},
@@ -41,7 +42,7 @@ const appRoutes: Routes = [
     {path: 'confirm', component : ConfirmPageComponent},
     {path: 'success', component: SuccessfulRegistrationComponent},
     {path: 'add', component: TShirtComponent, canActivate: [AuthGuard]},
-    {path: 'TShirtPage/:id', component: TShirtPageComponent, canActivate: [AuthGuard]},
+    {path: 'TShirtPage/:id', component: TShirtPageComponent},
     {path: 'login', component: LogInComponent},
     {path: 'registration', component: RegistrationComponent},
     {path: 'admin', component: AdminPageComponent, canActivate: [AuthGuard]},
@@ -49,7 +50,8 @@ const appRoutes: Routes = [
     {path: 'basket', component: BasketComponent, canActivate: [AuthGuard]},
     {path: 'pay', component: PaymentPageComponent},
     {path: 'profile/:id', component: ManageUserProfileComponent, canActivate: [AuthGuard]},
-    {path: 'refactor/:id', component: RefactorTshirtComponent, canActivate: [AuthGuard]}
+    {path: 'refactor/:id', component: RefactorTshirtComponent, canActivate: [AuthGuard]},
+    {path: 'success-pay', component: SuccessfulPayComponent}
 ];
 
 export function tokenGetter() {
@@ -80,7 +82,8 @@ const JWT_Module_Options: JwtModuleOptions = {
     BasketComponent,
     PaymentPageComponent,
     ManageUserProfileComponent,
-    RefactorTshirtComponent
+    RefactorTshirtComponent,
+    SuccessfulPayComponent
   ],
     imports: [
         BrowserModule,
