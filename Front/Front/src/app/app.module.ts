@@ -47,7 +47,7 @@ const appRoutes: Routes = [
     {path: 'admin', component: AdminPageComponent, canActivate: [AuthGuard]},
     {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
     {path: 'basket', component: BasketComponent, canActivate: [AuthGuard]},
-    {path: 'basket/pay', component: BasketComponent},
+    {path: 'pay', component: PaymentPageComponent},
     {path: 'profile/:id', component: ManageUserProfileComponent, canActivate: [AuthGuard]},
     {path: 'refactor/:id', component: RefactorTshirtComponent, canActivate: [AuthGuard]}
 ];

@@ -45,4 +45,9 @@ public class UserController {
     public String getAchievements(HttpServletRequest request){
         return userService.getAchievements(request);
     }
+
+    @PostMapping("/email")
+    public ResponseEntity sendEmail(@RequestBody String email){
+        return this.userService.sendEmail(email);
+    }
 }

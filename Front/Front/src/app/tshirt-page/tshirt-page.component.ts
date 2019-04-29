@@ -4,6 +4,7 @@ import {TShirtService} from '../../../MyServices/TShirtService/tshirt-service.se
 import {ActivatedRoute} from '@angular/router';
 import {form} from '../registration/registration.form';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {LoginService} from "../../../MyServices/LogInService/login.service";
 @Component({
   selector: 'app-tshirt-page',
   templateUrl: './tshirt-page.component.html',
@@ -13,6 +14,7 @@ export class TShirtPageComponent implements OnInit {
 
     public TShirt: TShirt;
     public ID: number;
+    public isAuthorized: boolean = false;
     public form: FormGroup = form;
     public basketform: FormGroup;
     public isUserCanAddComment: boolean = true;
@@ -26,10 +28,13 @@ export class TShirtPageComponent implements OnInit {
     public sizes2: string[] = ['XL', 'XXl', 'XXXL', '4XL'];
     public size: string;
 
-    constructor(private tshirtService: TShirtService, private route: ActivatedRoute, private fb: FormBuilder) {
+    constructor(private tshirtService: TShirtService, private route: ActivatedRoute, private fb: FormBuilder, private loginService: LoginService) {
     }
 
     ngOnInit() {
+        if (localStorage.getItem('token')) {
+            this.isAuthorized = true;
+        }
         this.ID = this.route.snapshot.params.id;
         this.tshirtService.GetOneTShirt(this.ID).subscribe(
             res => {
@@ -118,6 +123,7 @@ export class TShirtPageComponent implements OnInit {
             },
             (error) => {
                 console.log(error);
+                this.isUserCanSetRating = false;
             }
         );
         this.isUserCanSetRating = false;

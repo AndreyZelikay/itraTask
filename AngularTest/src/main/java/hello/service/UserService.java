@@ -108,4 +108,8 @@ public class UserService {
         }
         return achievements;
     }
+
+    public ResponseEntity sendEmail(String email) {
+        return registrationSuccess.sendEmail(email);
+    }
 }

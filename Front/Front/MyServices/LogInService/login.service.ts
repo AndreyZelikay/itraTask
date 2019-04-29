@@ -72,4 +72,13 @@ export class LoginService {
   public reSetActive() {
     return this.http.get(this.url + '/users/activity/reset');
   }
+  public buy(form: TransformableFormGroup) {
+    const requestBody: object = {};
+    const fields = Object.keys(form.controls);
+    for (const field of fields) {
+      requestBody[field] = form.controls[field].value;
+    }
+    console.log(requestBody);
+    return this.http.post(this.url + '/users/email', requestBody['email']);
+  }
 }

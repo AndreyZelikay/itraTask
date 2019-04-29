@@ -36,8 +36,11 @@
 						</tbody>
 					</table>
 					<div class="row">
-						<div class="col">
+						<div *ngIf="isAuthorized" class="col">
 							<button class="buy-btn" (click)="toBasket()">To basket</button>
+						</div>
+						<div *ngIf="!isAuthorized">
+							<a [routerLink]="['/pay']">buy</a>
 						</div>
 					</div>
 					<div>
@@ -45,7 +48,7 @@
 						{{TShirt?.description}}
 					</div>
 					<h5>Set rating</h5>
-					<div class="col" *ngIf="isUserCanSetRating">
+					<div class="col" *ngIf="isUserCanSetRating && isAuthorized">
 						<a *ngFor="let item of starListRating; let i=index " (click)="setStar(i)">
 							<i *ngIf="item" class="fa fa-star-o fa-1x"></i>
 							<i *ngIf="!item" class="fa fa-star fa-1x"></i>
@@ -83,7 +86,7 @@
 			</div>
 		</div>
 		<div class="w-100"></div>
-			<div *ngIf="isUserCanAddComment" class="col">
+			<div *ngIf="isUserCanAddComment && isAuthorized" class="col">
 				<div class="col login-form-1" align="center">
 					<div class="form-group col-lg-6">
 					<form   [formGroup]="form">

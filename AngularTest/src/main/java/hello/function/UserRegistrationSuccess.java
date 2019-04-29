@@ -5,6 +5,8 @@ import hello.dao.UserForm;
 import hello.model.ApplicationUser;
 import hello.service.EmailSender;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -34,5 +36,12 @@ public class UserRegistrationSuccess {
         user.setRole("ANONYMOUS");
         user.setActive(true);
         userRepo.save(user);
+    }
+
+    public ResponseEntity sendEmail(String email) {
+        String message = String.format("Thank you for purchase!\n" +
+                        " You can get your purchase in our shops");
+        emailSender.send(email, "Activation code", message);
+        return ResponseEntity.status(HttpStatus.OK).body(null);
     }
 }
