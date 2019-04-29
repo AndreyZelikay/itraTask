@@ -14,12 +14,6 @@ export class TagCloudComponent implements OnInit {
   constructor( private tShirtService: TShirtService) { }
 
   ngOnInit() {
-    this.tShirtService.getAllTags().subscribe(
-        (response) => {
-          this.tags = response;
-        },
-        (error) => {
-          console.log(error);
-        });
+
   }
 }

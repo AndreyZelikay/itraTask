@@ -1,7 +1,6 @@
 package hello.controllers;
 
 import hello.model.TShirt;
-import hello.model.Tag;
 import hello.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +20,7 @@ public class SearchController {
     }
 
     @PostMapping("/tag")
-    public List<Tag> SearchTag(@RequestBody String search) {
-        return searchService.searchTag(search+"*");
+    public List<TShirt> SearchByTag(@RequestBody String search) {
+        return searchService.searchByTag(search+"*");
     }
 }

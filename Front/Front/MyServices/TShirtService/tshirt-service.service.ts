@@ -104,4 +104,8 @@ export class TShirtService {
   public getAchievements() {
       return this.http.get<string>(this.userUrl + '/achievements');
   }
+
+  public  searchTag(body: string) {
+      return this.http.post<TShirt[]>(this.searchUrl + '/tag', body);
+  }
 }

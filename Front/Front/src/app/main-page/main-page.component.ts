@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {TShirt} from '../../../MyModules/TShirt.module';
 import {TShirtService} from '../../../MyServices/TShirtService/tshirt-service.service';
 import {LoginService} from '../../../MyServices/LogInService/login.service';
+import {Tag} from "../../../MyModules/TagModule";
 
 @Component({
   selector: 'app-main-page',
@@ -15,10 +16,20 @@ export class MainPageComponent implements OnInit {
     public role: string;
     public popularTshirts: TShirt[];
     public lastTshirts: TShirt[];
+    public isSearchNow: boolean = false;
+    public searchedTshirts: TShirt[];
+    public tags: Tag[];
 
   constructor(private tshirtService: TShirtService, private loginService: LoginService) { }
 
   ngOnInit() {
+      this.tshirtService.getAllTags().subscribe(
+          (response) => {
+              this.tags = response;
+          },
+          (error) => {
+              console.log(error);
+          });
       this.tshirtService.GetAllTShirt().subscribe(
           (res) => {
            this.TShirts = res;
@@ -44,5 +55,16 @@ export class MainPageComponent implements OnInit {
                 console.log(err);
         });
       this.role = this.loginService.getRole();
+  }
+
+  public searchTag(body: string) {
+      this.isSearchNow = true;
+      this.tshirtService.searchTag(body).subscribe(
+          (response) => {
+              this.searchedTshirts = response;
+          },
+          (error) => {
+                this.isSearchNow = false;
+          });
   }
 }

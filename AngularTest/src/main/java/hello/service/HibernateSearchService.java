@@ -46,22 +46,22 @@ public class HibernateSearchService {
         return TShirtList;
     }
     @Transactional
-    public List<Tag> SearchTag(String searchTerm) {
+    public List<TShirt> SearchByTag(String searchTerm) {
         FullTextEntityManager fullTextEntityManager = Search.getFullTextEntityManager(entityManager);
-        QueryBuilder Tag = fullTextEntityManager.getSearchFactory().buildQueryBuilder().forEntity(Tag.class).get();
-        Query TagWildcardQuery = Tag
+        QueryBuilder TShirt = fullTextEntityManager.getSearchFactory().buildQueryBuilder().forEntity(TShirt.class).get();
+        Query TShirtWildcardQuery = TShirt
                 .keyword()
                 .wildcard()
-                .onField("body")
+                .onFields("Tags.body")
                 .matching(searchTerm)
                 .createQuery();
-        FullTextQuery fullTextQuery = fullTextEntityManager.createFullTextQuery(TagWildcardQuery , Tag.class);
-        List<Tag> TagsId = null;
+        FullTextQuery fullTextQuery = fullTextEntityManager.createFullTextQuery(TShirtWildcardQuery , TShirt.class);
+        List<TShirt> TShirtList = null;
         try {
-            TagsId = fullTextQuery.getResultList();
+            TShirtList = fullTextQuery.getResultList();
         } catch (NoResultException nre) {
             System.out.println("error");
         }
-        return TagsId;
+        return TShirtList;
     }
 }
