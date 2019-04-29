@@ -1,25 +1,30 @@
-<h1 align="center">Users designs</h1>
-<ul class="products clearfix">
-  <li *ngFor="let tshirt of usersTshirt" class="product-wrapper">
-    <a class="product">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm">
-            <div class="product-photo">
-              <img src={{tshirt.url}} alt="">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col"> <h1 align="center">Users designs</h1></div>
+    <div class="w-100"></div>
+    <div class="col-lg-2" *ngFor="let tshirt of usersTshirt">
+      <a class="product">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col"><h3 align="center">{{tshirt.name}}</h3></div>
+            <div class="w-100"></div>
+            <div class="col">
+              <div class="product-photo">
+                <img src={{tshirt.url}} alt="" width="200" height="200">
+              </div>
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+              <a [routerLink]="['/refactor',tshirt.id]"><button type="button" class="btn btn-success"><span style="vertical-align: inherit;">
+                  <span style="vertical-align: inherit;">Refactor</span></span>
+              </button></a>
+              <button type="submit" class="btn btn-danger" (click)="deleteTshirt(tshirt.id)"><span align="right" style="vertical-align: inherit;">
+                  <span style="vertical-align: inherit;">Delete</span></span>
+              </button>
             </div>
           </div>
-          <div class="w-100"></div>
-          <div class="col">
-            <button type="button" class="btn btn-success"><span style="vertical-align: inherit;">
-  	<span style="vertical-align: inherit;">Refactor</span></span>
-            </button>
-            <button type="submit" class="btn btn-danger" (click)="deleteTshirt(tshirt.id)"><span align="right" style="vertical-align: inherit;">
-  	<span style="vertical-align: inherit;">Delete</span></span>
-            </button>
-          </div>
         </div>
-      </div>
-    </a>
-  </li>
-</ul>
+      </a>
+    </div>
+  </div>
+</div>

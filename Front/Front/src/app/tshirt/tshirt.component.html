@@ -28,10 +28,13 @@
               <form>
                   <label >Theme</label><br>
                       <mat-form-field>
-                        <mat-select [(value)]="selectedTheme">
-                          <mat-option>None</mat-option>
-                          <mat-option *ngFor="let theme of themes" value="theme">{{theme}}</mat-option>
-                        </mat-select>
+                          <mat-label>Theme</mat-label>
+                          <mat-select [formControl]="theme">
+                              <mat-option>--</mat-option>
+                              <mat-option *ngFor="let them of themes" [value]="them">
+                                  {{them}}
+                              </mat-option>
+                          </mat-select>
                       </mat-form-field><br>
                       <label >Tags</label>
                       <mat-form-field class="chip-list">

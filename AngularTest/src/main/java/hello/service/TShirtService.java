@@ -71,7 +71,7 @@ public class TShirtService {
         return ResponseEntity.status(HttpStatus.OK).body(null);
     }
 
-    public TShirt updateTShirt(TShirtForm tShirtForm, HttpServletRequest request,Integer id) {
+    public TShirt updateTShirt(TShirtForm tShirtForm,Integer id) {
         TShirt tShirt = tShirtRepo.getOne(id);
         ArrayList<Tag> tags = new ArrayList<Tag>();
         tShirt.setUrl(tShirtForm.getUrl());
@@ -79,7 +79,6 @@ public class TShirtService {
         tShirt.setName(tShirtForm.getName());
         tShirt.setTheme(tShirtForm.getTheme());
         tShirt.setJson(tShirtForm.getJson());
-        tShirt.setApplicationUser(userRepo.findByUsername(token.readToken(request)));
         tShirtRepo.save(tShirt);
         for (String name: tShirtForm.getTags()){
             Tag tag = new Tag();

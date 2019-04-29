@@ -10,4 +10,5 @@ export interface TShirt {
 	theme: string;
 	json: string;
 	rating: boolean[];
+	ratingNumber: number;
 }

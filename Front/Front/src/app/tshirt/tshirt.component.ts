@@ -25,6 +25,7 @@ export class TShirtComponent implements OnInit {
           map((tag: string | null) => tag ? this._filter(tag) : this.alltags.slice()));
   }
     public name: string;
+    public theme: FormControl;
     public form: FormGroup;
     public descr: string;
     public	TShirt: TShirt;
@@ -35,12 +36,12 @@ export class TShirtComponent implements OnInit {
     public filteredTags: Observable<string[]>;
     public tags: string[] = [];
     public alltags: string[] = [];
-    public selectedTheme: string;
     public themes: string[] = ['hipster', 'science', 'sport', 'history', 'premium'];
 
     @ViewChild('tagInput') tagInput: ElementRef<HTMLInputElement>;
     @ViewChild('auto') matAutocomplete: MatAutocomplete;
   ngOnInit() {
+     this.theme = new FormControl('');
      $(document).ready( function() {
             $('#meme').memeGenerator({
                   useBootstrap: true,
@@ -76,9 +77,10 @@ export class TShirtComponent implements OnInit {
           name: this.name,
           url: this.ImgUrl,
           tags: this.tags,
-          theme: this.selectedTheme,
+          theme: this.theme.value,
           json: this.json
       };
+      console.log(requestBody);
     this.tshirtService.CreateTShirt(requestBody).subscribe(
         res => {
             this.router.navigate(['profile']);

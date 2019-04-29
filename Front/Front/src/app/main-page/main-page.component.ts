@@ -14,6 +14,7 @@ export class MainPageComponent implements OnInit {
     public TShirts: TShirt[];
     public role: string;
     public popularTshirts: TShirt[];
+    public lastTshirts: TShirt[];
 
   constructor(private tshirtService: TShirtService, private loginService: LoginService) { }
 
@@ -28,10 +29,16 @@ export class MainPageComponent implements OnInit {
                 result += res[i].ratings[j].rating;
                for(var k=0; k<result/res[i].ratings.length; k++)
                 this.TShirts[i].rating[k] = false;
+               this.TShirts[i].ratingNumber = result/res[i].ratings.length;
            }
            this.popularTshirts = this.TShirts;
-           this.popularTshirts.sort((a, b) => {return a.rating.length - b.rating.length}).slice(this.popularTshirts.length - 5);
+           console.log(this.TShirts);
+           this.popularTshirts = this.popularTshirts.sort((a, b) => a.ratingNumber - b.ratingNumber).slice(this.popularTshirts.length - 5);
            console.log(this.popularTshirts);
+           if(this.TShirts.length > 5)
+            this.lastTshirts = this.TShirts.slice(this.TShirts.length - 5);
+           else
+               this.lastTshirts = this.TShirts;
            },
           (err) => {
                 console.log(err);

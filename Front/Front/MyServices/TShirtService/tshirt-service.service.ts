@@ -16,6 +16,7 @@ export class TShirtService {
     private adminUrl = 'http://localhost:8080/admin';
     private searchUrl = 'http://localhost:8080/search';
     private basketUrl = 'http://localhost:8080/basket';
+    private userUrl = 'http://localhost:8080/users';
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -99,4 +100,8 @@ export class TShirtService {
   public updateTshirt(requestBody: object, id: number) {
         return this.http.post(this.tShirtUrl + '/update/' + id, requestBody);
     }
+
+  public getAchievements() {
+      return this.http.get<string>(this.userUrl + '/achievements');
+  }
 }

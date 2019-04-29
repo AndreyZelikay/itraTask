@@ -10,6 +10,7 @@ import {TShirtService} from '../../../MyServices/TShirtService/tshirt-service.se
 export class ProfileComponent implements OnInit {
 
   public TShirts: TShirt[];
+  public achievements: string;
 
   constructor( private tshirtService: TShirtService) { }
 
@@ -20,6 +21,11 @@ export class ProfileComponent implements OnInit {
         },
         (err) => {
           console.log(err);
+        });
+    this.tshirtService.getAchievements().subscribe(
+        (response) => {
+            this.achievements = response['cause'];
+            console.log(response);
         });
   }
   public deleteTshirt(id: number) {

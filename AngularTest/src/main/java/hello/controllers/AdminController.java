@@ -33,8 +33,4 @@ public class AdminController {
     public List<TShirt> getUsersTShirts(@PathVariable( "id" ) int id){
         return this.adminService.getUsersTShirts(id);
     }
-    @PostMapping("/user/{id}/tshirts")
-    public TShirt updateTshirtByAdmin(@PathVariable( "id" ) int id, TShirtForm tShirtForm){
-        return this.adminService.updateTshirtByAdmin(id,tShirtForm);
-    }
 }

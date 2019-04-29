@@ -8,6 +8,7 @@ import {MatAutocompleteSelectedEvent, MatChipInputEvent, MatAutocomplete} from '
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 import {ActivatedRoute, Router} from '@angular/router';
+import {LoginService} from "../../../MyServices/LogInService/login.service";
 
 declare var $: any;
 
@@ -17,7 +18,7 @@ declare var $: any;
   styleUrls: ['./refactor-tshirt.component.css']
 })
 export class RefactorTshirtComponent implements OnInit {
-  constructor(private tshirtService: TShirtService, private fb: FormBuilder, private router: Router, private  route: ActivatedRoute) {
+  constructor(private tshirtService: TShirtService, private fb: FormBuilder, private router: Router, private  route: ActivatedRoute, private loginService: LoginService) {
     this.filteredTags = this.tagCtrl.valueChanges.pipe(
         startWith(null),
         map((tag: string | null) => tag ? this._filter(tag) : this.alltags.slice()));
@@ -90,14 +91,16 @@ export class RefactorTshirtComponent implements OnInit {
     };
     this.tshirtService.updateTshirt(requestBody, this.route.snapshot.params.id).subscribe(
         res => {
-          this.router.navigate(['profile']);
+          if(this.loginService.getRole() === 'ADMIN')
+            this.router.navigate(['admin']);
+          else
+            this.router.navigate(['profile']);
         },
         err => {
           alert('an error whith create');
         }
     );
   }
-
   public add(event: MatChipInputEvent): void {
     if (!this.matAutocomplete.isOpen) {
       const input = event.input;

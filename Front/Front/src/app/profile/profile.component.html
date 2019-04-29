@@ -1,25 +1,32 @@
-<h1 align="center">My designs</h1>
-<ul class="products clearfix">
-  <li *ngFor="let tshirt of TShirts" class="product-wrapper">
-    <a class="product">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col">
-            <div class="product-photo">
-              <img src={{tshirt.url}} alt="" width="200" height="200">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col"> <h1 align="center">My designs</h1></div>
+    <div class="w-100"></div>
+    <div class="col"> <h3 align="center">My achievements: {{achievements}}</h3></div>
+    <div class="w-100"></div>
+    <div class="col-lg-2" *ngFor="let tshirt of TShirts">
+          <a class="product">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col"><h3 align="center">{{tshirt.name}}</h3></div>
+                <div class="w-100"></div>
+                <div class="col">
+                  <div class="product-photo">
+                    <img src={{tshirt.url}} alt="" width="200" height="200">
+                  </div>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                  <a [routerLink]="['/refactor',tshirt.id]"><button type="button" class="btn btn-success"><span style="vertical-align: inherit;">
+                  <span style="vertical-align: inherit;">Refactor</span></span>
+                  </button></a>
+                  <button type="submit" class="btn btn-danger" (click)="deleteTshirt(tshirt.id)"><span align="right" style="vertical-align: inherit;">
+                  <span style="vertical-align: inherit;">Delete</span></span>
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="w-100"></div>
-          <div class="col">
-            <a [routerLink]="['/refactor',tshirt.id]"><button type="button" class="btn btn-success"><span style="vertical-align: inherit;">
-            <span style="vertical-align: inherit;">Refactor</span></span>
-            </button></a>
-            <button type="submit" class="btn btn-danger" (click)="deleteTshirt(tshirt.id)"><span align="right" style="vertical-align: inherit;">
-            <span style="vertical-align: inherit;">Delete</span></span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </a>
-  </li>
-</ul>
+          </a>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 .product-wrapper {
 	display: block;
-	width: 100%;
+	width: 70%;
 	float: left;
 	transition: width .2s;
 }
@@ -14,7 +14,8 @@
 	text-decoration: none;
 	color: #474747;
 	z-index: 0;
-	height: 400px;
+	height: 340px;
+	width: 250px;
 }
 .product-photo {
 	position: relative;
@@ -66,6 +67,6 @@
 	color: orange;
 }
 .fa {
-	width: 10%;
+	width: 20%;
 	height: 10%;
 }
