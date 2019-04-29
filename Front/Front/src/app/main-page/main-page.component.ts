@@ -13,7 +13,7 @@ export class MainPageComponent implements OnInit {
 
     public TShirts: TShirt[];
     public role: string;
-    public starList: boolean[];
+    public popularTshirts: TShirt[];
 
   constructor(private tshirtService: TShirtService, private loginService: LoginService) { }
 
@@ -21,14 +21,17 @@ export class MainPageComponent implements OnInit {
       this.tshirtService.GetAllTShirt().subscribe(
           (res) => {
            this.TShirts = res;
-           for(var i = 0; i < res.length; i++) {
+           for (var i = 0; i < res.length; i++) {
                var result: number = 0;
+               this.TShirts[i].rating = [true, true, true, true, true];
                for(var j = 0; j < res[i].ratings.length; j++)
                 result += res[i].ratings[j].rating;
-               this.TShirts[i].rating = result/res[i].ratings.length;
-               console.log(this.TShirts[i].rating);
+               for(var k=0; k<result/res[i].ratings.length; k++)
+                this.TShirts[i].rating[k] = false;
            }
-              console.log(this.TShirts[0].rating);
+           this.popularTshirts = this.TShirts;
+           this.popularTshirts.sort((a, b) => {return a.rating.length - b.rating.length}).slice(this.popularTshirts.length - 5);
+           console.log(this.popularTshirts);
            },
           (err) => {
                 console.log(err);

@@ -1,44 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb992427-d9ea-43c1-9279-3685b850f5b3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_19_9.liv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_1u.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_3y.cfe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_3y.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/_3y.si" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.TShirt/segments_4r" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_12_3.liv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_k.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_t.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_u.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_v.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_w.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_x.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/_y.cfs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexpath/hello.model.Tag/segments_1n" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/controllers/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/controllers/TShirtController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/dao/TShirtForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/dao/TShirtForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/TShirt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/model/TShirt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/FeedBackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/service/FeedBackService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/service/TShirtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front/Front/MyServices/TShirtService/tshirt-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/MyServices/TShirtService/tshirt-service.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front/Front/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front/Front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/main-page/main-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/main-page/main-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/main-page/main-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/main-page/main-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/tag-cloud/tag-cloud.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/tag-cloud/tag-cloud.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/tag-cloud/tag-cloud.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/tag-cloud/tag-cloud.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/tshirt/tshirt.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/tshirt/tshirt.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/tshirt/tshirt.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/tshirt/tshirt.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Front/Front/src/app/tshirt/tshirt.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../Front/Front/src/app/tshirt/tshirt.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="eb992427-d9ea-43c1-9279-3685b850f5b3" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -346,12 +309,12 @@
       <workItem from="1555519687491" duration="10432000" />
       <workItem from="1555595755357" duration="19409000" />
       <workItem from="1555666586590" duration="128922000" />
-      <workItem from="1556116245171" duration="75164000" />
+      <workItem from="1556116245171" duration="75245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276350000" />
+    <option name="totallyTimeSpent" value="276431000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />

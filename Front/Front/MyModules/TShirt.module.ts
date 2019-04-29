@@ -9,5 +9,5 @@ export interface TShirt {
 	comments: CommentModule[];
 	theme: string;
 	json: string;
-	rating: number;
+	rating: boolean[];
 }
